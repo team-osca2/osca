@@ -1,0 +1,482 @@
+@charset "UTF-8";
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+.bodyall {
+    width: 100%;
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+.body {
+    width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 16px;
+}
+
+.body-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 600px;
+}
+
+.line {
+    height: 1px;
+    margin: 0;
+    border: none;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    background-color: rgb(0 0 0 / 12%);
+    background-color: #303441;
+    height: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.menu-list {
+    padding: 11px 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #303441;
+    color: #303441;
+    font-weight: 400;
+    font-size: 14px;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+.menu-list:hover {
+    font-weight: 500;
+}
+
+.menu-list-text {
+    position: relative;
+    font-weight: inherit;
+}
+
+.menu-page-here {
+    font-weight: 500;
+}
+
+.study-open {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-left: 24px;
+}
+.study-open-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.study-open-title {
+    font-size: 18px;
+    color: #303441;
+}
+
+.study-register-button {
+    border: 0;
+    border-radius: 6px;
+    width: 269px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+    background: #F9A01B;
+}
+
+.border{
+    margin-top: 20px;
+    padding: 40px;
+    border: 1px solid rgb(228, 229, 237);
+    display: flex;
+    flex-direction: column
+}
+
+/* 스터디 작성 페이지 */
+.study-info-wrapper {
+    margin-bottom: 20px;
+}
+
+.study-content-title-label {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 8px;
+    position: relative;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.study-content-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555969;
+}
+
+.detail-wrapper {
+    margin: 6px 0 0 0;
+    padding: 0;
+    color: #9a9ba7;
+    font-size: 12px;
+}
+
+.study-content, .study-content:hover, .study-content:focus-within {
+    background-color: #fafafc;
+    border-color: #e4e5ed;
+    color: #9a9ba7;
+}
+
+.study-content {
+    width: 100%;
+    border: 1px solid #e4e5ed;
+    border-radius: 4px;
+    -webkit-transition: background-color 0.2s,border-color 0.2s;
+    transition: background-color 0.2s,border-color 0.2s;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    cursor: text;
+    background-color: #fff;
+    color: #303441;
+    height: 42px;
+    font-size: 15px;
+    padding: 0 14px;
+    min-width: 64px;
+}
+
+.study-content-input {
+    outline: none;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    background-image: none;
+    box-sizing: border-box;
+    font-size: inherit;
+    border: none;
+    font-weight: inherit;
+    background-color: transparent;
+    text-align: left;
+    color: inherit;
+}
+
+.study-register-button{
+    cursor: pointer;
+}
+
+.study-register-button:hover{
+    font-weight: 600;
+}
+
+/* 첨부 파일 css */
+.upload-dropzone {
+    border: 1px solid #ddd;
+    font-size: 12px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.upload-dropzone input[type=file] {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+input {
+    font-weight: 300;
+    max-width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border .12s ease-in-out;
+}
+
+#photo-file{
+    padding: 8.5px 0px;
+    border: 0;
+}
+
+input, textarea {
+    color: #3333;
+    font-size: 14px;
+}
+
+.upload-dropzone span {
+    color: #999;
+}
+.upload-dropzone span {
+    color: #d1d1d1;
+    display: inline-block;
+    line-height: 24px;
+    padding: 10px;
+}
+
+.upload-dropzone a {
+    text-decoration: none;
+    font-size: 13px;
+    color: rgba(22, 158, 230, 1);
+}
+
+.media-study-register-button{
+    display: none;
+}
+
+@media screen and (max-width: 840px){
+    .body{
+        width: auto;
+    }
+
+    .mypage-title{
+        text-align: center;
+    }
+
+    .study-register-button{
+        display: none;
+
+    }
+
+    .mypage-top {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .media-study-register-button{
+        border: 0;
+        border-radius: 6px;
+        width: 200px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 500;
+        background: #F9A01B;
+        margin: 40px auto;
+    }
+
+    .footer{
+        margin-top: 0px;
+    }
+
+    .body {
+        margin: 40px auto 0px;
+        padding: 0 16px;
+    }
+
+    .selected-skills-list {
+        width: auto;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+}
+/* skills */
+.skills-wrapper {
+    width: 100%;
+    height: 452px;
+    border: 1px solid #f2f3f7;
+}
+
+.skills-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: calc(100% - 52px);
+}
+
+.skills-scroll {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+}
+
+.it-skills {
+    overflow: auto;
+    width: 150px;
+    height: 100%;
+    margin: 0;
+    padding: 8px;
+}
+/* 선택안한 스킬 */
+.skill-name-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #303441;
+    margin: 4px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    padding: 0 12px;
+}
+
+.skill-name {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 34px;
+    margin: 0px auto;
+}
+/* 선택한 스킬 */
+.delete-button2{
+    background-color: #144F79;
+    border-radius: 4px;
+    border-color: #144F79;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.selected-skill {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgb(48, 52, 65);
+    margin: 4px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #F9A01B;
+    background-color: rgb(255, 250, 209);
+    padding: 0px 12px;
+}
+.yellow-tick {
+    display: inline-block;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #f9a01b;
+    align-self: center;
+}
+
+.selected-skills-list {
+    height: 100%;
+    overflow: auto;
+    border-left: 1px solid #f2f3f7;
+    width: 550px;
+}
+
+.selected-skills-name {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 20px;
+    background: rgb(242, 243, 247);
+    color: rgb(85, 89, 105);
+    display: flex;
+    cursor: default;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 10px 16px;
+}
+
+.skills{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #f2f3f7;
+}
+.skills-selected-box {
+    display: flex;
+    grid-gap: 8px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+.skills-each {
+    width: fit-content;
+}
+
+.css-1h7exwy {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 20px;
+    background: rgb(242, 243, 247);
+    color: rgb(85, 89, 105);
+    display: flex;
+    cursor: default;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

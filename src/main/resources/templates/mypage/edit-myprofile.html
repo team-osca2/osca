@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>마이 페이지</title>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="stylesheet" href="/css/mypage/edit-myprofile.css"/>
+    <link rel="stylesheet" href="/css/mypage/modals.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png"/>
+</head>
+<body>
+<header class="header-wrapper">
+    <section class="header-container">
+        <a th:href="@{/}" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width: 70px; height: 40px"/>
+        </a>
+    </section>
+</header>
+
+<form action="/mypage/edit-myprofile" method="post" name="writeForm" class="body-wrapper" id="edit-general-profile">
+    <div class="profile-edit-wrapper">
+        <nav class="aside-contents">
+            <div class="aside-menu">
+                <div class="menu-list selected-menu">
+                    <div class="menu-number black-menu-number">1</div>
+                    <span class="menu-text selected-text">자기 소개</span>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-number black-menu-number">2</div>
+                    <span class="menu-text selected-text">전문 분야</span>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-number black-menu-number">3</div>
+                    <span class="menu-text selected-text">보유 기술</span>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-number black-menu-number">4</div>
+                    <span class="menu-text selected-text">경력 사항</span>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-number black-menu-number">5</div>
+                    <span class="menu-text selected-text">학력</span>
+                </div>
+            </div>
+        </nav>
+        <div class="edit-content-wrapper">
+            <section class="information">
+                <span class="info-title">자기 소개</span>
+                <div class="info-wrapper">
+                    <div class="info-padding">
+                        <div class="info-format">
+                            <div class="introduction">
+                                <div class="profile-image-wrapper">
+                                    <div name="profile-thumbnail" class="profile_thumbnail">
+                                        <div size="102" shape="0" role="article" class="image-box">
+                                            <img
+                                                    src="https://d2v80xjmx68n4w.cloudfront.net/members/thumbs/QfUBa1690812432.png"
+                                                    alt="avatar"
+                                                    shape="0"
+                                                    loading="lazy"
+                                                    class="profile-image"
+                                            />
+                                            <div style="font-size: 15px; text-align: center; margin-top: 10px;"
+                                                 th:text="${memberNickname}"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="intro-right">
+                                    <div class="margin">
+                                        <div>
+                                            <div class="intro-text-colomn">
+                                                <span class="intro-title">자기소개</span>
+                                                <!--  자기소개 여기가 update가 되는 것임 -->
+                                                <textarea maxlength="255" class="intro-text-input"
+                                                          name="generalVO.generalIntroduction" rows="4" cols="50"
+                                                          th:attr="placeholder=${general.generalIntroduction != null and general.generalIntroduction != '' ? general.generalIntroduction : '자기소개를 입력해주세요.'}"
+                                                          th:value="${general.generalIntroduction}"
+                                                          th:field="${general.generalIntroduction}"
+                                                >
+                                                </textarea>
+                                                <span class="intro-text-count">119/255</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="area-of-expertise profile-section padding-top-list">
+                <span direction="row" class="info-title-expert">직업</span>
+                <div class="expert-wrapper">
+                    <div>
+                        <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                            <div class="category-box">
+                                <span class="category-title">직업</span>
+                                <div class="category-select">
+                                    <div class="category-container">
+                                        <span class="a11yText"></span>
+                                        <div class="location-select-control workperiod-select-control">
+                                            <div class="expert-loc-input-area expert-input-area">
+                                                <div class="category-placeholder period-holder"></div>
+                                                <!-- 직업 데이터 : 직업의 번호를 가져와야 함 -->
+                                                <input type="hidden" id="generalJobId" name="memberJobVO.jobId" rows="4"
+                                                       cols="50"
+                                                       th:attr="placeholder=${job.job != null and job.job != '' ? job.job : '직업을 선택해주세요.'}"
+                                                       th:field="${job.jobId}"
+                                                >
+                                                <div class="job-number" id="job" hidden th:text="${job.jobId}"></div>
+                                                <div class="expert-loc-singleValue expert-singleValue"
+                                                     th:text="${job.job}"></div>
+                                                <input readonly="" tabindex="0" class="loc-dummyInput"/>
+                                            </div>
+                                            <div class="down-arrow-wrapper">
+                                                <span display="none"></span>
+                                                <div class="down-arrow">
+                                                    <svg
+                                                            height="20"
+                                                            width="20"
+                                                            viewBox="0 0 20 20"
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            class="down-arrow-svg"
+                                                    >
+                                                        <path
+                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                                                        ></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+
+                                            <div class="expert-menu-container">
+                                                <div class="expert-list">
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="2">웹 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="3">서버 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="4">프론트엔드 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="5">자바 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="6">C,C++ 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="7">파이썬 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="8">Node.js 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="9">데이터 엔지니어</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="10">DevOps/시스템 관리자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="11">백엔드 개발자</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="12">데이터 사이언티스트</div>
+                                                    </div>
+                                                    <div class="expert-text" tabindex="-1">
+                                                        <div class="expert-option-text" val="13">백엔드 개발자</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills padding-top-list">
+                <span direction="row" class="info-title-expert">보유 기술</span>
+                <div class="skills-wrapper">
+                    <div class="skills-container">
+                        <div class="skills-scroll">
+                            <ul class="it-skills">
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="1">React.js</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="2">Java</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="3">HTML</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="4">CSS</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="5">JSP</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="6">NODE.JS</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="7">NEXT.JS</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="8">DJANGO</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="9">FLASK</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="10">FAST API</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="11">PYTHON</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="12">C</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="13">C++</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="14">PERL</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="15">RUBBY</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="16">PHP</div>
+                                </li>
+                                <li class="skill-name-list">
+                                    <div class="skill-name" value="17">R</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="selected-skills-list">
+                            <div class="delete-box">
+                                <button role="button" color="denim" type="button" class="delete-button2">
+                                    <span>전체삭제</span>
+                                </button>
+                            </div>
+
+                            <div class="skills-selected-box">
+                                <div hidden id="exist-skillIds" th:text="${skillIds}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="workperiod padding-top-list">
+                <span direction="row" class="info-title-expert">경력사항</span>
+                <div class="workperiod-wrapper">
+                    <div>
+                        <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                            <div class="category-box">
+                                <span class="category-title">경력</span>
+                                <div class="workperiod-select-wrapper">
+                                    <div class="select-container">
+                                        <div class="location-select-control workperiod-select-control">
+                                            <div class="loc-input-area workperiod-input-area">
+                                                <div class="loc-singleValue workperiod-singleValue" id="career"
+                                                     th:text="${general.generalCareer}"></div>
+                                                <input type="hidden" id="generalCareer"
+                                                       th:field="${generalVO.generalCareer}"
+                                                >
+                                                <input readonly="" tabindex="0" class="loc-dummyInput"/>
+                                            </div>
+                                            <div class="down-arrow-wrapper">
+                                                <span display="none"></span>
+                                                <div class="down-arrow">
+                                                    <svg
+                                                            height="20"
+                                                            width="20"
+                                                            viewBox="0 0 20 20"
+                                                            aria-hidden="true"
+                                                            focusable="false"
+                                                            class="down-arrow-svg"
+                                                    >
+                                                        <path
+                                                                d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                                                        ></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="workperiod-menu-container">
+                                                <div class="workperiod-list">
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">신입</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">1년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">2년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">3년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">4년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">5년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">6년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">7년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">8년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">9년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">10년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">11년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">12년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">13년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">14년</div>
+                                                    </div>
+                                                    <div class="workperiod-option" tabindex="-1">
+                                                        <div class="workperiod-text">15년 이상</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                                    <div class="category-box">
+                                        <span class="category-title">회사</span>
+                                        <input id="generalCompany" class="category-select category-container"
+                                               name="generalVO.generalCompany" rows="4" cols="50"
+                                               th:attr="placeholder=${general.generalCompany != null and general.generalCompany != '' ? general.generalCompany : '회사를 입력해주세요.'}"
+                                               th:value="${general.generalCompany}"
+                                               th:field="${general.generalCompany}"
+                                               style="outline: none">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                                    <div class="category-box">
+                                        <span class="category-title">급여</span>
+                                        <input id="generalSalary" name="generalVO.generalSalary" rows="4" cols="50"
+                                               th:attr="placeholder=${general.generalSalary != null and general.generalSalary != '' ? general.generalSalary : '급여를 입력해주세요.'}"
+                                               th:value="${general.generalSalary}"
+                                               th:field="${general.generalSalary}"
+                                               class="category-select category-container"
+                                               style="outline: none">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cert-area">
+                <section class="certificate-area padding-top-list">
+                    <span direction="row" class="info-title-expert">학력</span>
+                    <div class="workperiod-wrapper">
+                        <div>
+                            <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                                <div class="expert-wrapper bottom-padding">
+                                    <div name="specialtiesWithCategories" class="specialtiesWithCategories">
+                                        <div class="category-box">
+                                            <span class="category-title">학력</span>
+                                            <input class="category-select category-container"
+                                                   style="outline: none" name="generalVO.generalUniversity" rows="4"
+                                                   cols="50"
+                                                   th:attr="placeholder=${general.generalUniversity != null and general.generalUniversity != '' ? general.generalUniversity : '학교를 입력해주세요.'}"
+                                                   th:value="${general.generalUniversity}"
+                                                   th:field="${general.generalUniversity}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-wrapper">
+        <div class="footer-div">
+            <button role="button" color="yellow" class="save-button" id="submit">
+                <span>프로필 저장</span>
+            </button>
+        </div>
+    </footer>
+</form>
+
+</form>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/js/mypage/edit-myprofile.js"></script>
+<script src="/js/mypage/modals.js"></script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/mypage/profile-page.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css" />
+    <link rel="stylesheet" href="/css/mypage/mypage.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>유저 프로필 - 남에게 보이는 </title>
+  </head>
+  <body>
+
+  <!-- 헤더 시작 -->
+  <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+  <!-- 헤더 끝 -->
+
+    <div class="body-wrapper">
+      <div class="UserProfileContainer">
+        <div class="ProfileMainSection" style="padding: 32px">
+          <div class="ProfileMainSection_profile">
+            <div class="MemberProfilePicture">
+              <!-- 유저 프로필 나오는 부분 -->
+              <img
+                src="https://d2v80xjmx68n4w.cloudfront.net/members/thumbs/QfUBa1690812432.png"
+                class="profile-image2 img-responsive"
+              />
+            </div>
+          </div>
+          <div class="ProfileMainSection__information">
+            <!-- 유저 닉네임 나오는 부분 -->
+            <div class="ProfileMainSection__username" th:text="*{memberNickName}"></div>
+          </div>
+        </div>
+        <div class="UserProfileContainer__contents">
+          <!-- 자기소개 css는 mypage.css-->
+          <div class="ProfileDescriptionSection">
+            <div class="ProfileSectionTitle">소개</div>
+            <div class="ProfileDescriptionSection_desctiption" style="height: inherit" th:text="*{general.generalIntroduction}">
+            </div>
+
+            <div class="DescriptionDetailSection">
+              <div>
+                <div class="ProfileSectionTitle">직업</div>
+                <div class="ProfileSkillSection-tag-group">
+              <!--  직업 데이터 나오는 부분 -->
+                  <div class="ProfileSkillSection-tag" th:text="*{memberJob}"></div>
+                </div>
+              </div>
+              <div>
+                <!--  보유 기술 나오는 부분 -->
+                <div class="ProfileSectionTitle">보유 기술</div>
+                <div class="ProfileSkillSection-tag-group skill-lists">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 자기소개 끝 -->
+          <div class="UserProfileContainer__contents-right">
+            <div class="ProfileInformationSection">
+              <div class="ProfileInformationSection__section">
+                <div class="ProfileInformationSection__section-title">
+                  더 많은 정보
+                </div>
+                <div class="ProfileInformationSection__section-infomation">
+                  <span
+                    class="ProfileInformationSection__section-infomation-title"
+                    >대학교</span
+                  >
+                  <!--  대학 정보 나오는 부분 -->
+                  <span
+                    class="ProfileInformationSection__section-infomation-description" th:text="*{general.generalUniversity}"
+                    ></span
+                  >
+                </div>
+                <div  class="ProfileInformationSection__section-infomation">
+                  <span
+
+                    class="ProfileInformationSection__section-infomation-title"
+                    >회사</span
+                  >
+                  <div  class="ProfileInformationSection__section-answer">
+                    <span class="ProfileInformationSection__section-infomation-description" th:text="*{general.generalCompany}">
+                  <!--  회사 정보 나오는 부분 --></span>
+                  </div>
+                </div>
+                <div  class="ProfileInformationSection__section-infomation">
+                    <span
+
+                      class="ProfileInformationSection__section-infomation-title"
+                      >경력</span
+                    >
+                  <!--  경력 정보 나오는 부분 -->
+                  <span
+
+                      class="ProfileInformationSection__section-infomation-description" th:text="*{general.generalCareer}"
+                      >신입</span
+                    >
+                  </div>
+                <div  class="ProfileInformationSection__section-infomation">
+                    <span class="ProfileInformationSection__section-infomation-title">급여</span
+                    >
+                  <!-- 급여 데이터 나오는 부분-->
+                  <span class="ProfileInformationSection__section-infomation-description" th:text="*{general.generalSalary}">월1000만원</span
+                  >
+                </div>
+              </div>
+                  </div>
+                </div>
+
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <footer th:replace="~{/fix/footer :: footer}"></footer>
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+  <script src="/js/post/post.js"></script>
+  <script th:inline="javascript">
+    let skills = [[${skills}]];
+  </script>
+  <script src="/js/mypage/mypage.js"></script>
+</html>

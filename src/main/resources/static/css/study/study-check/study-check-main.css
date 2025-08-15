@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/* 신청 리스트 나오는 부분 */
+div {
+    display: block;
+}
+
+html {
+    line-height: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+body {
+    letter-spacing: 0;
+    font-size: 13px;
+    font-family: MetroSans;
+    font-weight: 400;
+    background-color: #fff
+}
+
+.main-wrapper {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.margin-top-60 {
+    margin-top: 60px !important;
+}
+
+.flex, .fl {
+    display: flex;
+}
+
+.main-wrapper .border-color {
+    color: #e4e5ed;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+.margin-left-5 {
+    margin-left: 5px !important;
+}
+
+
+/* 측면 목록 */
+.main-wrapper .side-menu-container {
+    flex-basis: 300px;
+    margin-right: 25px;
+}
+
+#side-menu-wrapper.min-height {
+    min-height: 800px;
+}
+
+#side-menu-wrapper .side-menu-title-wrapper {
+    color: #333;
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.NGB{
+    font-weight: 500;
+}
+
+#side-menu-wrapper .guide-line {
+    height: 2px;
+    background-color: #333;
+}
+
+#side-menu-wrapper .menu-list-wrapper {
+    margin: 15px 30px;
+}
+
+#side-menu-wrapper .menu-list-wrapper .main-menu-wrapper {
+    padding: 0;
+}
+
+#side-menu-wrapper .menu-list-wrapper .main-menu-wrapper>li.main-menu {
+    line-height: 36px;
+    list-style: none;
+    margin: 0;
+    border: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+}
+
+#side-menu-wrapper{
+    font-size: 14px;
+    color: #222;
+}
+
+/* 스터디 목록 나오는 부분 */
+.main-wrapper .content-wrapper {
+    flex: 1;
+}
+
+.main-wrapper .content-wrapper .title-wrapper {
+    font-size: 18px;
+    font-weight: 700;
+    color: #303441;
+    margin-bottom: 16px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .panel-wrapper:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .panel-wrapper {
+    border: 1px solid #e4e5ed;
+}
+
+.position-relative {
+    position: relative;
+}
+.flex-center-center, .awesome-radio-body, .order-btn-brand-gray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wrapper .card-dropdown {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.main-wrapper .card-dropdown img {
+    width: 24px;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+.main-wrapper .card-dropdown .dropdown-menu {
+    padding: 0;
+    right: 0;
+    left: inherit;
+    border: 1px solid #f2f3f7;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.07);
+    min-width: 78px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper .breadcrumb-wrapper {
+    font-size: 12px;
+    color: #727585;
+}
+
+.flex-left-center {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.margin-right-10 {
+    margin-right: 10px !important;
+}
+
+.status-label .label-chip {
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper .breadcrumb-wrapper {
+    font-size: 12px;
+    color: #727585;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper .item-title-wrapper {
+    color: #303441;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    width: 440px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper .item-title-wrapper a {
+    color: #303441;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper .date-wrapper
+{
+    text-align: right;
+    color: #303441;
+}
+
+.tahoma, .font-bold {
+    font-weight: 700;
+}
+
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper {
+    flex-basis: 180px;
+}
+
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper button.btn {
+    padding: 13px 15px;
+    font-size: 16px;
+}
+
+.btn-custom-project {
+    color: #f0f1f5;
+    background-color: #F9A01B;
+    border-color: #F9A01B;
+}
+
+.request-btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 13px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.badge-wrapper:hover{
+    font-weight: 600;
+}
+
+.side-content-all-weight{
+    font-weight: 600;
+}
+
+.side-content-weight{
+    font-weight: 600;
+}
+
+.apply-profile{
+    height: 70px;;
+    width: 70px;
+    margin-right: 40px;
+}
+
+.item-wrapper{
+    padding: 10px;
+}
+
+/* 모달창 나오는 부분 */
+.position-relative {
+    position: relative;
+}
+
+.request-content-wrapper {
+    height: 500px;
+    overflow-x: hidden;
+}
+
+textarea.form-control, textarea.input-file-form-control, .form-control-custom-project-wrapper textarea.form-control {
+    height: auto;
+}
+
+.btn-step-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    min-height: 48px;
+}
+
+.btn.btn-custom-project {
+    padding: 13px 15px;
+}
+
+.btn-step {
+    width: 150px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 15px 15px;
+    font-size: 13px;
+    line-height: 1.5438;
+    border-radius: 8px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.text-center{
+    text-align: center;
+    font-weight: 600;
+}
+
+.badge-wrapper{
+    cursor: pointer;
+}
+
+
+.side-content-all-weight,.side-content-weight {
+    font-weight: 600;
+}
+
+.media-footer{
+    display: none;
+}
+
+@media screen and (max-width: 820px){
+    .main{
+        display: none;
+    }
+
+    .main-wrapper .content-wrapper {
+        flex: 0;
+    }
+
+    .media-footer{
+        display: block;
+    }
+
+    .media-content-color, .change-bottom-color{
+        color: #303441 !important;
+        border-bottom: 2px solid #F9A01B !important;
+    }
+}

@@ -1,0 +1,526 @@
+@charset "UTF-8";
+
+html {
+    line-height: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    display: block;
+    margin: 0;
+}
+
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot?#iefix) format('embedded-opentype');
+}
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+.body-remove-account {
+    margin-top: 20px;
+    padding: 40px;
+    border: 1px solid #e4e5ed;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.reason {
+    color: #303441;
+}
+
+.reason-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 8px;
+    margin: 4px 0;
+}
+.list-li {
+    margin: 4px 0;
+}
+
+.list-label {
+    font-size: 14px;
+    color: #303441;
+    cursor: pointer;
+}
+.label-span {
+    white-space: nowrap;
+    outline: none;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.list-radio {
+    position: absolute;
+    left: 0;
+    z-index: 19;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: inherit;
+}
+
+.label-span2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c8cad2;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border-color 0.36s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: border-color 0.36s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.selected {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #F9A01B;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    transition: border-color 0.36s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+}
+
+.selected::after {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    opacity: 0;
+    transform: scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: opacity 0.36s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s, transform 0.36s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+    box-sizing: border-box;
+    background-color: #F9A01B;
+    content: " ";
+}
+.selected::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.label-text {
+    margin-left: 8px;
+    margin: 0 8px;
+}
+
+.password-colum {
+    margin-top: 32px;
+}
+
+.password-check-title {
+    color: #303441;
+}
+.input-div {
+    width: 100%;
+    border: 1px solid #e4e5ed;
+    border-radius: 4px;
+    -webkit-transition: background-color 0.2s,border-color 0.2s;
+    transition: background-color 0.2s,border-color 0.2s;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    overflow: hidden;
+    cursor: text;
+    background-color: #fff;
+    color: #303441;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 12px;
+    min-width: 64px;
+    margin-top: 12px;
+}
+
+.password-input {
+    outline: none;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    background-image: none;
+    box-sizing: border-box;
+    font-size: inherit;
+    border: none;
+    font-weight: inherit;
+    background-color: transparent;
+    text-align: left;
+    color: inherit;
+}
+
+.account-delete-notice-wrapper {
+    margin-top: 20px;
+    margin-bottom: 14px;
+    padding: 24px 40px 24px 47px;
+    background-color: #f2f3f7;
+    font-size: 14px;
+    color: #727585;
+    line-height: normal;
+}
+
+.notice-list {
+    text-indent: -15px;
+    word-break: keep-all;
+}
+
+.check-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.all-checked-wrapper {
+    margin-top: 8px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.check-tick {
+    font-size: 16px;
+    color: #303441;
+    cursor: pointer;
+}
+.check-span {
+    outline: none;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.check-input {
+    position: absolute;
+    left: 0;
+    z-index: 19;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: inherit;
+}
+.checkbox__inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #c8cad2;
+    background-color: #fff;
+    -webkit-transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
+
+.checkbox__inner::after {
+    opacity: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    display: table;
+    width: 4px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    content: " ";
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+.check-text {
+    margin-left: 8px;
+    color: #303441;
+}
+.final-button[disabled] {
+    cursor: not-allowed;
+    background-color: #e4e5ed;
+    border-color: #e4e5ed;
+    color: #9a9ba7;
+}
+.final-button {
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height: 1;
+    font-weight: 500;
+    -webkit-transition: background-color 0.3s,border-color 0.3s;
+    transition: background-color 0.3s,border-color 0.3s;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+    max-width: 100%;
+    height: 42px;
+    font-size: 15px;
+    padding: 0 22px;
+    min-width: 64px;
+    background-color: #fff;
+    border-color: #e4e5ed;
+    color: #303441;
+}
+
+.check-selected {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s, background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+    border-color: #F9A01B;
+    background-color: #F9A01B;
+}
+
+.check-selected::after {
+    opacity: 1;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    display: table;
+    width: 4px;
+    height: 8px;
+    border-width: 0px 2px 2px 0px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-image: initial;
+    border-top-style: initial;
+    border-top-color: initial;
+    border-left-style: initial;
+    border-left-color: initial;
+    content: " ";
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-duration: 0.36s;
+    animation-name: animation-d5glx;
+}
+
+.self-input {
+    width: 100%;
+    border: 1px solid rgb(228, 229, 237);
+    border-radius: 4px;
+    transition: background-color 0.2s ease 0s, border-color 0.2s ease 0s;
+    display: inline-flex;
+    flex-direction: row;
+    overflow: hidden;
+    cursor: text;
+    background-color: rgb(255, 255, 255);
+    color: rgb(48, 52, 65);
+    height: 32px;
+    font-size: 13px;
+    padding: 0px 10px;
+    min-width: 64px;
+    margin-left: 24px;
+    margin-top: 8px;
+}
+
+.self-input-text {
+    outline: none;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+    background-image: none;
+    box-sizing: border-box;
+    font-size: inherit;
+    border: none;
+    font-weight: inherit;
+    background-color: transparent;
+    text-align: left;
+    color: inherit;
+}
+
+.displayNone{
+    display: none;
+}
+
+.check-input-password{
+    margin: 6px 0 0 0;
+    padding: 0;
+    color: #9a9ba7;
+    font-size: 12px;
+}

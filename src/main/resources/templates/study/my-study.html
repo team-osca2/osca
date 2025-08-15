@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myStudy</title>
+    <link rel="stylesheet" href="/css/study/study-main/study-header.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css" />
+    <link rel="stylesheet" href="/css/study/my-study/my-study-main.css" />
+    <link rel="stylesheet" href="/css/study/my-study/my-study-all.css" />
+    <link rel="stylesheet" href="/css/study/study-open/study-open-main.css" />
+    <link rel="stylesheet" href="/css/study/study-check/study-check-main-modal.css" />
+    <link rel="stylesheet" href="/css/study/study-check/study-check-main.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-main-media.css" />
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+</head>
+<body>
+<header class="header-wrapper">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width: 70px; height: 40px" />
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="" class="header-menu">오늘의 스터디</a>
+            <a href="" class="header-menu">오늘의 카페</a>
+            <a href="" class="header-menu">FAQ</a>
+            <a href="" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="header-aside">
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">회원가입</p>
+            </span>
+            </a>
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">로그인</p>
+            </span>
+            </a>
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+            </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="/buyer/order-list" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img
+                                        src="https://kmong.com/img/tools/main_user_gray.png"
+                                        alt="avatar"
+                                        shape="0"
+                                        loading="lazy"
+                                        class="profile-img"
+                                        style="height: 32px; width: 32px"
+                                />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<!--  메인 페이지 내용 시작  -->
+<main style="margin-top: 0px;">
+    <div class="main-wrapper">
+        <div class="flex margin-top-60">
+            <!-- ==================== 사이드에 메뉴 나오는 부분 ====================  -->
+            <div class="side-menu-container">
+                <div id="side-menu-wrapper" class="side-menu min-height">
+                    <div class="side-menu-title-wrapper NGB">
+                        내 스터디
+                    </div>
+                    <div class="guide-line"></div>
+                    <div class="menu-list-wrapper">
+                        <ul id="side-menu-main-group" class="main-menu-wrapper">
+                            <li class="main-menu">
+                                <div class="badge-wrapper">
+                                    <span class="side-menu-content side-content-all-weight" onclick="filterList('전체')">전체</span>
+                                </div>
+                            </li>
+                            <li class="main-menu">
+                                <div class="badge-wrapper">
+                                    <span class="side-menu-content" onclick="filterList('개설')">내가 개설한 스터디</span>
+                                </div>
+                            </li>
+                            <li class="main-menu">
+                                <div class="badge-wrapper">
+                                    <span class="side-menu-content" onclick="filterList('참여')">내가 참여중인 스터디</span>
+                                </div>
+                            </li>
+                            <li class="main-menu">
+                                <div class="badge-wrapper">
+                                    <span class="side-menu-content" onclick="filterList('신청')">내가 신청한 스터디</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 스터디 리스트 나오는 부분 ==================== -->
+            <div class="content-wrapper">
+                <div class="list-panel-wrapper">
+
+                    <!-- ==================== 리스트 뿌려지는 부분은 여기에서부터 반복되는 것!! ==================== -->
+                    <div class="panel-wrapper">
+                        <div class="item-wrapper position-relative flex-center-center">
+                            <div class="main-image-wrapper border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                            <div class="item-content-wrapper">
+                                <div>
+                                    <div class="breadcrumb-wrapper flex-left-center" style="margin-top: 1px;">
+                                        <div class="status-label">
+
+                                            <!-- ==================== 내가 개설한 스터디는 개설, 내가 참여하는 스터디는 참여, 내가 신청한 스터디는 신청 ====================-->
+                                            <span class="label-chip font-medium" style="background-color: #d51e14;">신청</span>
+                                        </div>
+                                        <span class="border-color margin-left-5 margin-right-5">|</span>
+
+                                        <!-- ==================== 스터디 제목 ==================== -->
+                                        <span>네이버 개발자와 함께하는 Spring Boot 스터디</span>
+                                    </div>
+                                    <div class="item-title-wrapper">
+
+                                        <!-- ==================== 스터디 상세 내용!! ==================== -->
+                                        <a href=""> <!--여기에 스터디 상세 페이지로 가는 경로 넣어주면 됩니당. 혜빈언니 홧팅!! -->
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="date-wrapper">
+                                    <span class="margin-right-5" style="font-size: 14px;">마감</span>
+                                    <span style="font-size: 18px;">
+
+                        <!-- ==================== 스터디 싱청 마감 D-day 나오는 부분 ==================== -->
+                        <span class="tahoma">D-10</span>
+                      </span>
+                                </div>
+                            </div>
+                            <div class="button-wrapper position-relative">
+                                <button class="NGB btn btn-custom-project my-apply" style="width: 180px; background-color: #F9A01B;">
+                                    내 신청서 보기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== 새로운 리스트 시작 : 개설한 스터디 ==================== -->
+                    <div class="panel-wrapper">
+                        <div class="item-wrapper position-relative flex-center-center">
+                            <div class="card-dropdown dropdown">
+                                <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/ic_more.svg" alt="더보기 아이콘">
+                                <ul class="dropdown-menu my-gigs-settings-dropdown-menu ">
+                                    <!-- 수정시 카페 detail페이지로 이동하기 -->
+                                    <li><a class="dropdown-link">수정</a></li>
+
+                                    <li><a class="dropdown-link delete-btn">삭제</a></li>
+                                </ul>
+                            </div>
+                            <div class="main-image-wrapper border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                            <div class="item-content-wrapper">
+                                <div>
+                                    <div class="breadcrumb-wrapper flex-left-center" style="margin-top: 1px;">
+                                        <div class="status-label">
+
+                                            <!-- ==================== 내가 개설한 스터디는 개설, 내가 참여하는 스터디는 참여, 내가 신청한 스터디는 신청 ====================-->
+                                            <span class="label-chip font-medium" style="background-color: #144F79;">개설</span>
+                                        </div>
+                                        <span class="border-color margin-left-5 margin-right-5">|</span>
+
+                                        <!-- ==================== 스터디 제목 ==================== -->
+                                        <span>네이버 개발자와 함께하는 Spring Boot 스터디</span>
+                                    </div>
+                                    <div class="item-title-wrapper">
+                                        <!-- ==================== 스터디 상세 보기 페이지로 이동 ====================  -->
+                                        <a href="">
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-wrapper position-relative">
+                                <!-- ==================== 신청한 사람 리스트 페이지로 이동하기 ==================== -->
+                                <a href="/study/applicant" class="NGB btn btn-custom-project" style="width: 180px; height: 52.3px; background-color: #F9A01B; font-size: 16px;">
+                                    <!-- ==================== 신청한 사람 수 나오는 부분 ==================== -->
+                                    신청자 : 7명
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ==================== 새로운 리스트 시작 : 신청한 스터디 ==================== -->
+                    <div class="panel-wrapper">
+                        <div class="item-wrapper position-relative flex-center-center">
+                            <div class="main-image-wrapper border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                            <div class="item-content-wrapper">
+                                <div>
+                                    <div class="breadcrumb-wrapper flex-left-center" style="margin-top: 1px;">
+                                        <div class="status-label">
+                                            <!-- ==================== 내가 개설한 스터디는 개설, 내가 참여하는 스터디는 참여, 내가 신청한 스터디는 신청 ====================-->
+                                            <span class="label-chip font-medium" style="background-color: #61AEE5;">참여</span>
+                                        </div>
+                                        <span class="border-color margin-left-5 margin-right-5">|</span>
+                                        <span>네이버 개발자와 함께하는 Spring Boot 스터디</span>
+                                    </div>
+                                    <div class="item-title-wrapper">
+                                        <!-- ==================== 참여 하고 있는 스터디 상세 보기 페이지로 이동 ====================  -->
+                                        <a href="">
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-wrapper position-relative">
+                                <!-- ==================== 참여 하고 있는 스터디 상세 보기 페이지로 이동 ====================  -->
+                                <button class="NGB btn btn-custom-project" style="width: 180px; background-color: #F9A01B;">
+                                    스터디 가기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- ====================모달창 띄우기 (내 신청서)==================== -->
+<div class="modal hidden" style="z-index: 10;">
+    <div style="width: 960px; height: 680px; background: white; border-radius: 10px; padding: 40px;">
+        <div>
+            <button type="button" class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                </svg>
+            </button>
+            <div class="wrapper position-relative">
+                <div class="CustomProcessBar">
+                    <div class="position-relative">
+                        <div class="text-center font-medium" style="font-size: 18px;">스터디 지원서</div>
+                    </div>
+                </div>
+
+                <div class="request-content-wrapper">
+                    <div class="content">
+                        <div class="border">
+
+                            <div class="study-info-wrapper">
+                                <label class="study-content-title-label">
+                                    <span class="study-content-title">지원 동기</span>
+                                </label>
+                                <div class="study-content-wrapper" style="width: 100%;">
+                                    <div class="study-content" style="height:200px; width: 100%;">
+                                        <!-- ==================== 스터디 지원 동기 나오는 부분 ==================== -->
+                                        <textarea style="resize: none;" type="text" placeholder="spring boot 프로젝트를 수행하고 싶기 때문입니다." class="study-content-input"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="study-info-wrapper">
+                                <label class="study-content-title-label">
+                                    <span class="study-content-title">자기소개</span>
+                                </label>
+                                <div class="study-content-wrapper" style="width: 100%;">
+                                    <div class="study-content" style="height:200px; width: 100%;">
+
+                                        <!-- ==================== 자기 소개 나오는 부분 ==================== -->
+                                        <textarea style="resize: none;" type="text" placeholder="안녕하세요! 저는 spring boot 스터디를 지원하는 정유진입니다." class="study-content-input"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fl-1 text-right">
+                    <div>
+                        <button class="btn btn-step btn-custom-project font-size-16">수정</button>
+                        <button class="btn btn-step btn-custom-project font-size-16">삭제</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal2 hidden" style="z-index: 1000;">
+    <div style="background: white; border-radius: 10px; padding: 30px;">
+        <div style="font-size: 16px; margin-bottom: 10px;">삭제하시겠습니까?</div>
+        <button class="accept-btn1">확인</button>
+        <button class="cancel-btn1">취소</button>
+    </div>
+</div>
+
+<!--==================== main 미디어 쿼리==================== -->
+<main class="media-main">
+    <div>
+        <section class="media-menu-bar">
+            <div class="media-menu-bar-wrapper">
+                <div class="media-menu-content  all-content-color"><div>전체</div></div>
+                <div class="media-menu-content"><div>개설</div></div>
+                <div class="media-menu-content"><div>참여</div></div>
+                <div class="media-menu-content"><div>신청</div></div>
+            </div>
+        </section>
+
+        <section class="media-main-study">
+
+
+            <!-- ====================신청한 스터디 부분 미디어 쿼리==================== -->
+            <article class="media-main-list">
+                <a href="" class="study-list-wrapper" style="padding-bottom: 0;">
+                    <div class="media-study-list">
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="min-width: auto; background-color: #d51e14;">
+                                <p style="background-color: #d51e14; color:#FFFFFF">신청</p>
+                            </div>
+                            <h2 class="media-study-title">네이버 개발자와 함께하는 Spring Boot 스터디</h2>
+                            <p class="study-detail-content">
+                                안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                혹시 관심 있으신 분은 지원 부탁드립니다.
+                            </p>
+                        </div>
+                        <div class="media-period-wrapper">
+                            <img src="/images/study-images/study-main.png" width="96" height="96" decoding="async" data-nimg="1" loading="lazy" style="color: transparent; border-radius: 4px;">
+                        </div>
+                    </div>
+                </a>
+                <button class="NGB btn btn-custom-project my-apply-media" style="width: 300px; background-color: #F9A01B; margin-top: -150px;">
+                    내 신청서 보기
+                </button>
+            </article>
+
+
+            <!-- ====================개설한 스터디 부분 미디어 쿼리==================== -->
+            <article class="media-main-list">
+                <a href="" class="study-list-wrapper" style="padding-bottom: 0;">
+                    <div class="media-study-list">
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="min-width: auto; background-color: #144F79;">
+                                <p style="background-color: #144F79; color:#FFFFFF">개설</p>
+                            </div>
+                            <h2 class="media-study-title">네이버 개발자와 함께하는 Spring Boot 스터디</h2>
+                            <p class="study-detail-content">
+                                안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                혹시 관심 있으신 분은 지원 부탁드립니다.
+                            </p>
+                        </div>
+                        <div class="media-period-wrapper">
+                            <img src="/images/study-images/study-main.png" width="96" height="96" decoding="async" data-nimg="1" loading="lazy" style="color: transparent; border-radius: 4px;">
+                        </div>
+                    </div>
+                </a>
+                <button class="NGB btn btn-custom-project my-apply" style="width: 300px; background-color: #F9A01B; margin-top: -150px;">
+                    신청자: 7명
+                </button>
+            </article>
+
+
+            <!-- ====================참여한 스터디 부분 미디어 쿼리==================== -->
+            <article class="media-main-list">
+                <a href="" class="study-list-wrapper" style="padding-bottom: 0;">
+                    <div class="media-study-list">
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="min-width: auto; background-color: #61AEE5;">
+                                <p style="background-color: #61AEE5; color:#FFFFFF">참여</p>
+                            </div>
+                            <h2 class="media-study-title">네이버 개발자와 함께하는 Spring Boot 스터디</h2>
+                            <p class="study-detail-content">
+                                안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                혹시 관심 있으신 분은 지원 부탁드립니다.
+                            </p>
+                        </div>
+                        <div class="media-period-wrapper">
+                            <img src="/images/study-images/study-main.png" width="96" height="96" decoding="async" data-nimg="1" loading="lazy" style="color: transparent; border-radius: 4px;">
+                        </div>
+                    </div>
+                </a>
+                <button class="NGB btn btn-custom-project my-apply" style="width: 300px; background-color: #F9A01B; margin-top: -150px;">
+                    내 스터디 가기
+                </button>
+            </article>
+        </section>
+
+        <footer class="media-footer">
+            <div class="media-footer-wrapper" style="margin-bottom: 15px;">
+                <h5 class="media-footer-content-wrapper">
+                    <a href="" class="media-footer-content">오늘의 카페</a>
+                </h5>
+                <h5 class="media-footer-content-wrapper">
+                    <a href="" class="media-footer-content">FAQ</a>
+                </h5>
+                <h5 class="media-footer-content-wrapper">
+                    <a href="../introduction/introduction.html" class="media-footer-content">Oh!스카 소개</a>
+                </h5>
+            </div>
+        </footer>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <ol style="width: 45%; padding: 0">
+            <b>(주)OH!스카</b>
+            | 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층 | 대표 : 정해승<br />
+            개인정보보호책임 : 배정수 | 사업자등록번호 : 815-88-00171<br />
+            통신판매업신고 : 2015 - 서울강남 - 03148호 | 02-2135-2949<br />
+            koreais@koreaedugroup.com
+        </ol>
+        <ol>
+            <a href="">오늘의 스터디</a>
+        </ol>
+        <ol>
+            <a href="">오늘의 카페</a>
+        </ol>
+        <ol>
+            <a href="">FAQ</a>
+        </ol>
+        <ol>
+            <a href="../introduction/introduction.html">OH!스카 소개</a>
+        </ol>
+    </div>
+    <div class="footer-media">
+        &nbsp;&nbsp; (주)OH!스카 &nbsp;&nbsp;&nbsp;
+        <a href="">오늘의 스터디</a>&nbsp; <a href="">오늘의 카페</a>&nbsp; <a href="">FAQ</a>&nbsp;
+        <a href="">OH!스카 소개</a>&nbsp;
+    </div>
+</footer>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/js/study/my-study.js"></script>
+</html>

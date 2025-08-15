@@ -1,0 +1,499 @@
+@charset "UTF-8";
+
+html {
+    line-height: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    display: block;
+    margin: 0;
+}
+
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot?#iefix) format('embedded-opentype');
+}
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    flex: 1;
+    margin-bottom: 75px;
+}
+.CashChargeSelectCard {
+    color: #303441;
+    margin-bottom: 50px;
+}
+.CashChargeSelectCard-main-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #303441;
+    margin-bottom: 16px;
+}
+
+.CashChargeSelectCard .selectCard-options-box {
+    outline: 1px solid #e4e5ed;
+}
+.CashChargeSelectCard .selectCard-options-box .cashPrice-select-box {
+    display: flex;
+    flex: 1;
+    padding: 50px 40px;
+    border-bottom: 1px dashed #e4e5ed;
+}
+.CashChargeSelectCard .selectCard-options-box .cash-icon {
+    flex: 1 0 auto;
+}
+.CashChargeSelectCard .selectCard-options-box .options-main {
+    width: 100%;
+}
+
+.CashChargeSelectCard .selectCard-options-box .selectCard-options-label {
+    font-size: 15px !important;
+    font-weight: bold;
+    margin: 0;
+    line-height: 22px;
+}
+.CashChargeSelectCard .selectCard-options-box .description-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.CashChargeSelectCard .selectCard-options-box {
+    font-size: 32px !important;
+    font-weight: bold;
+    margin: 0;
+    line-height: 46px;
+}
+
+.selectCard-options-description {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 46px;
+}
+
+.CashChargeSelectCard .selectCard-options-box .can-maximum-charge {
+    font-size: 13px !important;
+    text-align: right;
+    color: #9a9ba7;
+    margin: 0;
+    line-height: 19px;
+}
+
+.CashChargeSelectCard .selectCard-options-box .cash-option-button-list {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+}
+.CashChargeSelectCard .selectCard-options-box .cash-option-button {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    border-radius: 4px;
+    color: #555969;
+    margin-right: 20px;
+    border: none;
+}
+.cash-option-button{
+    font-weight: 500;
+    background-color: #f2f3f7;
+}
+
+.cash-option-button:hover{
+    background-color: #e3e3e3;
+}
+.cash-option-selected {
+  
+    background-color: #ffe7c2 !important;
+    color: #303441;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+.CashChargeSelectCard .selectCard-options-box .awesome-radio-body {
+    margin-right: 10px;
+}
+.CashChargeSelectCard .selectCard-options-box .cash-option-button .awesome-radio-text {
+    font-size: 16px;
+}
+.awesome-radio-text {
+    display: flex;
+}
+
+.awesome-radio-text:hover {
+    cursor: pointer;
+}
+.CashChargeSelectCard .selectCard-options-box .payment-options-select-box {
+    display: flex;
+    flex: 1;
+    padding: 50px 40px;
+    position: relative;
+}
+
+.CashChargeSelectCard .selectCard-options-box .payment-radioButtons {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-radius: 4px;
+    border: solid 1px #e4e5ed;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.CashChargeSelectCard .selectCard-options-box .payment-radioButtons .awesome-radio {
+    margin-right: 85px;
+}
+.hide {
+    display: none !important;
+}
+.awesome-radio:last-child {
+    margin-bottom: 0px;
+}
+
+.awesome-radio>label {
+    margin: 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.awesome-radio input[type="radio"] {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.awesome-radio-body {
+    position: relative;
+    margin-right: 5px;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #979797;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out;
+}
+.awesome-radio input[type="radio"]:checked+.awesome-radio-body {
+    border-color: #f9a01b;
+}
+.awesome-radio input[type="radio"]:checked+.awesome-radio-body::after {
+    -webkit-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    transform: scale(1,1);
+}
+.awesome-radio-body::after {
+    display: inline-block;
+    position: relative;
+    content: " ";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #f9a01b;
+    -webkit-transform: scale(0,0);
+    -ms-transform: scale(0,0);
+    -o-transform: scale(0,0);
+    transform: scale(0,0);
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+}
+
+.CashChargeSelectCard .selectCard-options-box .selectCard-options-label {
+    font-size: 15px !important;
+    font-weight: bold;
+    margin: 0;
+    line-height: 22px;
+}
+
+.margin-top-50 {
+    margin-top: 50px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
+}
+.flex-center-center, .awesome-radio-body, .order-btn-brand-gray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 15px 15px;
+    font-size: 13px;
+    line-height: 1.5438;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Button .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.Button .size-l {
+    width: 270px;
+    height: 50px;
+}
+
+.btn-brand-yellow {
+    color: #FFF;
+    background-color: #f9a01b;
+    border-color: #f9a01b;
+    background-image: none;
+}
+.btn-brand-yellow:hover {
+    color: #FFF;
+    background-color: #f9a01be1;
+    border-color: #f9a01be1;
+}
+.CashChargeDescriptionBox {
+    background-color: #f7f9fa;
+    padding: 30px;
+}
+.CashChargeDescriptionBox .description-title {
+    font-size: 15px !important;
+    line-height: 1.6;
+    color: #333;
+    letter-spacing: normal;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+}
+.CashChargeDescriptionBox .description-list {
+    padding-left: 0;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #666;
+}
+
+.margin-top-40 {
+    margin-top: 40px !important;
+}
+
+.credit-descriptions {
+    color: #555969;
+    display: none;
+}
+
+
+.credit-limit-item-set:first-child {
+    background-color: #f7f9fa;
+    border-radius: 4px;
+    border: none;
+}
+
+.credit-limit-item-set {
+    border-bottom: solid 1px #f7f9fa;
+}
+.flex-start-center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.credit-limit-item-set:first-child .credit-limit-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.credit-limit-item-set:last-child {
+    border-bottom: solid 1px #e4e5ed;
+}
+
+.credit-limit-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 19px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.CashChargeSelectCard-main-title{
+    display: block;
+}
+
+
+@media screen and (max-width: 996px){
+
+.CashChargeSelectCard-main-title{
+    display: none;}
+ 
+    .selectCard-options-description {
+        font-size: 27px;
+        letter-spacing: -0.39px;
+        text-align: center;
+        margin: 0 0 8px 0;
+        line-height: 1;
+        font-weight: 500;
+    }
+    .cash-option-button-list{
+        justify-content: center;
+    }
+ 
+ .cash-option-button {
+    position: relative;
+    height: 54px;
+    border-radius: 4px;
+    background-color: #f2f3f7;
+    color: #555969;
+    margin-right: 9px;
+    border: none;
+   
+}
+.description-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-direction: column;
+
+}
+
+.content-wrapper {
+    margin-top: 10px;
+}
+
+}
+
+.hidden{
+    display: none;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}

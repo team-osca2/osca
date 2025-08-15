@@ -1,0 +1,60 @@
+version: "3.9"
+
+services:
+  load-test:
+    image: locustio/locust:latest
+    container_name: locust-master
+    command: >
+      -f /load-test/task/locust-tasks.py
+      --master
+      --web-host=0.0.0.0
+    ports:
+      - "8089:8089"
+    environment:
+      # 필수: 타겟 API 베이스 URL
+      TARGET_HOST: "http://host.docker.internal:8080"
+      # 옵션1: 고정 토큰 직접 주입 (Bearer ${AUTH_TOKEN})
+      AUTH_TOKEN: ""
+      # 옵션2: 로그인으로 토큰 발급
+      AUTH_LOGIN_PATH: "/login"
+      AUTH_USERNAME: "test@example.com"
+      AUTH_PASSWORD: "test1234"
+      # 테스트 파라미터
+      MEMBER_ID_MIN: "1"
+      MEMBER_ID_MAX: "1000"
+      PAGE_MIN: "0"
+      PAGE_MAX: "10"
+      PAGE_SIZE: "20"
+    volumes:
+      - ./load-test:/load-test
+    networks:
+      - locust
+
+  load-test-worker:
+    image: locustio/locust:latest
+    container_name: locust-worker
+    command: >
+      -f /load-test/task/locust-tasks.py
+      --worker
+      --master-host=locust-master
+    depends_on:
+      - load-test
+    environment:
+      TARGET_HOST: "http://host.docker.internal:8080"
+      AUTH_TOKEN: ""
+      AUTH_LOGIN_PATH: "/login"
+      AUTH_USERNAME: "test@example.com"
+      AUTH_PASSWORD: "test1234"
+      MEMBER_ID_MIN: "1"
+      MEMBER_ID_MAX: "1000"
+      PAGE_MIN: "0"
+      PAGE_MAX: "10"
+      PAGE_SIZE: "20"
+    volumes:
+      - ./load-test:/load-test
+    networks:
+      - locust
+
+networks:
+  locust:
+    driver: bridge

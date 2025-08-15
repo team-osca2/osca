@@ -1,0 +1,128 @@
+/* FAQ-detail-main-media css */
+@media (min-width: 1024px){
+    body > main {
+        min-height: 65vh;
+    }
+}
+
+@media (min-width: 1160px) {
+    .container {
+        padding: 0;
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .sub-nav {
+        align-items: baseline;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .breadcrumbs {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-sidebar {
+        border: 0;
+        flex: 0 0 17%;
+        height: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .collapsible-sidebar {
+        max-height: none;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article {
+        flex: 1 0 66%;
+        max-width: 66%;
+        min-width: 640px;
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .article-header {
+        flex-direction: row;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .article-title {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .article-return-to-top {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .article-relatives {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-request-yellow, input[type="submit"] {
+        width: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

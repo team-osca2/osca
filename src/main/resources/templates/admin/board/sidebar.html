@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 사이드 바 -->
+<div th:fragment="sidebar">
+    <div id="side-bar">
+        <div class="side-menu">
+            <div>
+                <div class="menu-title-layout">
+                    <div class="menu-title">
+                        <div class="menu-name">
+                            MENU
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu-bar">
+                    <li class="menu">
+                        <div class="menu-flex">
+                            <div>
+                                <img src="/images/admin/board_icon.png" class="icon">
+                            </div>
+                            <a href="/admin/board">
+                                <span>게시판 관리</span>
+                            </a>
+                            <div class="triangle-button">
+                                <img src="/images/admin/arrow_icon.png"
+                                     class="icon triangle-icon triangle">
+                            </div>
+                        </div>
+                        <ul class="menus1 menus" style="display: none;">
+                            <li class="select-menu">
+                                <a href="/admin/board">
+                                    <span>전체 게시판</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/board/study">
+                                    <span>스터디 게시판</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/board/cafe">
+                                    <span>카페 게시판</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/board/reported">
+                                    <span>신고된 게시판</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/board/blocked">
+                                    <span>삭제된 게시판</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu">
+                        <div class="menu-flex">
+                            <div>
+                                <img src="/images/admin/user_icon.png" class="icon">
+                            </div>
+                            <a href="/admin/member">
+                                <span>유저 관리</span>
+                            </a>
+                            <div class="triangle-button">
+                                <img src="/images/admin/arrow_icon.png"
+                                     class="icon triangle-icon triangle">
+                            </div>
+                        </div>
+                        <ul class="menus2 menus" style="display:none;">
+                            <li class="select-menu">
+                                <a href="/admin/member">
+                                    <span>전체 유저 목록</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/member/study">
+                                    <span>일반 유저 목록</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/member/cafe">
+                                    <span>카페 유저 목록</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a href="/admin/member/reported">
+                                    <span>신고당한 유저 목록</span>
+                                </a>
+                            </li>
+                            </li>
+                            <li class="select-menu">
+                                <a  href="/admin/member/blocked">
+                                    <span>정지당한 유저 목록</span>
+                                </a>
+                            </li>
+                            <li class="select-menu">
+                                <a  href="/admin/member/payment">
+                                    <span>결제 목록</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu">
+                        <div class="menu-flex">
+                            <div>
+                                <img src="/images/admin/write_icon.png" class="icon">
+                            </div>
+                            <a href="/admin/reply" >
+                                <span>댓글 관리</span>
+                            </a>
+                            <div class="triangle-button">
+                                <!--                                        <img src="/images/admin/arrow_icon.png"-->
+                                <!--                                             class="icon triangle-icon triangle">-->
+                            </div>
+                        </div>
+                        <ul class="menus2 menus" style="display:none;">
+                            <!--                                    <li class="select-menu">-->
+                            <!--                                        <a th:href="@{/admin/board/notice/list}">-->
+                            <!--                                            <span>전체 댓글</span>-->
+                            <!--                                        </a>-->
+                            <!--                                    </li>-->
+                            <!--                                    <li class="select-menu">-->
+                            <!--                                        <a th:href="@{/admin/board/notice/write}">-->
+                            <!--                                            <span>스터디 댓글</span>-->
+                            <!--                                        </a>-->
+                            <!--                                    </li>-->
+                            <!--                                    <li class="select-menu">-->
+                            <!--                                        <a th:href="@{/admin/board/notice/write}">-->
+                            <!--                                            <span>카페 댓글</span>-->
+                            <!--                                        </a>-->
+                            <!--                                    </li>-->
+                        </ul>
+                    </li>
+
+                    <li class="menu">
+                        <div class="menu-flex">
+                            <div>
+                                <img src="/images/admin/notice_icon.png" class="icon">
+                            </div>
+                            <a>
+                                <span>FAQ 관리</span>
+                            </a>
+                            <div class="triangle-button">
+                                <!--                                        <img src="/images/admin/arrow_icon.png"-->
+                                <!--                                             class="icon triangle-icon triangle">-->
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 사이드 바 끝-->
+</body>
+</html>

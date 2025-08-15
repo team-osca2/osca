@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지- FAQ 목록</title>
+    <link rel="stylesheet" href="/css/admin/sidemenu.css">
+    <link rel="stylesheet" href="/css/admin/admin_board.css">
+    <link rel="stylesheet" href="/css/admin/admin_board_proposal.css">
+    <link rel="icon" href="/images/logo3.png">
+</head>
+
+<body>
+<div>
+    <div class="info-title-box info-title-box-flex">
+        <div class="logo-box-layout">
+            <div class="logo-box">
+                <img src="/images/logo1.png">
+            </div>
+            <div class="logo-title">
+                <span>Jar</span>
+            </div>
+        </div>
+        <div>
+            <div class="select-name">
+                <span>FAQ 관리</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+
+        <!-- 사이드 바 -->
+        <div th:fragment="sidebar">
+            <div id="side-bar">
+                <div class="side-menu">
+                    <div>
+                        <div class="menu-title-layout">
+                            <div class="menu-title">
+                                <div class="menu-name">
+                                    MENU
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="menu-bar">
+                            <li class="menu">
+                                <div class="menu-flex">
+                                    <div>
+                                        <img src="/images/admin/board_icon.png" class="icon">
+                                    </div>
+                                    <a href="">
+                                        <span>게시판 관리</span>
+                                    </a>
+                                    <div class="triangle-button">
+                                        <img src="/images/admin/arrow_icon.png"
+                                             class="icon triangle-icon triangle">
+                                    </div>
+                                </div>
+                                <ul class="menus1 menus" style="display: none;">
+                                    <li class="select-menu">
+                                        <a href="adminPage-boardList.jsp">
+                                            <span>전체 게시판</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/challenge/list}">
+                                            <span>스터디 게시판</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/groupChallenge/list}">
+                                            <span>카페 게시판</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="menu">
+                                <div class="menu-flex">
+                                    <div>
+                                        <img src="/images/admin/user_icon.png" class="icon" class="icon">
+                                    </div>
+                                    <a>
+                                        <span>유저 관리</span>
+                                    </a>
+                                    <div class="triangle-button">
+                                        <img src="/images/admin/arrow_icon.png"
+                                             class="icon triangle-icon triangle">
+                                    </div>
+                                </div>
+                                <ul class="menus2 menus" style="display:none;">
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/list}">
+                                            <span>전체 유저 목록</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/write}">
+                                            <span>일반 유저 목록</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/write}">
+                                            <span>카페 유저 목록</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/write}">
+                                            <span>신고당한 유저 목록</span>
+                                        </a>
+                                    </li>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/write}">
+                                            <span>정지당한 유저 목록</span>
+                                        </a>
+                                    </li>
+                                    <li class="select-menu">
+                                        <a th:href="@{/admin/board/notice/write}">
+                                            <span>결제 목록</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="menu">
+                                <div class="menu-flex">
+                                    <div>
+                                        <img src="/images/admin/write_icon.png" class="icon">
+                                    </div>
+                                    <a>
+                                        <span>댓글 관리</span>
+                                    </a>
+                                    <div class="triangle-button">
+                                        <!--                                        <img src="/images/admin/arrow_icon.png"-->
+                                        <!--                                             class="icon triangle-icon triangle">-->
+                                    </div>
+                                </div>
+                                <ul class="menus2 menus" style="display:none;">
+                                    <!--                                    <li class="select-menu">-->
+                                    <!--                                        <a th:href="@{/admin/board/notice/list}">-->
+                                    <!--                                            <span>전체 댓글</span>-->
+                                    <!--                                        </a>-->
+                                    <!--                                    </li>-->
+                                    <!--                                    <li class="select-menu">-->
+                                    <!--                                        <a th:href="@{/admin/board/notice/write}">-->
+                                    <!--                                            <span>스터디 댓글</span>-->
+                                    <!--                                        </a>-->
+                                    <!--                                    </li>-->
+                                    <!--                                    <li class="select-menu">-->
+                                    <!--                                        <a th:href="@{/admin/board/notice/write}">-->
+                                    <!--                                            <span>카페 댓글</span>-->
+                                    <!--                                        </a>-->
+                                    <!--                                    </li>-->
+                                </ul>
+                            </li>
+
+                            <li class="menu">
+                                <div class="menu-flex">
+                                    <div>
+                                        <img src="/images/admin/notice_icon.png" class="icon">
+                                    </div>
+                                    <a>
+                                        <span>FAQ 관리</span>
+                                    </a>
+                                    <div class="triangle-button">
+                                        <!--                                        <img src="/images/admin/arrow_icon.png"-->
+                                        <!--                                             class="icon triangle-icon triangle">-->
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 사이드 바 끝-->
+
+        <div class="container">
+            <div class="container-margin">
+                <!-- 헤더 -->
+                <div class="update-button-flex">
+                <div class="delete-box-layout ">
+                    <div class="delete-box">
+                        <button class="register-button">
+                            <a th:href="@{write}">FAQ 등록</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="delete-box-layout">
+                    <div class="delete-box">
+                        <button class="deleteButton delete-button">FAQ 삭제</button>
+                    </div>
+                </div>
+            </div>
+
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+
+                    <div class="board-info-box">
+                        <div class="board-info-title-box">
+                            <span>전체 FAQ 목록</span>
+                        </div>
+
+                        <div class="info-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th class="checkbox-line">
+                                        <input type="checkbox" id="allSelect">
+                                    </th>
+                                    <th>No</th>
+                                    <th>FAQ 제목</th>
+                                    <th>FAQ 내용</th>
+                                    <th>작성 날짜</th>
+                                    <th>분류</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <td class="checkbox-line">
+                                        <input type="checkbox" name="check">
+                                    </td>
+                                    <td class="noticeId">
+                                        1
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            FAQ 제목
+                                        </a>
+                                    </td>
+                                    <td class="open-modal" style="cursor: pointer;">
+                                        FAQ 내용...
+                                    </td>
+                                    <div class="modal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>testtestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest</p>
+                                        </div>
+                                    </div>
+                                    <td>
+                                        2023.04.23
+                                    </td>
+                                    <td>
+                                        스터디
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-line">
+                                        <input type="checkbox" name="check">
+                                    </td>
+                                    <td class="noticeId">
+                                        2
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            FAQ 제목
+                                        </a>
+                                    </td>
+                                    <td class="open-modal" style="cursor: pointer;">
+                                        FAQ 내용...
+                                    </td>
+                                    <div class="modal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>2</p>
+                                        </div>
+                                    </div>
+                                    <td>
+                                        2023.04.23
+                                    </td>
+                                    <td>
+                                        카페
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-line">
+                                        <input type="checkbox" name="check">
+                                    </td>
+                                    <td class="noticeId">
+                                        3
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            FAQ 제목
+                                        </a>
+                                    </td>
+                                    <td class="open-modal" style="cursor: pointer;">
+                                        FAQ 내용...
+                                    </td>
+                                    <div class="modal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>3</p>
+                                        </div>
+                                    </div>
+                                    <td>
+                                        2023.04.23
+                                    </td>
+                                    <td>
+                                        포인트
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="checkbox-line">
+                                        <input type="checkbox" name="check">
+                                    </td>
+                                    <td class="noticeId">
+                                        4
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            FAQ 제목
+                                        </a>
+                                    </td>
+                                    <td class="open-modal" style="cursor: pointer;">
+                                        FAQ 내용...
+                                    </td>
+                                    <div class="modal">
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>4</p>
+                                        </div>
+                                    </div>
+                                    <td>
+                                        2023.04.23
+                                    </td>
+                                    <td>
+                                        가입/탈퇴
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 페이지 버튼 -->
+
+                <!-- <section id="content-wrap">
+                    <ul></ul>
+                    <div id="paging-wrap">
+                        <c:if test="${prev}">
+                            <a href="javascript:location.href='${pageContext.request.contextPath}/adminFreeBoardList.admin?page=${startPage - 1}'"
+                                class="paging paging-move"><img
+                                    src="${pageContext.request.contextPath}/images/prev.png"
+                                    width="15px"></a>
+                        </c:if>
+                        <c:forEach var="i" begin="${startPage}" end="${endPage}">
+                            <c:choose>
+                                <c:when test="${i eq page}">
+                                    <a href="javascript:void(0)" class="paging paging-checked">
+                                        <c:out value="${i}" />
+                                    </a>
+                                </c:when>
+                                <c:otherwise>
+                                    <a href="javascript:location.href='${pageContext.request.contextPath}/adminFreeBoardList.admin?page=${i}'"
+                                        class="paging">
+                                        <c:out value="${i}" />
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <div></div>
+                    </div>
+                </section> -->
+
+                <div class="page-button-box-layout">
+                    <div class="page-button-box">
+                        <!-- 페이지 번호 -->
+                        <div class="">
+                            <div class="page-button-margin">
+                                <div>
+                                    <img src="/images/admin/left_icon.png"
+                                         class="left-button">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-button-active page-button">
+                            <div class="page-button-margin">
+                                <div>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-button">
+                            <div class="page-button-margin">
+                                <div>
+                                    <span>2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page-button">
+                            <div class="page-button-margin">
+                                <div>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="page-button-margin">
+                                <div>
+                                    <img src="/images/admin/right_icon.png"
+                                         class="right-button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 페이지 버튼 끝 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/admin/checkbox.js"></script>
+<script src="/js/admin/board_proposal.js"></script>
+<script src="/js/admin/sidemenu.js"></script>
+<script src="/js/admin/show_modal.js"></script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이 페이지</title>
+    <link rel="stylesheet" href="/css/mypage/profile-page.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css" />
+    <link rel="stylesheet" href="/css/mypage/mypage.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+  </head>
+  <body>
+  <!-- 헤더 시작 -->
+  <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+
+
+  <div class="body-wrapper">
+    <div class="UserProfileContainer">
+      <div class="ProfileMainSection" style="padding: 32px">
+        <div class="ProfileMainSection__information">
+          <div class="ProfileMainSection__username">손쉬운가을1622</div>
+        </div>
+      </div>
+      <div class="UserProfileContainer__contents">
+        <!-- 자기소개 css는 mypage.css-->
+        <div class="ProfileDescriptionSection">
+          <div class="ProfileSectionTitle">소개</div>
+          <div class="ProfileDescriptionSection_desctiption" style="height: inherit">
+            ㅂㅂㅂㅂㅂㅈㄷㄱㅂㅈㄷㄱㅂ<br />
+            ㅈㄷㄱㅂㅈㄷㄱ<br />
+            ㅂㅈㄷㄱ<br />
+            ㅂㅈㄷㄱ<br />
+            ㅂㅈㄷㄱㄱㄱ
+          </div>
+
+          <div class="DescriptionDetailSection">
+            <!-- <div>
+              <div class="ProfileSectionTitle">경력사항</div>
+              <div class="ProfileSkillSection-tag-group">
+                <div class="ProfileSkillSection-tag">프리랜서·0년 1개월</div>
+              </div>
+            </div> -->
+            <div>
+              <div class="ProfileSectionTitle">전문 분야</div>
+              <div class="ProfileSkillSection-tag-group">
+                <div class="ProfileSkillSection-tag">웹 디자인</div>
+              </div>
+            </div>
+            <div>
+              <div class="ProfileSectionTitle">보유 기술</div>
+              <div class="ProfileSkillSection-tag-group">
+                <div class="ProfileSkillSection-tag">영어 번역</div>
+                <div class="ProfileSkillSection-tag">일본어 번역</div>
+                <div class="ProfileSkillSection-tag">인도네시아어 번역</div>
+                <div class="ProfileSkillSection-tag">프랑스어 번역</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 자기소개 끝 -->
+        <div class="UserProfileContainer__contents-right">
+          <div class="ProfileInformationSection">
+            <div class="ProfileInformationSection__section">
+              <div class="ProfileInformationSection__section-title">
+                활동 정보
+              </div>
+              <div class="ProfileInformationSection__section-infomation">
+                  <span
+                          class="ProfileInformationSection__section-infomation-title"
+                  >총 스터디 참여 수</span
+                  >
+                <span
+                        data-v-04747ca2=""
+                        class="ProfileInformationSection__section-infomation-description"
+                >0개</span
+                >
+              </div>
+              <div data-v-04747ca2="" class="ProfileInformationSection__section-infomation">
+                  <span
+                          data-v-04747ca2=""
+                          class="ProfileInformationSection__section-infomation-title"
+                  >완료한 스터디 수</span
+                  >
+                <div data-v-04747ca2="" class="ProfileInformationSection__section-answer">
+                    <span
+                            data-v-04747ca2=""
+                            class="ProfileInformationSection__section-infomation-description"
+                    >
+                      0개</span
+                    >
+                </div>
+              </div>
+              <div data-v-04747ca2="" class="ProfileInformationSection__section-infomation">
+                    <span
+                            data-v-04747ca2=""
+                            class="ProfileInformationSection__section-infomation-title"
+                    >출석율</span
+                    >
+                <span
+                        data-v-04747ca2=""
+                        class="ProfileInformationSection__section-infomation-description"
+                >0%</span
+                >
+              </div>
+              <div data-v-04747ca2="" class="ProfileInformationSection__section-infomation">
+                    <span
+                            data-v-04747ca2=""
+                            class="ProfileInformationSection__section-infomation-title"
+                    >지역</span
+                    >
+                <span
+                        data-v-04747ca2=""
+                        class="ProfileInformationSection__section-infomation-description"
+                >서울</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!---->
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 시작 -->
+  <footer th:replace="~{/fix/footer :: footer}"></footer>
+  <!-- 푸터 끝 -->
+  </body>
+</html>

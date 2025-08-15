@@ -1,0 +1,28 @@
+.select-type {
+    font-family: 'GmarketSansMedium';
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-radius: 1px;
+    box-shadow: inset 0 1px #e3e3e3;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    max-width: 250px;
+    min-width: 150px;
+    overflow: hidden;
+    padding: 0 20px 0 5px;
+    position: relative;
+    text-overflow: ellipsis;
+    z-index: 1;
+    width: 100%;
+    white-space: nowrap;
+}
+.select-type {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 0 15px 0 10px;
+}

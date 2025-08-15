@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이 페이지 - 내가 보는 </title>
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css" />
+    <link rel="stylesheet" href="/css/header/header.css" />
+    <link rel="stylesheet" href="/css/mypage/mypage.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+  </head>
+<!--  오늘의 카페랑 FAQ 부분 경로 추가하기 -->
+  <body>
+  <!-- 헤더 시작 -->
+  <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+  <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+
+  <!-- 헤더 끝 -->
+
+    <div class="bodyall">
+      <div class="body">
+        <div class="body-wrapper">
+          <aside class="aside-wrapper">
+            <section class="aside-top">
+              <div class="profile">
+                <img
+                  src="https://kmong.com/img/tools/main_user_gray.png"
+                  alt="프로필 이미지"
+                  class="profile-image"
+                />
+              </div>
+              <div class="username" th:text="*{memberNickName}"></div>
+            </section>
+            <section class="aside-bottom">
+              <div class="mini">마이 페이지</div>
+              <hr orientation="horizontal" class="line" />
+
+              <a class="menu-list" th:href="@{/user/{id}}" >
+                <div class="menu-list-text menu-page-here">내 프로필</div>
+              </a>
+              <a class="menu-list" th:href="@{/setting}" >
+                <div class="menu-list-text">계정 관리</div>
+              </a>
+              <a class="menu-list" th:href="@{/study/my-study}" >
+                <div class="menu-list-text">내 스터디</div>
+              </a>
+              <a class="menu-list" th:href="@{/mypage/favourites}" >
+                <div class="menu-list-text">즐겨찾기</div>
+              </a>
+            </section>
+          </aside>
+          <main class="mypage">
+            <div class="mypage-top">
+                <h2 class="mypage-title">마이 페이지</h2>
+              <a href="/mypage/edit-myprofile" style="text-decoration: none;">
+                <button class="big-edit" type="button" >
+                  프로필 등록/수정
+                </button>
+              </a>
+            </div>
+            <div class="border">
+            <div class="UserProfileContainer-contents">
+            <!-- 자기소개 -->
+              <div class="ProfileDescriptionSection">
+                <div class="ProfileSectionTitle">소개</div>
+                <div class="ProfileDescriptionSection_desctiption" style="height: inherit" th:text="*{general.generalIntroduction}">
+                </div>
+              </div>
+              <div class="DescriptionDetailSection">
+                <div>
+                  <div class="ProfileSectionTitle">
+                    경력사항
+                  </div>
+                  <div class="ProfileSkillSection-tag-group">
+                    <div class="ProfileSkillSection-tag">
+                      <div th:text="*{general.generalCareer}"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="ProfileSectionTitle">
+                    회사 및 직업
+                  </div>
+                  <div class="ProfileSkillSection-tag-group">
+                      <div class="ProfileSkillSection-tag" th:text="*{general.generalCompany}"></div>
+                      <div class="ProfileSkillSection-tag" th:text="*{memberJob}"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="ProfileSectionTitle">
+                    급여
+                  </div>
+                  <div class="ProfileSkillSection-tag-group">
+                    <div class="ProfileSkillSection-tag"  th:text="*{general.generalSalary}"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="ProfileSectionTitle">
+                    보유 기술
+                  </div>
+                  <div class="ProfileSkillSection-tag-group skill-lists">
+                  </div>
+                </div>
+              </div>
+              
+             <!-- 자기소개 끝 -->    
+                 
+        </div>
+        
+    </div>
+    <div class="flex-left">
+      <a th:href="@{mypage/edit-myprofile}">
+
+      <button class="mini-edit" type="button" >
+      프로필 등록/수정
+      </button>
+      </a>
+    </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+  <footer th:replace="~{/fix/footer :: footer}"></footer>
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://rawgit.com/jackmoore/autosize/master/dist/autosize.min.js"></script>
+  <script src="/js/post/post.js"></script>
+  <script th:inline="javascript">
+    let skills = [[${skills}]];
+  </script>
+  <script src="/js/mypage/mypage.js"></script>
+</html>

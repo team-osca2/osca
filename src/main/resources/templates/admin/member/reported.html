@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지- 신고당한 계정 목록</title>
+    <link rel="stylesheet" href="/css/admin/sidemenu.css">
+    <link rel="stylesheet" href="/css/admin/admin_board.css">
+    <link rel="stylesheet" href="/css/admin/admin_board_proposal.css">
+    <link rel="icon" href="/images/logo3.png">
+</head>
+
+<body>
+<div>
+    <div class="info-title-box info-title-box-flex">
+        <div class="logo-box-layout">
+            <div class="logo-box">
+                <img src="/images/logo1.png">
+            </div>
+            <div class="logo-title">
+                <span>Jar</span>
+            </div>
+        </div>
+        <div>
+            <div class="select-name">
+                <span>유저 관리</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+
+        <!-- 사이드 바 -->
+        <div th:replace="~{admin/board/all:: #sidebar}"> </div>
+        <!-- 사이드 바 끝-->
+
+        <div class="container">
+            <div class="container-margin">
+                <!-- 헤더 -->
+
+
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+
+                    <div class="board-info-box">
+                        <div class="board-info-title-box">
+                            <span>신고당한 유저 목록</span>
+                        </div>
+
+                        <div class="info-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>유저 아이디</th>
+                                    <th>유저 이름</th>
+                                    <th>분류</th>
+                                    <th>신고 수</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="user : ${users}">
+                                    <td class="checkbox-line">
+                                        <input type="checkbox" name="check" />
+                                    </td>
+                                    <td class="noticeId">
+                                        <span th:text="${user.id}"></span>
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            <span th:text="${user.memberNickname}"></span>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span th:text="${user.memberName}"></span>
+                                    </td>
+                                    <td>
+                                        <span th:text="${user.memberRole == 1 ? '카페' : '스터디'}"></span>
+                                    </td>
+                                    <td>
+                                        <span th:text="${user.memberReportNo}"></span>
+                                    </td>
+                                    <td>
+                                        <span class="delete-indivisual"> 삭제 </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 페이지 번호 -->
+                <div id="paging-wrap">
+                    <a th:if="${pagination.prev}" th:with="prevPage=${pagination.startPage - 1}" th:href="@{/admin/member/reported(page=${prevPage})}" class="change-page paging">
+                        <img src="/images/admin/left_icon.png" class="left-button">
+                    </a>
+                    <th:block th:each="page:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+                        <a th:if="${page eq pagination.page}" class="change-page page-button-active paging page-button-margin" th:text="${page}"></a>
+                        <a th:unless="${page eq pagination.page}" th:href="@{/admin/member/reported(page=${page})}" class="change-page paging page-button-margin" th:text="${page}"></a>
+                    </th:block>
+                    <a th:if="${pagination.next}" th:with="nextPage=${pagination.endPage + 1}" th:href="@{/admin/member/reported(page=${nextPage})}" class="change-page paging">
+                        <img src="/images/admin/right_icon.png" class="right-button">
+                    </a>
+                </div>
+                <!-- 페이지 번호 끝 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/admin/checkbox.js"></script>
+<script src="/js/admin/board_proposal.js"></script>
+<script src="/js/admin/sidemenu.js"></script>
+<script src="/js/admin/show_modal.js"></script>
+
+</html>

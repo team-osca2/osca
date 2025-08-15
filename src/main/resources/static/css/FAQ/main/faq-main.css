@@ -1,0 +1,270 @@
+.header {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    align-items: center;
+    display: flex;
+    height: 44px;
+    justify-content: space-between;
+}
+
+.logo-osca {
+    height: 16px;
+    margin-top: 8px;
+}
+
+.cs {
+    height: 16px;
+    padding-left: 6px;
+}
+
+.nav-wrapper a {
+    border: 0;
+    color: rgba(22, 158, 230, 1);
+    display: none;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 20px 0 0;
+    width: auto;
+}
+
+
+.nav-wrapper a.login {
+    display: inline-block;
+}
+
+.container-divider {
+    border-top: 1px solid #FEEB83;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.sub-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    min-height: 50px;
+    padding-bottom: 15px;
+}
+
+.breadcrumbs {
+    margin: 0 0 15px 0;
+    padding: 0;
+    font-weight: 400;
+    color: #666666;
+}
+
+.breadcrumbs li {
+    display: inline;
+    font-weight: 400;
+    font-size: 13px;
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666666;
+}
+
+.breadcrumbs li a:visited {
+    color: #666666;
+}
+
+.breadcrumbs li + li::before {
+    content: ">";
+    margin: 0 4px;
+}
+
+.search {
+    position: relative;
+}
+
+.search::before {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #777;
+    content: "\1F50D";
+    font-size: 14px;
+    position: absolute;
+    left: 20px;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before, .icon, .search::before, .recent-activity-item-comment span::before, .article-vote::before, .attachments .attachment-item::before, .share a::before, .vote-up::before, .vote-down::before, .actions .dropdown-toggle::before, .collapsible-nav-list li[aria-selected="true"]::after, .collapsible-sidebar-title::after, .search-result-votes::before, .search-result-meta-count::before {
+    font-family: "copenhagen-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    line-height: 1em;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+}
+
+input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+    padding: initial;
+    border: initial;
+}
+
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+.search input[type="search"] {
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-sizing: border-box;
+    color: #666;
+    font-weight: 400;
+    height: 40px;
+    padding-left: 40px;
+    padding-right: 20px;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.category-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.category-content {
+    flex: 1;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.page-header h1 {
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+}
+
+.section-tree {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-tree .section {
+    flex: initial;
+}
+
+.section-tree-title {
+    margin-bottom: 0;
+}
+
+.section-tree-title a {
+    color: rgba(102, 102, 102, 1);
+}
+
+.article-list-item {
+    font-size: 16px;
+    padding: 15px 0;
+}
+
+.article-list-item a {
+    color: rgba(102, 102, 102, 1);
+}
+
+.see-all-sections-trigger {
+    cursor: pointer;
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+.see-all-sections-trigger[aria-hidden="true"] {
+    display: none;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    margin-top: 60px;
+    padding: 30px 0;
+}
+
+.footer-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    display: none;
+}
+
+.footer a {
+    color: #999;
+}
+
+.footer-mweb {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

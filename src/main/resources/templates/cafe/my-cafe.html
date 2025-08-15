@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>오스카 | 내 카페</title>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="stylesheet" href="/css/footer/footer.css"/>
+    <link rel="stylesheet" href="/css/cafe/my_cafe.css"/>
+    <link rel="stylesheet" href="/css/cafe/my_cafe_sub.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png"/>
+</head>
+<body>
+<!-- 헤더 시작 -->
+<div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+<div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+<div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+
+
+<!-- main 미디어 쿼리 -->
+<main class="media-main">
+    <div>
+        <section class="media-menu-bar">
+            <div class="media-menu-bar-wrapper">
+                <div class="media-menu-content  all-content-color">
+                    <a href="">전체 카페</a>
+                </div>
+                <div class="media-menu-content">
+                    <a href="">진행중</a>
+                </div>
+                <div class="media-menu-content">
+                    <a href="">만료</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<main style="margin-top: 0px;">
+    <div class="main-wrapper">
+        <div class="flex margin-top-60">
+            <div class="side-menu-container">
+                <div id="side-menu-wrapper" class="side-menu min-height">
+                    <div class="side-menu-title-wrapper NGB">
+                        내 카페
+                    </div>
+                    <div class="guide-line"></div>
+                    <div class="menu-list-wrapper">
+                        <ul id="side-menu-main-group side-menu-title-wrapper" class="main-menu-wrapper">
+                            <li class="main-menu panel side-content-all-weight">
+                                <a class="flex-left-center flex-align-baseline">
+                                    <div class="badge-wrapper ">
+                                        <span>전체 카페</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="main-menu panel">
+                                <a class="flex-left-center flex-align-baseline">
+                                    <div class="badge-wrapper">
+                                        <span>홍보 진행중인 카페</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="main-menu panel">
+                                <a  class="flex-left-center flex-align-baseline">
+                                    <div class="badge-wrapper">
+                                        <span>홍보기간 만료된 카페</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="main-menu panel">
+                                <a  class="flex-left-center flex-align-baseline">
+                                    <div class="badge-wrapper">
+                                        <span>등록한 카페</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="list-panel-wrapper">
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</main>
+
+<div class="modal2 hidden" style="z-index: 1000;">
+    <div style="background: white; border-radius: 10px; padding: 30px;">
+        <div style="font-size: 16px; margin-bottom: 10px;">삭제하시겠습니까?</div>
+        <button class="accept-btn1">확인</button>
+        <button class="cancel-btn1">취소</button>
+    </div>
+</div>
+
+<!-- 푸터 시작 -->
+<footer th:replace="~{/fix/footer :: footer}"></footer>
+<!-- 푸터 끝 -->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script th:inline="javascript">
+    const myCafeList = [[${myCafeList}]];
+</script>
+<script src="/js/cafe/my_cafe.js"></script>
+</html>

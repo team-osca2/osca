@@ -1,0 +1,27 @@
+@media (min-width: 1160px) {
+    .footer-inner {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .footer-inner {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .footer-mweb {
+        display: none;
+    }
+}
+
+
+
+

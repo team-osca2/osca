@@ -1,0 +1,242 @@
+@charset "UTF-8";
+
+html {
+    line-height: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    display: block;
+    margin: 0;
+}
+
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    background-color: transparent;
+
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot?#iefix) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff2) format('woff2'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff) format('woff'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.otf) format('truetype'),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot),url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot?#iefix) format('embedded-opentype');
+}
+* {
+    font-family: 'Metro Sans',sans-serif;
+    box-sizing: border-box;
+}
+
+.UserProfileContainer {
+    width: 1170px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.ProfileMainSection {
+    border-radius: 4px;
+    background: #fafafc;
+    display: flex;
+    align-items: center;
+}
+
+.ProfileMainSection_profile {
+    flex-basis: 127px;
+    width: 217px;
+}
+
+.MemberProfilePicture {
+    position: relative;
+}
+
+.MemberProfilePicture img {
+    border-radius: 50%;
+    background-color: #e4e5ed;
+}
+
+.profile-image2 {
+    border-radius: 50%;
+    width: 127px;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.ProfileMainSection__information {
+    flex: 1;
+    padding-left: 24px;
+}
+.ProfileMainSection__username {
+    font-size: 25px;
+    font-weight: 700;
+    color: #303441;
+    height: 37px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+}
+
+.UserProfileContainer__contents{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+.UserProfileContainer__contents-left {
+    flex-basis: calc(100% - 390px);
+    width: calc(100% - 390px);
+    padding-right: 40px;
+}
+
+/* 활동정보 */
+.UserProfileContainer__contents-right {
+    flex-basis: 390px;
+    width: 390px;
+}
+.ProfileInformationSection {
+    border: 1px solid #e4e5ed;
+    padding: 24px;
+    margin-bottom: 120px;
+}
+.ProfileInformationSection__section {
+    margin-bottom: 40px;
+}
+.ProfileInformationSection__section-title {
+    font-size: 14px;
+    color: #303441;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.ProfileInformationSection__section-infomation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+}
+.ProfileInformationSection__section-infomation-title {
+    font-size: 14px;
+    color: #727585;
+}
+.ProfileInformationSection__section-infomation-description {
+    font-size: 14px;
+    color: #303441;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.ProfileDescriptionSection_desctiption {
+    margin-bottom: 60px;
+}
+
+
+@media screen and (max-width: 996px){
+
+    .UserProfileContainer__contents-right{
+        display: none;
+    }
+
+    .ProfileMainSection {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .ProfileDescriptionSection{
+        margin: 0 30px;
+    }
+
+    .profile-image2 {
+        width: 72px;
+    }
+
+    .ProfileMainSection {
+        display: flex;
+        padding: 24px 20px 36px 20px;
+        background-color: #f2f3f7;
+    }
+}

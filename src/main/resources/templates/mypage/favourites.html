@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>즐겨찾기</title>
+    <link rel="stylesheet" href="/css/mypage/favourites.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="stylesheet" href="/css/mypage/mypage.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png"/>
+</head>
+<body>
+<!-- 헤더 시작 -->
+<div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+<div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+<div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+<!-- 헤더 끝 -->
+
+<div class="bodyall">
+    <div class="body">
+        <div class="body-wrapper">
+            <aside class="aside-wrapper">
+                <section class="aside-top">
+                    <div class="profile">
+                        <img
+                                src="https://kmong.com/img/tools/main_user_gray.png"
+                                alt="프로필 이미지"
+                                class="profile-image"
+                        />
+                    </div>
+                    <div class="username" th:text="${memberNickname}"></div>
+                </section>
+                <section class="aside-bottom">
+                    <div class="mini">마이 페이지</div>
+                    <hr orientation="horizontal" class="line"/>
+                    <!-- id에 세션 넣어주기-->
+                    <a class="menu-list" th:href="@{/user/{id}}" >
+                        <div class="menu-list-text">내 프로필</div>
+                    </a>
+                    <a class="menu-list" th:href="@{/setting}" >
+                        <div class="menu-list-text">계정 관리</div>
+                    </a>
+                    <a class="menu-list" th:href="@{/study/my-study}" >
+                        <div class="menu-list-text">내 스터디</div>
+                    </a>
+                    <a class="menu-list" th:href="@{/mypage/favourites}" >
+                        <div class="menu-list-text menu-page-here">즐겨찾기</div>
+                    </a>
+                </section>
+            </aside>
+            <main class="mypage">
+
+                <div class="fav-list">
+                    <div class="underline">
+                        <a href="#" class="study-fav active">
+                            스터디
+                        </a></div>
+                    <div class="underline">
+                        <a href="#" class="cafe-fav">
+                            카페
+                        </a></div>
+                </div>
+
+                <!-- =================== 스터디 리스트 =================== -->
+                <div class="study-scrap-list border" style="padding:30px;" th:each="studyList : ${studyLists}" >
+                    <div class="study-list-container">
+                        <div class="right-menu-content-wrapper position-relative">
+                            <div class="bookmark" style="z-index: 100;  float: right;">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark-color.png"
+                                         style="height: 17px; width: 17px; cursor: pointer;"
+                                         class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <a href="/mypage/favourites" class="study-menu-wrapper">
+                                <div class="study-info-wrapper">
+                                    <div class="date-chip-wrapper">
+                                        <div class="date-chip study-chip">스터디</div>
+                                        <span class="study-title" th:text="${studyList.studyTitle}"></span>
+                                    </div>
+                                    <div class="study-main-content" th:text="${studyList.studyContents}">
+                                    </div>
+                                    <div class="study-detail-info">
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">모집 마감일</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${studyList.studyDeadlineDate}"></span>
+                                            </div>
+                                        </div>
+                                        <div class="study-detail-divider"></div>
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">진행 기간(일)</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${studyList.studyPeriodDate}"></span>
+                                            </div>
+                                        </div>
+                                        <div class="study-detail-divider"></div>
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">모집 인원</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${studyList.studyMemberTotalNumber}"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =================== 카페 리스트 =================== -->
+                <div class="cafe-scrap-list border hidden" style="padding:30px" th:each="cafeList : ${cafeLists}">
+                    <div class="study-list-container">
+                        <div class="right-menu-content-wrapper position-relative">
+                            <div class="bookmark" style="z-index: 100;  float: right;">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark-color.png"
+                                         style="height: 17px; width: 17px; cursor: pointer;"
+                                         class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <a href="/mypage/favourites" class="study-menu-wrapper">
+                                <div class="study-info-wrapper">
+                                    <div class="date-chip-wrapper">
+                                        <div class="date-chip cafe-chip">카페</div>
+                                        <!-- 카페명 -->
+                                        <span class="study-title" th:text="${cafeList.cafeName}"></span>
+                                    </div>
+                                    <!-- 카페 위치 -->
+                                    <div class="study-main-content" th:text="${cafeList.cafeLocation}">
+                                    </div>
+                                    <div class="study-detail-info">
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">오픈 시간</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${cafeList.cafeOpenTime}"></span>
+                                            </div>
+                                        </div>
+                                        <div class="study-detail-divider"></div>
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">마감 시간</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${cafeList.cafeEndTime}"></span>
+                                            </div>
+                                        </div>
+                                        <div class="study-detail-divider"></div>
+                                        <div class="study-detail">
+                                            <div class="study-detail-label">전화번호</div>
+                                            <div class="study-detail-value">
+                                                <span style="font-weight: 450;"
+                                                      th:text="${cafeList.cafeContactPhonenumber}"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+
+<footer th:replace="~{/fix/footer :: footer}"></footer>
+
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/js/mypage/favourites.js"></script>
+
+</html>

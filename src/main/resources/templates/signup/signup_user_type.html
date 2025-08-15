@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/signup/signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="signup-step">
+        <main class="contents-area">
+            <a href="#" class="logo-link">
+                <img src="/images/logo.png" width="85px" style="margin: 0;" alt="">
+            </a>
+            <div class="contents-box">
+                <div class="contents-main">
+                    <h1 class="contents-title">오!스카에서 어떤 서비스를<br>이용하고 싶으세요?</h1>
+                    <p class="contents-subtitle">원하는 회원가입 유형을 선택하세요.<br>일반회원으로 가입 후에도 카페회원으로 전한이 가능합니다.</p>
+                    <label class="general">
+                        <div class="btn-explain">스터디를 하고 싶다면 </div>
+                        <button id="study" role="button" class="type-button">
+                            <span class="button-icon-wrapper">
+                                <span role="img" class="button-icon-box">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" focusable="false" preserveAspectRatio="xMidYMid meet" class="button-icon">
+                                        <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                            <div class="button-text">일반회원으로 가입</div>
+                        </button>
+                    </label>
+                    <label class="ceo">
+                        <div class="btn-explain">내 카페를 홍보하고 싶다면</div>
+                        <button id="cafe" role="button" class="type-button">
+                            <span class="button-icon-wrapper">
+                                <span role="img" class="button-icon-box">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" focusable="false" preserveAspectRatio="xMidYMid meet" class="button-icon">
+                                        <path d="M0 0h24v24H0V0z" fill="none"></path><path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                            <div class="button-text">카페회원으로 가입</div>
+                        </button>
+                    </label>
+                </div>
+        </main>
+    </div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+    const $study = $("#study");
+    const $cafe = $("#cafe");
+
+    $study.click(function (){
+        let link = "/sign-up?role=general";
+        location.href = link;
+    });
+
+    $cafe.click(function (){
+        let link = "/sign-up?role=cafe";
+        location.href = link;
+    });
+
+</script>
+</html>

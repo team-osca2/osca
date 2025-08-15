@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/logo/favicon.png">
+    <link rel="stylesheet" href="/css/signup/result.css">
+    <title>오!스카 회원가입 성공</title>
+</head>
+<body>
+<div id="join-result">
+    <main class="container ">
+        <div class="welcome-message">
+            <span class="name-wrapper" th:text="${memberNickname}">단단한자두5768</span>님!<br />오!스카 가입을 환영합니다.
+        </div>
+        <div class="img-wrapper">
+            <img
+                    width="208"
+                    src="/images/signup-images/point.jpg"
+                    alt="축하 이미지"
+            />
+        </div>
+        <div class="first-join">
+            1000P가 발급되었습니다.<br />지금 바로 사용해보세요!
+        </div>
+        <br />
+        <button role="button" color="yellow" class="go-to-main-btn">
+            <span class="go-to-main-msg">원래 페이지로 돌아가기</span>
+        </button>
+    </main>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+    $('.go-to-main-btn').click(function(){
+        let link = "/";
+        location.replace(link);
+    });
+</script>
+</html>

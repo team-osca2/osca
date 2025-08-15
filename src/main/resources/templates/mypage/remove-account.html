@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/mypage/settings.css" />
+    <link rel="stylesheet" href="/css/mypage/remove-account.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>회원탈퇴</title>
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <section class="header-container">
+        <a th:href="@{/}" aria-label="logo" class="header-logo">
+          <img src="/images/logo.png" alt="오!스카 로고" style="width: 70px; height: 40px" />
+        </a>
+        <div>
+          <span class="header-line"></span>
+          <a th:href="@{/study/}" class="header-menu">오늘의 스터디</a>
+          <a th:href="@{/cafe}" class="header-menu">오늘의 카페</a>
+          <a th:href="@{/FAQ/FAQ-main}" class="header-menu">FAQ</a>
+          <a th:href="@{/introduction}" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="header-aside">
+          <a
+            role="link"
+            color="default"
+            href="/inboxes?inbox_group_id=&amp;partner_id="
+            class="header-aside-menu"
+            aria-expanded="false"
+          >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">로그아웃</p>
+            </span>
+          </a>
+          <a
+            role="link"
+            color="default"
+            href="/inboxes?inbox_group_id=&amp;partner_id="
+            class="header-aside-menu"
+            aria-expanded="false"
+          >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+            </span>
+          </a>
+          <div>
+            <div class="header-profile" aria-expanded="false">
+              <a href="/buyer/order-list" class="profile-link">
+                <div class="profile-wrapper">
+                  <div size="32" shape="0" role="article" class="profile-shape">
+                    <img
+                      src="https://kmong.com/img/tools/main_user_gray.png"
+                      alt="avatar"
+                      shape="0"
+                      loading="lazy"
+                      class="profile-img"
+                      style="height: 32px; width: 32px"
+                    />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div>
+      <div class="body-div">
+        <aside class="setting-menu-box">
+          <div class="menu-title">계정 설정</div>
+          <hr class="line" />
+          <a class="menu-list" th:href="@{/setting/}">내 정보</a>
+          <a class="menu-list" th:href="@{/password/change}">비밀번호 변경</a>
+          <a class="menu-list menu-selected">회원 탈퇴</a>
+        </aside>
+        <hr class="line-mini">
+        <main class="body-details">
+          <div class="body-details-div">
+            <h1 class="body-details-title">회원 탈퇴</h1>
+            <div class="body-remove-account">
+              <section>
+                <div class="reason">오스카를 떠나는 이유를 알려주세요.</div>
+                <ul class="reason-list">
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label">
+                      <span class="label-span">
+                        <input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="이용하고 싶은 서비스가 없어요"
+                        />
+                        <span color="#ffd400" class="radio__inner label-span2"> </span>
+                        <span class="label-text"> 이용하고 싶은 서비스가 없어요 </span>
+                      </span>
+                    </label>
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="서비스 퀄리티가 낮아요"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">서비스 퀄리티가 낮아요</span></span
+                      ></label
+                    >
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="비매너 회원을 만났어요"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">비매너 회원을 만났어요</span></span
+                      ></label
+                    >
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="잦은 오류가 발생해요"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">잦은 오류가 발생해요</span></span
+                      ></label
+                    >
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="대체할 만한 서비스를 찾았어요"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">대체할 만한 서비스를 찾았어요</span></span
+                      ></label
+                    >
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="쿠폰 · 적립금 등 혜택이 적어요"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">쿠폰 · 적립금 등 혜택이 적어요</span></span
+                      ></label
+                    >
+                  </li>
+                  <li class="list-li">
+                    <label color="#ffd400" class="list-label"
+                      ><span class="label-span"
+                        ><input
+                          data-testid="radio"
+                          type="radio"
+                          name="reasons"
+                          class="radio__input list-radio"
+                          value="기타"
+                        /><span color="#ffd400" class="radio__inner label-span2"></span
+                        ><span class="label-text">기타</span></span
+                      ></label
+                    >
+                    <div class="self-input displayNone">
+                      <input
+                        type="text"
+                        placeholder="직접입력"
+                        class="self-input-text"
+                        value=""
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </section>
+              <section class="password-colum">
+                <div class="password-check-title">비밀번호 확인</div>
+                <div class="input-div">
+                  <input
+                    type="password"
+                    placeholder="비밀번호를 입력해주세요"
+                    class="password-input"
+                  />
+                </div>
+                <div>
+                  <div class="password-check">
+                    <p class="check-input-password">
+                    </p>
+                  </div>
+                </div>
+                <ul class="account-delete-notice-wrapper">
+                  <li class="notice-list">
+                    • 현재 사용중인 계정 정보는 회원 탈퇴 후 복구가 불가합니다.
+                  </li>
+                  <li class="notice-list">
+                    • 참여 중인 스터디가 있거나 홍보중인 카페가 있다면 탈퇴 신청이 불가합니다.
+                  </li>
+                  <li class="notice-list">
+                    • 탈퇴 후 회원님의 정보는 전자상거래 소비자보호법에 의거한 오스카
+                    개인정보처리방침에 따라 관리됩니다.
+                  </li>
+                  <li class="notice-list">
+                    • 현재 보유 중인 쿠폰은 모두 자동 소멸되며, 탈퇴 후 재가입하더라도 이미
+                    소멸되었기 때문에 양도되지 않습니다.
+                  </li>
+                  <li class="notice-list">
+                    • 작성하신 스터디 모집글 및 답글은 탈퇴 시 자동 삭제되지 않습니다. 탈퇴 후에는
+                    계정 정보가 삭제되어 본인 확인이 불가하므로, 탈퇴 신청 전에 게시글 삭제를 요청해
+                    주시기 바랍니다.
+                  </li>
+                  <li class="notice-list">
+                    • 충전된 포인트가 있을 경우, 포인트 환불을 통해 정산이 완료된 이후 탈퇴를
+                    신청하셔야 합니다.
+                  </li>
+                </ul>
+              </section>
+              <div class="check-wrapper">
+                <label class="all-checked-wrapper"
+                  ><label color="#ffd400" class="check-tick"
+                    ><span class="check-span"
+                      ><input type="checkbox" class="check-input" /><span
+                        color="#ffd400"
+                        class="checkbox__inner"
+                      ></span></span></label
+                  ><span class="check-text">주의사항을 모두 확인하였습니다.</span></label
+                >
+<!--                <form th:action="@{/setting/withdraw}" method="post" id="deleteMember" name="deleteMember" class="body-box">-->
+                    <button role="button" color="default" disabled id="final-button" class="final-button">
+                      <span>회원 탈퇴</span>
+                    </button>
+<!--                </form>-->
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer th:replace="~{/fix/footer :: footer}"></footer>
+
+  </body>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="/js/mypage/remove-account.js"></script>
+</html>

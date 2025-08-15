@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Header</title>
+</head>
+<body>
+
+<!-- 로그인 되지 않은 헤더 -->
+<header class="header-wrapper" th:fragment="unlogined-header">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width:70px; height: 40px;">
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="/study" class="header-menu">오늘의 스터디</a>
+            <a href="/cafe" class="header-menu">오늘의 카페</a>
+            <a href="/FAQ/FAQ-main" class="header-menu">FAQ</a>
+            <a href="/introduction" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div class="header-aside">
+            <a role="link" color="default" href="/sign-up/email-type" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">회원가입</p>
+                        </span>
+            </a>
+            <a id="login" role="link" color="default" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">로그인</p>
+                        </span>
+            </a>
+            <a role="link" color="default" href="" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+                        </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="#" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img src="https://kmong.com/img/tools/main_user_gray.png" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<!-- 로그인 되고 난 뒤 헤더 -->
+<!-- 일반 로그인 헤더 -->
+<header class="header-wrapper" th:fragment="logined-header">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width:70px; height: 40px;">
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="/study" class="header-menu">오늘의 스터디</a>
+            <a href="/cafe" class="header-menu">오늘의 카페</a>
+            <a href="/FAQ/FAQ-main" class="header-menu">FAQ</a>
+            <a href="/introduction" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div class="header-aside">
+            <a role="link" color="default" href="http://localhost:10000/logout" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">로그아웃</p>
+                        </span>
+            </a>
+            <a role="link" color="default" href="http://localhost:10000/user/dbgmlwns" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+                        </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="#" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img src="https://kmong.com/img/tools/main_user_gray.png" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script th:inline="javascript">
+        let memberProfile = [[${memberProfile}]];
+        if (memberProfile) {
+            let $profileBox = $(".profile-shape");
+            $profileBox.html(`<img src="/display?fileName=${memberProfile.imagePath}/${memberProfile.imageUuid}_${memberProfile.imageName}" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">`);
+        }
+    </script>
+</header>
+<!--카카오 로그인 헤더-->
+<header class="header-wrapper" th:fragment="social-logined-header">
+    <link rel="stylesheet" href="/css/header/header.css">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width:70px; height: 40px;">
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="/study" class="header-menu">오늘의 스터디</a>
+            <a href="/cafe" class="header-menu">오늘의 카페</a>
+            <a href="/FAQ/FAQ-main" class="header-menu">FAQ</a>
+            <a href="/introduction" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div class="header-aside">
+            <a role="link" color="default" href="https://kauth.kakao.com/oauth/logout?client_id=c4b51a9523682afb89b2d9dca35e3d2e&logout_redirect_uri=http://localhost:10000/kakao/logout" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">로그아웃</p>
+                        </span>
+            </a>
+            <a role="link" color="default" href="" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+                        </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="#" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img src="https://kmong.com/img/tools/main_user_gray.png" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script th:inline="javascript">
+        let memberProfile = [[${memberProfile}]];
+        if (memberProfile) {
+            let $profileBox = $(".profile-shape");
+            $profileBox.html(`<img src="/display?fileName=${memberProfile.imagePath}/${memberProfile.imageUuid}_${memberProfile.imageName}" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">`);
+        }
+    </script>
+</header>
+</body>
+</html>

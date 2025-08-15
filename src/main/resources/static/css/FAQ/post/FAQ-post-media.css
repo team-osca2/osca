@@ -1,0 +1,46 @@
+@media (min-width: 1024px) {
+    body > main {
+        min-height: 65vh;
+    }
+}
+
+@media (min-width: 1160px) {
+    .container {
+        padding: 0;
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .sub-nav {
+        align-items: baseline;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .breadcrumbs {
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-large, input[type="submit"] {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .button-request-yellow, input[type="submit"] {
+        width: auto;
+    }
+}
+
+
+
+
+
+
+
+
+

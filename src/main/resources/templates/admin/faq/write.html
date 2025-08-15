@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지- FAQ 등록</title>
+    <link rel="icon" href="/images/logo3.png">
+    <link rel="stylesheet" href="/css/admin/sidemenu.css">
+    <link rel="stylesheet" href="/css/admin/admin_board_notice_write.css">
+    <link rel="stylesheet" href="/css/admin/write.css">
+
+</head>
+
+<body>
+<div>
+    <div class="info-title-box info-title-box-flex">
+        <div class="logo-box-layout">
+            <div class="logo-box">
+                <img src="/images/logo1.png">
+            </div>
+            <div class="logo-title">
+                <span>Jar</span>
+            </div>
+        </div>
+        <div>
+            <div class="select-name">
+                <span>FAQ 관리</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+
+        <!-- 사이드 바 -->
+        <div th:replace="~{admin/board/all:: #sidebar}"> </div>
+        <!-- 사이드 바 끝-->
+        <div class="container">
+            <div class="container-margin">
+                <!-- 헤더 -->
+                <div class="prev-button-layout">
+
+                </div>
+
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+                    <form id="faqForm" >
+                        <div class="board-info-box">
+                            <div class="board-info-title-box">
+                                <span>FAQ 등록하기</span>
+                            </div>
+                            <hr>
+                            <div class="info-table">
+                                <!--                            <form th:action="@{/admin/board/notice/write}" method="post">-->
+
+                                <div>
+                                    <input type="text" class="board-title" name="noticeTitle" placeholder="[카테고리] 제목  (과 같은 형식으로 입력해 주세요.)"
+                                           autocomplete="off">
+                                </div>
+                                <hr>
+                                <div class="form-field string required">
+                                    <label id="membnerType" for="membnerType" style="font-weight: 100; font-size: 13px;">FAQ 카테고리 구분</label>
+                                    <br />
+                                    <br />
+                                    <select name="types" id="" class="select-type" style="max-width: 100%;">
+                                        <option value="study">스터디</option>
+                                        <option value="cafe">카페</option>
+                                        <option value="intro">서비스 소개</option>
+                                        <option value="point">포인트</option>
+                                        <option value="join">가입/인증</option>
+                                        <option value="withdraw">계정 정보/ 탈퇴</option>
+                                        <option value="info">개인정보</option>
+                                        <option value="report">신고·페널티</option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <div>
+                                        <textarea class="board-content" name="noticeContent"
+                                                  placeholder="내용을 입력해주세요."></textarea>
+
+                                </div>
+                                <hr>
+                                <div>
+                                    <button class="btn_done" type="submit">등록 완료</button>
+                                </div>
+                    </form>
+
+            </div>
+        </div>
+        </section>
+    </div>
+</div>
+</div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="/js/admin/checkbox.js"></script>
+<script src="/js/admin/board_proposal.js"></script>
+<script src="/js/admin/sidemenu.js"></script>
+<script src="/js/admin/show_modal.js"></script>
+<script src="/js/admin/faq.js"></script>
+<script src="/js/admin/faq-save.js"></script>
+</html>

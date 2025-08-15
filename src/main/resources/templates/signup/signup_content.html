@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/signup/signup.css">
+    <title>오스카 | 회원가입</title>
+</head>
+<body>
+<div id="signup-step">
+    <main class="contents-area">
+        <a href="#" class="logo-link">
+            <img src="/images/logo.png" width="85px" style="margin: 0;" alt="">
+        </a>
+        <div class="contents-box">
+            <form class="signup-form" action="/sign-up" method="POST">
+                <h1 class="signup-form-title">딱 이것만 체크하면 가입완료!</h1>
+                <div class="name-input-area">
+                    <div class="input-title">이름</div>
+                    <div class="input-body">
+                        <!-- 이름 입력 -->
+                        <input type="text" required="" placeholder="이름을 입력해주세요" name="memberName" class="input" value="">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message"></p><!--영어 x-->
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-input-area">
+                    <div class="input-title">휴대폰 번호</div>
+                    <div class="number">
+                        <div class="input-body">
+                            <!-- 이메일 입력 -->
+                            <input id="tel" type="text" required="" placeholder="전화번호를 입력해주세요" name="memberPhonenumber" class="input"
+                                   value="">
+                        </div>
+                        <button type="button" id="verificationbtn" class="verificationbtn" disabled>인증번호 받기</button>
+                    </div>
+                </div>
+                <div class="verification">
+                    <div class="input-body disable">
+                        <input id="checkAouthCode" type="text" placeholder="인증번호를 입력해주세요." name="authCode" readonly="" class="input"
+                               value="">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message"></p><!--영어 x-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="email-input-area">
+                    <div class="input-title">이메일</div>
+                    <div class="input-body">
+                        <!-- 이메일 입력 -->
+                        <input type="email" required="" placeholder="이메일을 입력해 주세요." name="memberEmail" class="input" value="">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message"></p><!--이메일을 입력해주세요.-->
+                        </div>
+                    </div>
+                </div>
+                <div class="password-input-area">
+                    <div class="input-title">비밀번호</div>
+                    <div class="input-body">
+                        <!-- 비밀번호 입력 -->
+                        <input type="password" required="" placeholder="비밀번호를 입력해 주세요. (8자리 이상)" name="memberPassword"
+                               autocomplete="current-password" class="input" value="">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message"></p> <!-- 8자 이상, 영문 대 소문자, 숫자, 특수문자를 사용하세요. -->
+                        </div>
+                    </div>
+                </div>
+                <div class="input-area password-confirm-input-area">
+                    <div class="input-body">
+                        <!-- 비밀번호 확인 입력 -->
+                        <input type="password" id="confirmPasswordInput" required="" placeholder="비밀번호를 한번 더 입력해 주세요." name="passwordConfirm"
+                               autocomplete="current-password" class="input" value="" >
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message"></p> <!-- 8자 이상, 영문 대 소문자, 숫자, 특수문자를 사용하세요. -->
+                        </div>
+                    </div>
+                </div>
+                <div class="input-area">
+                    <div class="input-title">직업</div>
+                    <div class="input-select-body">
+                        <div class="input-select">
+                            <div class="selected-content-area">
+                                <div class="selected-content-box">직업을 선택해 주세요.</div>
+                            </div>
+                            <div class="selected-content-svg-area">
+                                <div class="selected-content-svg-box">
+                                    <svg height="20" width="20" viewBox="0 0 20 20" focusable="false"
+                                         class="selected-content-svg">
+                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 선택 하면 나오는 내용 -->
+                        <div class="select-menu" style="display: none;">
+                            <div class="select-menu-area">
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">프리랜서</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">직장인</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">소상공인</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">스타트업 창업자</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">대학(원)생</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">취업준비생</div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="jobType">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message">최소 한가지를 선택해 주세요</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-title">비즈니스 분야</div>
+                    <div class="input-select-body">
+                        <div class="input-select">
+                            <div class="selected-content-area">
+                                <div class="selected-content-box">비즈니스 분야를 선택해 주세요.</div>
+                            </div>
+                            <div class="selected-content-svg-area">
+                                <div class="selected-content-svg-box">
+                                    <svg height="20" width="20" viewBox="0 0 20 20" focusable="false"
+                                         class="selected-content-svg">
+                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 선택 하면 나오는 내용 -->
+                        <div class="select-menu" style="display: none;">
+                            <div class="select-menu-area">
+                                <div class="select-menu-option ">
+                                    <div class="select-menu-option-content">쇼핑몰</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">마케팅/광고 에이전시</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">음식·주점</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">IT 개발</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">콘텐츠</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">예술·스포츠·여가</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">제조업</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">미용·뷰티</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">병의원·제약</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">금융·보험</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">학원·교육</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">여행·숙박</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">부동산·분양</div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">기타</div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="jobSector">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message">최소 한가지를 선택해 주세요</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="input-area">
+                    <div class="input-title">관심사 선택 (중복 선택 가능)</div>
+                    <div class="input-select-body">
+                        <div class="input-select">
+                            <div class="selected-content-area">
+                                <div class="selected-content-box">관심사를 선택해 주세요.</div>
+                            </div>
+                            <div class="selected-content-svg-area">
+                                <div class="selected-content-svg-box">
+                                    <svg height="20" width="20" viewBox="0 0 20 20"  focusable="false" class="selected-content-svg">
+                                        <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="select-menu" style="display:none">
+                            <div class="select-menu-area">
+                                <div class="select-menu-option selected-menu">
+                                    <div class="select-menu-option-content">디자인
+                                        <span role="img" class="select-menu-option-content-svg-box selected-menu">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">IT·프로그래밍
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">영상·사진·음향
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option selected-menu">
+                                    <div class="select-menu-option-content">마케팅
+                                        <span role="img" class="select-menu-option-content-svg-box selected-menu">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">번역·통역
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">문서·글쓰기
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">창업·사업
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">취업·입시
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">전자책
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">운세
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">직무역량 레슨
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">주문제작
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">세무·법무·노무
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">취미 레슨
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">생활서비스
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">심리상담
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">VOD
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">투잡·노하우
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="select-menu-option">
+                                    <div class="select-menu-option-content">자료·템플릿
+                                        <span role="img" class="select-menu-option-content-svg-box">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"  focusable="false" preserveAspectRatio="xMidYMid meet" class="select-menu-option-content-svg">
+                                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                                <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input name="interestCategories" type="hidden" value="1">
+                        <input name="interestCategories" type="hidden" value="2">
+                        <input name="interestCategories" type="hidden" value="3">
+                    </div>
+                    <div class="input-error">
+                        <div class="input-error-message-box">
+                            <p class="input-error-message">최소 한가지를 선택해 주세요</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div name="agreements" class="checkbox-container">
+                    <div class="checkbox-checkall-area">
+                        <div role="checkbox" class="checkbox-checkall-box "> <!-- 전체 동의 selected-checkbox -->
+                            <span role="img" class="checkbox-check-svg-box">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                                         focusable="false" preserveAspectRatio="xMidYMid meet"
+                                         class="checkbox-check-svg"><path d="M0 0h24v24H0V0z" fill="none"></path><path
+                                            d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path></svg>
+                                </span>
+                        </div>
+                        모두 동의합니다.
+                    </div>
+                    <div class="checkbox-checkelement-box">
+                        <div class="checkbox-checkelement essentials">
+                            <div class="checkbox-svg-wrapper"> <!-- 체크 표시 들어가는 클래스-->
+                                <span role="img" class="checkbox-svg-box">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                             focusable="false" preserveAspectRatio="xMidYMid meet" class="checkbox-svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                        </svg>
+                                    </span>
+                            </div>
+                            만 14세 이상입니다.
+                            <span class="checkbox-content-highlight">(필수)</span>
+                        </div>
+                        <div class="checkbox-checkelement essentials">
+                            <div class="checkbox-svg-wrapper "> <!-- 체크 표시 들어가는 클래스-->
+                                <span role="img" class="checkbox-svg-box">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                             focusable="false" preserveAspectRatio="xMidYMid meet" class="checkbox-svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                        </svg>
+                                    </span>
+                            </div>
+                            서비스 이용약관에 동의합니다.
+                            <span class="checkbox-content-highlight">(필수)</span>
+                        </div>
+                        <div class="checkbox-checkelement essentials">
+                            <div class="checkbox-svg-wrapper "> <!-- 체크 표시 들어가는 클래스-->
+                                <span role="img" class="checkbox-svg-box">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                             focusable="false" preserveAspectRatio="xMidYMid meet" class="checkbox-svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                        </svg>
+                                    </span>
+                            </div>
+                            개인정보 수집/이용에 동의합니다.
+                            <span class="checkbox-content-highlight">(필수)</span>
+                        </div>
+                        <div class="checkbox-checkelement">
+                            <div class="checkbox-svg-wrapper "> <!-- 체크 표시 들어가는 클래스-->
+                                <span role="img" class="checkbox-svg-box">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                             focusable="false" preserveAspectRatio="xMidYMid meet" class="checkbox-svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                        </svg>
+                                    </span>
+                            </div>
+                            마케팅 수신・홍보 목적의 개인정보 수집 및 이용에 동의합니다. (선택)
+                        </div>
+                        <div class="checkbox-checkelement">
+                            <div class="checkbox-svg-wrapper "> <!-- 체크 표시 들어가는 클래스-->
+                                <span role="img" class="checkbox-svg-box">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"
+                                             focusable="false" preserveAspectRatio="xMidYMid meet" class="checkbox-svg">
+                                            <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                            <path d="M7.13322158,10.821143 C6.77457526,10.3822153 6.17602724,10.3624856 5.79632715,10.7770754 C5.41662707,11.1916652 5.39955962,11.8835778 5.75820594,12.3225054 L9.30027691,16.6574524 C9.66714471,17.1064419 10.2826916,17.1152317 10.6590418,16.6768551 L18.2255456,7.86331213 C18.5934618,7.43475954 18.5911847,6.74257073 18.2204597,6.31726515 C17.8497347,5.89195957 17.2509477,5.89459179 16.8830316,6.32314438 L10.004578,14.3352391 L7.13322158,10.821143 Z"></path>
+                                        </svg>
+                                    </span>
+                            </div>
+                            장기 미접속 시 계정 활성 상태 유지합니다. (선택)
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" name="memberRole" />
+
+                <button role="button" type="button" class="submit-button" disabled> <!--  disabled -->
+                    <span class="submit-button-text">버튼만 누르면 가입완료!</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- 가입 버튼 눌렀을 때 나오는 내용 -->
+        <p class="message">오스카는 회원님의 원활한 서비스 이용에 필요한 정보를<br>적절한 전자적 수단을 통해 제공하고 있습니다.</p>
+    </main>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<script>
+    if ( "[[${role}]]" === "cafe" ) {
+        $("input[name=memberRole]").val("1");
+    }
+</script>
+<script type="text/javascript" src="/js/signup/signup_func.js"></script>
+<script type="text/javascript" src="/js/signup/signup.js"></script>
+<script type="text/javascript" src="/js/signup/check-name.js"></script>
+<script type="text/javascript" src="/js/signup/check-phoneNumber.js"></script>
+<script type="text/javascript" src="/js/signup/submit.js"></script>
+</html>

@@ -1,0 +1,49 @@
+@media (min-width: 1024px) {
+    body > main {
+        min-height: 65vh;
+    }
+}
+
+@media (min-width: 1160px) {
+    .container {
+        padding: 0;
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .sub-nav {
+        align-items: baseline;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .breadcrumbs {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-content {
+        flex: 0 0 80%;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-header {
+        align-items: baseline;
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+

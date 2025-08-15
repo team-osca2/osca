@@ -1,0 +1,588 @@
+@charset "UTF-8";
+* {
+    font-family: 'Metro Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff2)
+    format('woff2'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.woff)
+    format('woff'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.otf)
+    format('truetype'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Black.eot?#iefix)
+    format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff2)
+    format('woff2'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.woff)
+    format('woff'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.otf)
+    format('truetype'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Bold.eot?#iefix)
+    format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff2)
+    format('woff2'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.woff)
+    format('woff'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.otf)
+    format('truetype'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Medium.eot?#iefix)
+    format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff2)
+    format('woff2'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.woff)
+    format('woff'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.otf)
+    format('truetype'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Regular.eot?#iefix)
+    format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'Metro Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff2)
+    format('woff2'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.woff)
+    format('woff'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.otf)
+    format('truetype'),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot),
+    url(https://d2v80xjmx68n4w.cloudfront.net/assets/fonts/MetroSans/MetroSans-Light.eot?#iefix)
+    format('embedded-opentype');
+}
+
+div {
+    display: block;
+}
+
+html {
+    line-height: normal;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+body {
+    letter-spacing: 0;
+    font-size: 13px;
+    font-family: MetroSans;
+    background-color: #fff;
+}
+
+.main-wrapper {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.margin-top-60 {
+    margin-top: 60px !important;
+}
+
+.flex,
+.fl {
+    display: flex;
+}
+
+/* 측면 목록 */
+.main-wrapper .side-menu-container {
+    flex-basis: 300px;
+    margin-right: 25px;
+}
+
+#side-menu-wrapper.min-height {
+    min-height: 800px;
+}
+
+#side-menu-wrapper {
+    font-size: 14px;
+    color: #222;
+}
+
+.main-menu{
+    cursor: pointer;
+}
+
+
+/* 스터디 목록 나오는 부분 */
+.main-wrapper .content-wrapper {
+    flex: 1;
+}
+
+.main-wrapper .content-wrapper .title-wrapper {
+    font-size: 18px;
+    font-weight: 700;
+    color: #303441;
+    margin-bottom: 16px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .panel-wrapper:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .panel-wrapper {
+    border: 1px solid #e4e5ed;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper {
+    height: 160px;
+    padding: 30px;
+}
+.position-relative {
+    position: relative;
+}
+.flex-center-center,
+.awesome-radio-body,
+.order-btn-brand-gray {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wrapper .card-dropdown {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.main-wrapper .card-dropdown img {
+    width: 24px;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+.main-wrapper .card-dropdown .dropdown-menu {
+    padding: 0;
+    right: 0;
+    left: inherit;
+    border: 1px solid #f2f3f7;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.07);
+    min-width: 78px;
+}
+
+.dropdown-menu,
+.border-top-category,
+.alarm-dropdown-menu,
+.gig-detail-menu,
+.gig-count-word .count-words-menu,
+.interest-box,
+.user-bank-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 5px 0;
+    margin-top: 0px;
+    list-style: none;
+    font-size: 13px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+    background-clip: padding-box;
+}
+
+.display-open {
+    padding: 0;
+    right: 0;
+    left: inherit;
+    border: 1px solid #f2f3f7;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.07);
+    min-width: 78px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    padding: 5px 0;
+    margin-top: 0px;
+    list-style: none;
+    font-size: 13px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+    background-clip: padding-box;
+}
+
+.display-open > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.5438;
+    color: #4d4d4d;
+    white-space: nowrap;
+}
+
+.display-open > li > a:hover {
+    background-color: #ccc;
+}
+
+.main-wrapper .card-dropdown .dropdown-link {
+    padding: 8px 12px;
+    text-align: center;
+    color: #303441;
+}
+
+.dropdown-menu > li > a,
+.border-top-category > li > a,
+.alarm-dropdown-menu > li > a,
+.gig-detail-menu > li > a,
+.gig-count-word .count-words-menu > li > a,
+.interest-box > li > a,
+.user-bank-dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.5438;
+    color: #4d4d4d;
+    white-space: nowrap;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .main-image-wrapper {
+    flex: 1;
+    margin-right: 20px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .item-content-wrapper {
+    flex-basis: 440px;
+    margin-right: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-wrapper
+.content-wrapper
+.list-panel-wrapper
+.item-wrapper
+.item-content-wrapper
+.breadcrumb-wrapper {
+    font-size: 12px;
+    color: #727585;
+}
+.flex-left-center {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.margin-right-10 {
+    margin-right: 10px !important;
+}
+
+.status-label .label-chip {
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 11px;
+}
+
+.NGB{
+    font-weight: 500;
+}
+
+.main-wrapper
+.content-wrapper
+.list-panel-wrapper
+.item-wrapper
+.item-content-wrapper
+.breadcrumb-wrapper {
+    font-size: 12px;
+    color: #727585;
+}
+
+.main-wrapper .border-color {
+    color: #e4e5ed;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+.margin-left-5 {
+    margin-left: 5px !important;
+}
+
+.main-wrapper
+.content-wrapper
+.list-panel-wrapper
+.item-wrapper
+.item-content-wrapper
+.item-title-wrapper {
+    color: #303441;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    width: 440px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.main-wrapper
+.content-wrapper
+.list-panel-wrapper
+.item-wrapper
+.item-content-wrapper
+.item-title-wrapper
+a {
+    color: #303441;
+}
+
+.main-wrapper
+.content-wrapper
+.list-panel-wrapper
+.item-wrapper
+.item-content-wrapper
+.date-wrapper {
+    text-align: right;
+    color: #303441;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+.tahoma,
+.font-bold {
+    font-weight: 700;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .button-wrapper {
+    flex-basis: 180px;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .button-wrapper button.btn {
+    padding: 13px 15px;
+    font-size: 16px;
+}
+
+.main-wrapper .content-wrapper .list-panel-wrapper .item-wrapper .button-wrapper button {
+    margin-top: 44px;
+}
+
+.btn-custom-project {
+    color: #f0f1f5;
+    background-color: #F9A01B;
+    border-color: #F9A01B;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 8px !important;
+    white-space: nowrap;
+    padding: 15px 15px;
+    font-size: 13px;
+    line-height: 1.5438;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.badge-wrapper:hover {
+    font-weight: 600;
+}
+
+.side-content-all-weight {
+    font-weight: 600;
+}
+
+.side-content-weight {
+    font-weight: 600;
+}
+
+/* 페이지 번호 */
+.main-wrapper .pagenation-wrapper {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.pagination > li.disabled,
+.form-control-custom-project-wrapper .pagination > li.form-control[disabled] {
+    cursor: none;
+    pointer-events: none;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+    z-index: 3;
+    color: #373a3c;
+    background-color: #fff;
+    cursor: default;
+}
+
+.pagination > li.disabled,
+.form-control-custom-project-wrapper .pagination > li.form-control[disabled] {
+    cursor: none;
+    pointer-events: none;
+}
+
+.media-main {
+    display: none;
+}
+
+.detail-button {
+    display: none;
+}
+
+@media screen and (max-width: 840px) {
+    .side-menu-container,
+    .pagenation-wrapper,
+    .main-wrapper {
+        display: none;
+    }
+
+    .media-main {
+        display: block;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .media-menu-bar {
+        width: 100%;
+        background-color: #ffffff;
+        z-index: 5200;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 45px;
+    }
+
+    .media-menu-bar-wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 44px;
+    }
+
+    .media-menu-content {
+        -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        font-size: 15px;
+        padding: 12px;
+        font-weight: 500;
+        height: 45px;
+        color: #9a9ba7;
+        border-bottom: 2px solid #f2f3f7;
+        cursor: pointer;
+    }
+
+    .media-menu-content > a {
+        color: inherit;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+    }
+
+    .study-detail-content{
+        color: rgb(154, 155, 167);
+        font-size: 12px;
+        font-style: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.z-index-style {
+    z-index: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #9a9ba7;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+    display: flex;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    z-index: 9;
+    padding: 0;
+    border-radius: 50%;
+}

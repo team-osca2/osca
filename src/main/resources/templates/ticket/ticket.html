@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/ticket/ticket.css">
+    <link rel="stylesheet" href="/css/ticket/ticket_modal.css">
+    <link rel="stylesheet" href="/css/footer/footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="icon " href="/images/favicon.png">
+    <title>ticketPurchase</title>
+</head>
+<body>
+<div id="__next">
+    <!-- 헤더 시작 -->
+    <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+    <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+    <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+    <main>
+        <div class="pay-service pay-service-container">
+            <h1 class="pay-content1 pay-content-title">
+                포인트 서비스
+            </h1>
+            <p class="pay-content2 pay-content-additional">
+                "카페 홍보"를 위해서는 포인트가 필요합니다.
+                <br>
+                홍보를 위한 포인트를 구매해 보세요.
+                <br>
+                <em>카페 사장님들만 이용 가능한 서비스입니다.</em>
+            </p>
+            <!-- 포인트 보여주는 부분 -->
+            <div class="content-wrapper">
+                <div class="coupon-wrapper">
+                    <!-- 구독 서비스별 결제 포인트-->
+                    <section class="coupon-list-wrapper">
+                        <!-- 쿠폰 리스트 -->
+                        <ul class="coupon-list">
+
+<!--                            js에서 입력-->
+
+                        </ul>
+                    </section>
+                </div>
+                <section class="notice">
+                    <h2 class="notice-title">꼭 확인해 주세요!</h2>
+                    <ul class="notice-list-wrapper">
+                        <li class="notice-list">
+                            · 홍보권이 만료된 이후에는, 카페 홍보글이 내려가게 됩니다.
+                        </li>
+                        <li class="notice-list">
+                            · 홍보를 연장하고 싶다면, 새로운 홍보권을 구매해주세요.
+                        </li>
+                        <li class="notice-list">
+                            · 홍보권을 사용 후 다른 홍보권으로의 변경은 불가합니다.
+                        </li>
+                        <li class="notice-list">
+                            · 홍보권을 적용하신 주문 건이 유효기간 이후 취소되는 경우, 복구가 불가합니다.
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <!-- 결제 모달창 숨기기 -->
+        <div class="modal hidden">
+            <div class="modalBox">
+                <div class="modal_title_area">
+                    <div class="modal_white_space"></div>
+                    <div class="modal_title_box">
+                        <p data-testid="Typography" color="var(--theme-palette-colors-black-100)" class="modal_title">
+                            <span data-testid="Typography" color="var(--theme-palette-colors-black-100)" class="modal_title_text">7일 홍보권 구매</span>
+                        </p>
+                    </div>
+                    <div class="exit_svg_area">
+                        <button type="button" class="closeBtn">
+                                <span class="svg_wrapper">
+                                    <svg viewBox="0 0 24 24" class="exit_svg">
+                                        <path d="M17.97 19.03a.749.749 0 1 0 1.06-1.06l-6.5-6.5a.749.749 0 0 0-1.06 0l-6.5 6.5a.749.749 0 1 0 1.06 1.06L12 13.06l5.97 5.97zM12 10.94 6.03 4.97a.749.749 0 1 0-1.06 1.06l6.5 6.5a.749.749 0 0 0 1.06 0l6.5-6.5a.749.749 0 1 0-1.06-1.06L12 10.94z"></path>
+                                    </svg>
+                                </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal_content_area">
+                    <form id="modal_form" onsubmit="return false;">
+                        <div class="modal_input_area">
+                            <div id="modal_point_title">결제 예정 포인트</div>
+                            <div class="modal_point_text1">현재 보유 중인 포인트</div>
+                            <span class="point_price positive" id="balance"></span>
+                            <div class="modal_point_text1">사용될 예정인 포인트</div>
+                            <span id="price" class="point_price negative"></span>
+                            <hr style="border:solid 1px #dad8d8;">
+                            <div class="modal_point_text2">결제 후 포인트</div>
+                            <span id="balance_after_payment" class="point_price"></span>
+                        </div>
+                        <div class="modal_button_area">
+                            <button type="submit" data-testid="Button" class="submit_button">
+                                <span color="var(--theme-palette-colors-black-100)" class="button_text">결제</span>
+                            </button>
+                            <button type="button" data-testid="Button" class="cancel_button">
+                                <span color="var(--theme-palette-colors-black-100)" class="button_text ">취소</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="info-modal" style="display: none;">
+                    <div class="info-modal-area" role="dialog">
+                        <div class="info-modal-main">
+                            <div class="info-modal-icon-box">
+                                <span class="info-modal-icon-body">
+                                </span>
+                            </div>
+                            <h2 class="info-modal-title"></h2>
+                        </div>
+                        <div class="info-modal-foot">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- 푸터 시작 -->
+    <footer th:replace="~{/fix/footer :: footer}"></footer>
+    <!-- 푸터 끝 -->
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script th:inline="javascript">
+    const tickets = [[${tickets}]];
+    const cafeAdId = [[${param.cafeAdId}]][0];
+    const type = [[${param.type}]][0];
+    const ceoBalance = [[${ceoBalance}]];
+    const ticketBox = $('.coupon-list');
+
+    const numberParsing = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+    const ticketForm = (ticket) => {
+        const point = numberParsing(ticket.ticketPoint);
+        return (`
+            <li class="coupon-list-element" data-duration="${ticket.ticketDuration}" data-price="${ticket.ticketPoint}" data-id="${ticket.id}">
+                <section class="coupon-sale">
+                    <h2>
+                        ${ticket.ticketDuration}일 홍보권
+                    </h2>
+                </section>
+                <h2 class="coupon-benefit">${point} point</h2>
+                <p class="coupon-benefit-detail">현재 소유하고 계신 포인트에서 ${point}포인트가 차감됩니다.</p>
+                <section class="coupon-dday-detail-wrapper">
+                    <div class="coupon-dday-detail">
+                        쿠폰 구매 후 ${ticket.ticketDuration}일 동안 카페 홍보가 가능합니다.
+                    </div>
+                </section>
+                <div class="coupon-benefit-category-wrapper">
+                    <div class="coupon-benefit-category">
+                        즉시 사용 가능
+                    </div>
+                </div>
+            </li>
+        `)
+    }
+
+    tickets.forEach((ticket) => {
+        ticketBox.append(ticketForm(ticket));
+    })
+</script>
+<script src="/js/ticket/ticket.js"></script>
+</html>

@@ -1,0 +1,484 @@
+@charset "UTF-8";
+
+.width-1170 {
+    width: 1170px !important;
+}
+
+.container {
+    width: 1024px;
+}
+
+.padding-side-0 {
+    padding: 0 0px !important;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.margin-top-20 {
+    margin-top: 20px !important;
+}
+
+.flex,
+.fl {
+    display: flex;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+.margin-right-10 {
+    margin-right: 10px !important;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.search-input {
+    text-align: center;
+    width: 700px;
+    font-size: 38px;
+    padding-right: 75px;
+    padding-left: 75px;
+    border: none;
+    outline: none;
+    padding-bottom: 5px;
+}
+
+.search-group {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.search-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.sort-item {
+    width: 87px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.border-opacity {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08) inset;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+.media-footer {
+    display: none;
+}
+
+.media-main {
+    display: none;
+}
+
+/* 스터디 목록 */
+.study-list-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    padding-left: 34px;
+}
+
+.study .filter-wrapper {
+    border: 1px solid #e4e5ed;
+}
+
+.study .filter-wrapper .search-form-wrapper {
+    flex-basis: 675px;
+}
+
+.study .filter-wrapper .filter-form-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    padding: 16px 32px;
+}
+
+.study .study-search-form {
+    padding: 15px 25px;
+}
+
+.study-search-form .index-search-bar {
+    caret-color: #F9A01B;
+}
+
+.study-search-form .search-input {
+    width: 100%;
+    padding: 0;
+    font-size: 14px;
+    text-align: left;
+    height: 20px;
+}
+
+.study .study-list-group-wrapper {
+    padding: 34px 0;
+    border-bottom: 1px solid #f2f3f7;
+}
+
+.study .sort-group-wrapper .sort-item[data-v-0049c6da] {
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 24px;
+    color: #303441;
+}
+
+.study .sort-group-wrapper .sort-item .NGB[data-v-0049c6da] {
+    font-weight: bold;
+}
+
+/* 스터디 목록 리스트 부분 */
+.study-menu-wrapper {
+    display: flex;
+    height: 160px;
+}
+
+.study-main-image {
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.study-info-wrapper {
+    flex: 1;
+    align-self: center;
+    margin-right: 25px;
+}
+
+.date-chip-wrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.date-chip-wrapper .date-chip-content .date-chip {
+    position: inherit;
+}
+
+.date-chip .date-chip-content {
+    padding: 1px 5px;
+    color: white;
+    border-radius: 4px;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+}
+
+.date-chip-content ,.date-chip-red {
+    background-color: #ff7262;
+}
+
+.study-breadcrumb {
+    margin-top: 2px;
+    font-size: 13px;
+    color: #9a9ba7;
+}
+
+.study-main-content {
+    margin: 20px 0 16px 0;
+    color: #555969;
+    line-height: 18px;
+    height: 36px;
+    font-size: 13px;
+    word-break: break-all;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.study-detail-info {
+    display: flex;
+    background-color: #fafafc;
+    padding: 12px 20px;
+}
+
+.study-title {
+    margin-left: 8px;
+    flex: 1;
+    font-size: 17px;
+    font-weight: 500;
+    color: #303441;
+}
+
+.bookmark {
+    position: relative;
+    z-index: 100;
+    margin-left: 770px;
+    margin-top: -195px;
+}
+
+.bookmark-icon {
+    width: 17px;
+    margin-right: 2px;
+}
+
+
+.study-detail {
+    display: flex;
+    justify-content: left;
+    flex: 1;
+    align-items: center;
+}
+
+.study-detail-divider {
+    border-right: 2px solid #e4e5ed;
+    margin: 0 20px 0 32px;
+}
+
+.study-detail-label {
+    color: #727585;
+    font-size: 15px;
+    line-height: 1.2;
+    flex: 1;
+}
+
+.study-detail-value {
+    color: #303441;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/* 페이지 숫자 넘어가는 부분 */
+.study-menu-pagination {
+    width: 100%;
+    margin-top: 47px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.pagination > li.disabled,
+.pagination > li.form-control[disabled] {
+    cursor: none;
+    pointer-events: none;
+}
+.pagination > li {
+    cursor: pointer;
+    display: inline;
+}
+
+.study-menu-pagination .pagination > li > a,
+.pagination > li > span {
+    border: 0;
+    font-size: 12px;
+}
+
+.active {
+    font-weight: 900;
+    color: #303441 !important;
+}
+
+.color-style{
+    color: #9a9ba7;
+}
+
+.number-color{
+    font-weight: 900;
+    color: #303441;
+}
+
+.button-color-style {
+    color: #4e4d4d;
+    opacity: 0.3;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    background-color: #fff;
+    margin-left: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.pagination > .disabled > span,
+.pagination > .form-control[disabled] > span,
+.pagination > .disabled > span:focus,
+.pagination > .form-control[disabled] > span:focus,
+.pagination > .disabled > a,
+.pagination > .form-control[disabled] > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus,
+.pagination > .form-control[disabled] > a:focus {
+    color: #888;
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.pagination > li > a {
+    padding: 9px 15px;
+    font-size: 12px;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 15px 15px;
+    line-height: 1.5438;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    margin-left: -1px;
+}
+
+.pagination>li>a:hover, .study-menu-pagination .pagination>li>span:hover {
+    background: #f2f3f7;
+    border-radius: 4px;
+}
+
+
+/* 사이드 목록 부분 */
+#side_menu_wrapper .userprofile-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a.plain,
+a.plain:hover,
+a.plain:active {
+    text-decoration: none;
+    color: #4d4d4d;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.member-profile-image {
+    position: relative;
+}
+
+.member-profile-image img {
+    border-radius: 50%;
+    background-color: #e4e5ed;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#side_menu_wrapper .userprofile-info-wrapper .username-wrapper {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.NGM,
+.NGR {
+    font-weight: 400;
+}
+
+a.plain,
+a.plain:hover,
+a.plain:active {
+    text-decoration: none;
+    color: #4d4d4d;
+}
+
+#side_menu_wrapper .userprofile-info-wrapper .btn-wrapper  {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px 30px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 2.77;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 13px;
+    line-height: 1.5438;
+    border-radius: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn:hover {
+    background: #171B28;
+    border-color: #171B28;
+}
+
+.my-study-button {
+    color: #6e6f71;
+    border: 0;
+    background-color: transparent;
+    font-size: 16px;
+    margin: 0px 25px;
+}
+
+.btn-navy {
+    color: #fff;
+    background-color: #144F79;
+    border-color: #144F79;
+}
+
+
+#side_menu_wrapper .userprofile-info-wrapper .btn-wrapper {
+    width: 14px;
+    margin-right: 6px;
+}
+

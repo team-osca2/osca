@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>study-main</title>
+    <link rel="stylesheet" href="/css/study/study-main/study-all.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-header.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-main.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-main-media.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+</head>
+<body>
+<header class="header-wrapper">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width:70px; height: 40px;">
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="" class="header-menu">오늘의 스터디</a>
+            <a href="" class="header-menu">오늘의 카페</a>
+            <a href="" class="header-menu">FAQ</a>
+            <a href="" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div class="header-aside">
+            <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                    <span class="aside-menu-contents">
+                        <p variant="body2" class="aside-contents" color="gray900">회원가입</p>
+                    </span>
+            </a>
+            <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                    <span class="aside-menu-contents">
+                        <p variant="body2" class="aside-contents" color="gray900">로그인</p>
+                    </span>
+            </a>
+            <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                    <span class="aside-menu-contents">
+                        <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+                    </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="/buyer/order-list" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img src="https://kmong.com/img/tools/main_user_gray.png" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+
+<main class="study">
+    <div class="container width-1170 padding-side-0">
+        <div class="list-container">
+            <div class="margin-top-20">
+                <div class="flex">
+                    <aside class="myStudy-list-wrapper" style="width: 184px; height: 250px;">
+                        <div class="myStudy-title">
+                            <div class="userprofile-info-wrapper">
+                                <!-- ===================== 미니 프로필 : 클릭하면 내 스터디 페이지로 이동하기 ===================== -->
+                                <a href="" class="plain">
+                                    <div class="thumbnail-wrapper position-relative">
+                                        <div class="member-profile-image">
+                                            <!-- ===================== 사용자 프로필 이미지 ===================== -->
+                                            <img src="https://kmong.com/img/tools/default_profile@2x.png" title="사용자 이름" class="profile-image img-responsive" style="width: 130px; margin: 20px 27px;" >
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="username-wrapper NGM" style="text-align: center;">
+                                    <!-- ===================== 사용자 이름 나오는 부분 : 클릭하면 내 스터디 페이지로 이동하기 ===================== -->
+                                    <a href="" class="plain">정유진</a>
+                                </div>
+                                <div class="btn-wrapper">
+                                    <!-- ===================== 스터디 개설하기 페이지로 이동하기 ===================== -->
+                                    <button class="btn btn-navy" style="margin: 10px 0px; width: 184px;" >스터디 개설하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="study-list-container">
+                        <div class="right-menu-content-wrapper position-relative">
+                            <!-- ===================== 스터디 검색하는 부분 ===================== -->
+                            <div class="filter-wrapper">
+                                <div class="search-form-wrapper">
+                                    <div class="study-search-form">
+                                        <div class="search-group text-center cursor">
+                                            <div class="index-search-bar">
+                                                <input placeholder="스터디를 검색하세요." id="search" type="text" maxlength="40" autocomplete="off" class="search-input">
+                                                <div id="search-btn" class="search-btn flex flex-center-center" style="top: 0px; right: 0px;">
+                                                    <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/ic_search.png" alt="검색" class="cursor" style="vertical-align: inherit; height: 20px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ===================== 스터디 리스트 뿌려지는 부분 ===================== -->
+                            <div class="study-list-group-wrapper">
+                                <a href="" class="study-menu-wrapper">
+                                    <div class="study-info-wrapper">
+                                        <div class="date-chip-wrapper">
+                                            <div class="date-chip">
+                                                <div class="date-chip-content font-medium date-chip-red">
+                                                    <!-- ===================== 스터디 마감 D-day 표시되는 부분 ===================== -->
+                                                    <span>D-2</span>
+                                                </div>
+                                            </div>
+                                            <!-- ===================== 스터디 마감 제목 나오는 부분 ===================== -->
+                                            <span class="study-title">네이버 개발자와 함께하는 Spring Boot 스터디</span>
+                                        </div>
+                                        <!-- ===================== 스터디 카테고리: 근데 이건 봐서 뺄 수 있을거 같앙!! 언니 하고 싶은대로 해 ㅎㅎ ===================== -->
+                                        <div class="study-breadcrumb">IT·프로그래밍 / 프로그램 개발</div>
+                                        <!-- ===================== 상세 프로젝트 내용 ===================== -->
+                                        <div class="study-main-content">
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </div>
+
+                                        <div class="study-detail-info">
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 마감일</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 모집 마감일 ===================== -->
+                                                    <span style="font-weight: 450;">2023년 9월 4일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">진행 기간(일)</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 진행 기간나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">180일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 인원</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 모집 인원 나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">5인</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="study-main-image-wrapper">
+                                        <!-- ===================== 스터디 썸네일 넣는 부분 =====================  -->
+                                        <div class="study-main-image border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ===================== 스크랩 있는 부분 ===================== -->
+                            <div class="bookmark">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark.png" style="height: 17px; width: 17px; cursor: pointer;" class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <div class="study-list-group-wrapper">
+                                <a href="" class="study-menu-wrapper">
+                                    <div class="study-info-wrapper">
+                                        <div class="date-chip-wrapper">
+                                            <div class="date-chip">
+                                                <div class="date-chip-content font-medium date-chip-red">
+                                                    <!-- ===================== 스터디 마감 D-day 표시되는 부분 ===================== -->
+                                                    <span>D-7</span>
+                                                </div>
+                                            </div>
+                                            <!-- ===================== 스터디 마감 제목 나오는 부분 ===================== -->
+                                            <span class="study-title">카카오 개발자와 함께하는 PHP 스터디</span>
+                                        </div>
+                                        <!-- ===================== 스터디 카테고리: 근데 이건 봐서 뺄 수 있을거 같앙!! 언니 하고 싶은대로 해 ㅎㅎ ===================== -->
+                                        <div class="study-breadcrumb">프로그램 개발</div>
+                                        <!-- ===================== 상세 프로젝트 내용 ===================== -->
+                                        <div class="study-main-content">
+                                            안녕하세요! 카카오 개발자와 함꼐하는 PHP 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </div>
+
+                                        <div class="study-detail-info">
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 마감일</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 모집 마감일 ===================== -->
+                                                    <span style="font-weight: 450;">2023년 9월 8일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">진행 기간(일)</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 진행 기간나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">200일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 인원</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 모집 인원 나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">6인</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="study-main-image-wrapper">
+                                        <!-- ===================== 스터디 썸네일 넣는 부분 =====================  -->
+                                        <div class="study-main-image border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ===================== 스크랩 있는 부분 ===================== -->
+                            <div class="bookmark">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark.png" style="height: 17px; width: 17px; cursor: pointer;" class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <div class="study-list-group-wrapper">
+                                <a href="" class="study-menu-wrapper">
+                                    <div class="study-info-wrapper">
+                                        <div class="date-chip-wrapper">
+                                            <div class="date-chip">
+                                                <div class="date-chip-content font-medium date-chip-red">
+                                                    <!-- ===================== 스터디 마감 D-day 표시되는 부분 ===================== -->
+                                                    <span>D-15</span>
+                                                </div>
+                                            </div>
+                                            <!-- ===================== 스터디 마감 제목 나오는 부분 ===================== -->
+                                            <span class="study-title">함께하는 React-native 스터디</span>
+                                        </div>
+                                        <!-- ===================== 스터디 카테고리: 근데 이건 봐서 뺄 수 있을거 같앙!! 언니 하고 싶은대로 해 ㅎㅎ ===================== -->
+                                        <div class="study-breadcrumb">React</div>
+                                        <!-- ===================== 상세 프로젝트 내용 ===================== -->
+                                        <div class="study-main-content">
+                                            React 함께 공부하고 싶으신 분들을 모집합니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </div>
+
+                                        <div class="study-detail-info">
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 마감일</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 모집 마감일 ===================== -->
+                                                    <span style="font-weight: 450;">2023년 9월 16일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">진행 기간(일)</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 진행 기간나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">100일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 인원</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 모집 인원 나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">8인</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="study-main-image-wrapper">
+                                        <!-- ===================== 스터디 썸네일 넣는 부분 =====================  -->
+                                        <div class="study-main-image border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ===================== 스크랩 있는 부분 ===================== -->
+                            <div class="bookmark">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark.png" style="height: 17px; width: 17px; cursor: pointer;" class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <div class="study-list-group-wrapper">
+                                <a href="" class="study-menu-wrapper">
+                                    <div class="study-info-wrapper">
+                                        <div class="date-chip-wrapper">
+                                            <div class="date-chip">
+                                                <div class="date-chip-content font-medium date-chip-red">
+                                                    <!-- ===================== 스터디 마감 D-day 표시되는 부분 ===================== -->
+                                                    <span>D-27</span>
+                                                </div>
+                                            </div>
+                                            <!-- ===================== 스터디 마감 제목 나오는 부분 ===================== -->
+                                            <span class="study-title">넷플릭스 개발자와 함께하는 Spring Boot 스터디</span>
+                                        </div>
+                                        <!-- ===================== 스터디 카테고리: 근데 이건 봐서 뺄 수 있을거 같앙!! 언니 하고 싶은대로 해 ㅎㅎ ===================== -->
+                                        <div class="study-breadcrumb">IT·프로그래밍 / 프로그램 개발</div>
+                                        <!-- ===================== 상세 프로젝트 내용 ===================== -->
+                                        <div class="study-main-content">
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            넷플릭스 개발자와 함꼐하는 Spring Boot 공부에 참여하고 싶으신 분들 모집합니다!
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </div>
+
+                                        <div class="study-detail-info">
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 마감일</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 모집 마감일 ===================== -->
+                                                    <span style="font-weight: 450;">2023년 9월 28일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">진행 기간(일)</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 진행 기간나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">180일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 인원</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 모집 인원 나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">5인</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="study-main-image-wrapper">
+                                        <!-- ===================== 스터디 썸네일 넣는 부분 =====================  -->
+                                        <div class="study-main-image border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ===================== 스크랩 있는 부분 ===================== -->
+                            <div class="bookmark">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark.png" style="height: 17px; width: 17px; cursor: pointer;" class="bookmark-add-color">
+                                </div>
+                            </div>
+                            <div class="study-list-group-wrapper">
+                                <a href="" class="study-menu-wrapper">
+                                    <div class="study-info-wrapper">
+                                        <div class="date-chip-wrapper">
+                                            <div class="date-chip">
+                                                <div class="date-chip-content font-medium date-chip-red">
+                                                    <!-- ===================== 스터디 마감 D-day 표시되는 부분 ===================== -->
+                                                    <span>D-2</span>
+                                                </div>
+                                            </div>
+                                            <!-- ===================== 스터디 마감 제목 나오는 부분 ===================== -->
+                                            <span class="study-title">네이버 개발자와 함께하는 Spring Boot 스터디</span>
+                                        </div>
+                                        <!-- ===================== 스터디 카테고리: 근데 이건 봐서 뺄 수 있을거 같앙!! 언니 하고 싶은대로 해 ㅎㅎ ===================== -->
+                                        <div class="study-breadcrumb">IT·프로그래밍 / 프로그램 개발</div>
+                                        <!-- ===================== 상세 프로젝트 내용 ===================== -->
+                                        <div class="study-main-content">
+                                            안녕하세요! Spring Boot 스터디에서 스터디원을 모집합니다.
+                                            IT 업계에서 근무하거나 공부하는 사람들과 함께 모여서 정보 공유와 개인 공부를 목적으로 개설된 스터디입니다.
+                                            스터디는 프로젝트를 수행하는 방식으로 진행하고자 합니다.
+                                            혹시 관심 있으신 분은 지원 부탁드립니다.
+                                        </div>
+
+                                        <div class="study-detail-info">
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 마감일</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 모집 마감일 ===================== -->
+                                                    <span style="font-weight: 450;">2023년 8월 27일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">진행 기간(일)</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 스터디 진행 기간나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">180일</span>
+                                                </div>
+                                            </div>
+                                            <div class="study-detail-divider"></div>
+                                            <div class="study-detail">
+                                                <div class="study-detail-label">모집 인원</div>
+                                                <div class="study-detail-value">
+                                                    <!-- ===================== 모집 인원 나오는 부분 ===================== -->
+                                                    <span style="font-weight: 450;">5인</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="study-main-image-wrapper">
+                                        <!-- ===================== 스터디 썸네일 넣는 부분 =====================  -->
+                                        <div class="study-main-image border-opacity" style="background-image: url(/images/study-images/study-main.png);"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- ===================== 스크랩 있는 부분 ===================== -->
+                            <div class="bookmark">
+                                <div class="bookmark-icon">
+                                    <img src="/images/study-images/bookmark.png" style="height: 17px; width: 17px; cursor: pointer;" class="bookmark-add-color">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- ===================== 스터디 페이지 번호 ===================== -->
+                        <div class="study-menu-pagination" style="margin-top:200px;">
+                            <ul class="pagination">
+                                <li class="disabled" style="cursor: pointer;"><a tabindex="-1">&lt;</a></li>
+                                <li class="page-item"><a tabindex="0" class="color-style number-color">1</a></li>
+                                <li class="page-item"><a tabindex="0" class="color-style">2</a></li>
+                                <li class="page-item"><a tabindex="0" class="color-style">3</a></li>
+                                <li class="page-item"><a tabindex="0" class="color-style">4</a></li>
+                                <li class="page-item"><a tabindex="0" class="color-style">5</a></li>
+                                <li class="page-button"><a tabindex="0" class="button-color-style">&gt;</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- 미디어 쿼리 부분 -->
+<main class="media-main">
+    <div>
+        <section class="media-menu-bar">
+            <div class="media-menu-bar-wrapper">
+                <div class="media-menu-content">
+                    <!-- ===================== 메인 화면으로 이동 ===================== -->
+                    <a href="">홈</a>
+                </div>
+                <div class="media-menu-content all-content-color">
+                    <!-- ===================== 내 스터디 페이지로 이동 ===================== -->
+                    <a href="">내 스터디</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-main-study">
+            <article class="media-main-list">
+                <a href="" class="study-list-wrapper">
+                    <div class="media-study-list">
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <!-- ===================== 스터디 마감 D-day 나오는 부분 ===================== -->
+                                <p>D-2</p>
+                            </div>
+                            <!-- ===================== 스터디 제목 및 카테고리 ===================== -->
+                            <h2 class="media-study-title">네이버 개발자와 함께하는 Spring Boot 스터디</h2>
+                            <p class="media-study-content">IT·프로그래밍</p>
+                        </div>
+                        <div class="media-period-wrapper">
+                            <!-- ===================== 스터디 썸네일 ===================== -->
+                            <img src="/images/study-images/study-main.png" width="96" height="96" decoding="async" data-nimg="1" loading="lazy" style="color: transparent; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <!-- ===================== 스터디 모집 기간, 진행 기간, 모집 인원 넣기 ===================== -->
+                    <div class="content1-wrapper">
+                        <div class="content1">
+                            <div>2023년 8월 27일</div>
+                            <span>모집 기간</span>
+                        </div>
+                        <div class="content1">
+                            <div>180일</div>
+                            <span>진행 기간</span>
+                        </div>
+                        <div class="content1">
+                            <div>5인</div>
+                            <span>모집 인원</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            <img src="/images/study-images/bookmark.png" style="height: 15px; width: 15px; cursor: pointer;" class="bookmark-add-color media-bookmark">
+        </section>
+
+        <div class="shortCut-wrapper">
+            <a role="link" color="yellow" href="" class="shortCut-content">
+                <span>스터디 개설하기</span>
+            </a>
+        </div>
+    </div>
+
+</main>
+
+
+<footer class="footer">
+    <div class="footer-inner">
+        <ol style="width:45%; padding: 0;">
+            <b>(주)OH!스카</b> | 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층 | 대표 : 정해승<br>
+            개인정보보호책임 : 배정수 | 사업자등록번호 : 815-88-00171<br>
+            통신판매업신고 : 2015 - 서울강남 - 03148호 | 02-2135-2949<br>
+            koreais@koreaedugroup.com
+        </ol>
+        <ol><a href="">오늘의 스터디</a></ol>
+        <ol><a href="">오늘의 카페</a></ol>
+        <ol><a href="">FAQ</a></ol>
+        <ol><a href="">OH!스카 소개</a></ol>
+    </div>
+    <div class="footer-media">
+        &nbsp;&nbsp; (주)OH!스카 &nbsp;&nbsp;&nbsp;
+        <a href="">오늘의 스터디</a>&nbsp;
+        <a href="">오늘의 카페</a>&nbsp;
+        <a href="">FAQ</a>&nbsp;
+        <a href="">OH!스카 소개</a>&nbsp;
+    </div>
+</footer>
+
+<!-- footer 미디어 쿼리 부분 -->
+<footer class="media-footer">
+    <div class="media-footer-wrapper" style="margin-bottom: 15px;">
+        <h5 class="media-footer-content-wrapper">
+            <a href="" class="media-footer-content">오늘의 카페</a>
+        </h5>
+        <h5 class="media-footer-content-wrapper">
+            <a href="" class="media-footer-content">FAQ</a>
+        </h5>
+        <h5 class="media-footer-content-wrapper">
+            <a href="" class="media-footer-content">Oh!스카 소개</a>
+        </h5>
+    </div>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script th:inline="javascript">
+    const pagination = [[${pagination}]],
+        search = [[${search}]];
+</script>
+<script src="/js/study/study-main.js"></script>
+
+</html>

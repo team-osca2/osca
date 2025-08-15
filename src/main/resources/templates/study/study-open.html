@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>study-open</title>
+    <link rel="stylesheet" href="/css/study/study-main/study-header.css" />
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css" />
+    <link rel="stylesheet" href="/css/study/study-open/study-open-main.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+</head>
+<body>
+<header class="header-wrapper">
+    <section class="header-container">
+        <a href="/" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width: 70px; height: 40px" />
+        </a>
+        <div>
+            <span class="header-line"></span>
+            <a href="" class="header-menu">오늘의 스터디</a>
+            <a href="" class="header-menu">오늘의 카페</a>
+            <a href="" class="header-menu">FAQ</a>
+            <a href="" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="header-aside">
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">회원가입</p>
+            </span>
+            </a>
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">로그인</p>
+            </span>
+            </a>
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+            </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="/buyer/order-list" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img
+                                        src="https://kmong.com/img/tools/main_user_gray.png"
+                                        alt="avatar"
+                                        shape="0"
+                                        loading="lazy"
+                                        class="profile-img"
+                                        style="height: 32px; width: 32px"
+                                />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<div class="bodyall">
+    <div class="body">
+        <div class="body-wrapper">
+            <main class="study-open">
+                <form action="/study/write" method="post">
+
+                <div class="study-open-top">
+                    <h2 class="study-open-title">오늘의 스터디 개설하기</h2>
+                    <button class="study-register-button" >
+                        스터디 등록하기
+                    </button>
+                </div>
+
+                <div class="border" th:object="${studyVO}">
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 제목 입력하기 -->
+                            <span class="study-content-title">스터디 제목</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <input type="text" class="study-content-input" th:field="*{studyTitle}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label class="study-content-title-label">
+                            <!-- 스터디 상세 내용 입력하기 -->
+                            <span class="study-content-title">스터디 상세 내용</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="height: 200px;">
+                          <textarea type="text" class="study-content-input" style="resize: none;" th:field="*{studyContents}">
+
+                          </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 진행 방식 입력하기 -->
+                            <span class="study-content-title">스터디 진행 방식</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="height: 200px;">
+                                <textarea type="text" class="study-content-input" style="resize: none;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label for="username" class="study-content-title-label">
+                            <!-- 스터디 진행 카페 입력하기 -->
+                            <span class="study-content-title">스터디 진행 카페</span>
+                        </label>
+                        <section class="skills">
+                            <div class="skills-wrapper">
+                                <div class="skills-container">
+                                    <div class="skills-scroll">
+                                        <ul class="it-skills">
+                                            <li class="skill-name-list"><div class="skill-name">서울</div></li>
+                                            <li class="skill-name-list"><div class="skill-name">경기</div></li>
+                                            <li class="skill-name-list"><div class="skill-name">인천</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">대전</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">대구</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">부산</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">광주</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">울산</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">강원</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">전남</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">전북</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">경남</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">경북</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">충남</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">충북</div></li>
+                                            <li class="skill-name-list"> <div class="skill-name">제주</div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="selected-skills-list">
+                                        <div class="delete-box">
+                                            <button role="button" color="denim" type="button" class="delete-button2">
+                                                <span>삭제</span>
+                                            </button>
+                                        </div>
+                                        <div class="skills-selected-box">
+                                            <!-- <div class="skills-each">
+                                              <div shape="rounded" label="delete" class="selected-skills-name">
+                                                Java<div type="button" class="button-x">
+                                                  <span role="img" color="#c8cad2" rotate="0" class="span-x"
+                                                    ><svg
+                                                      width="17"
+                                                      height="17"
+                                                      viewBox="0 0 24 24"
+                                                      fill="currentColor"
+                                                      focusable="false"
+                                                      preserveAspectRatio="xMidYMid meet"
+                                                      class="svg-x"
+                                                    >
+                                                      <path
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        d="M6.34314575,4.92893219 L12.000039,10.585039 L17.6568542,4.92893219 C18.0473785,4.5384079 18.6805435,4.5384079 19.0710678,4.92893219 C19.4615921,5.31945648 19.4615921,5.95262146 19.0710678,6.34314575 L13.415039,12.000039 L19.0710678,17.6568542 C19.4615921,18.0473785 19.4615921,18.6805435 19.0710678,19.0710678 C18.6805435,19.4615921 18.0473785,19.4615921 17.6568542,19.0710678 L12.000039,13.415039 L6.34314575,19.0710678 C5.95262146,19.4615921 5.31945648,19.4615921 4.92893219,19.0710678 C4.5384079,18.6805435 4.5384079,18.0473785 4.92893219,17.6568542 L10.585039,12.000039 L4.92893219,6.34314575 C4.5384079,5.95262146 4.5384079,5.31945648 4.92893219,4.92893219 C5.31945648,4.5384079 5.95262146,4.5384079 6.34314575,4.92893219 Z"
+                                                      ></path></svg
+                                                  ></span>
+                                                </div>
+                                              </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 추가 공지 사항 입력하기 -->
+                            <span class="study-content-title">추가 공지 사항</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content" style="height: 200px;">
+                                <textarea type="text" class="study-content-input" style="resize: none;"></textarea>
+                            </div>
+                        </div>
+                        <ul class="detail-wrapper">
+                            <li>
+                                * 추가로 원하시는 내용을 자유롭게 작성해주세요.
+                                <br>
+                                * 오픈 채팅방 아이디 등
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 진행 기간 입력하기 -->
+                            <span class="study-content-title">스터디 진행 기간(일)</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <input type="text" class="study-content-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 모집 인원 입력하기 -->
+                            <span class="study-content-title">스터디 모집 인원(명)</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <input type="number" min='0' class="study-content-input" th:field="*{studyTotal}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 모집 마감일 입력하기 -->
+                            <span class="study-content-title">스터디 모집 마감일</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <input type="date" class="study-content-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="study-info-wrapper">
+                        <label  class="study-content-title-label">
+                            <!-- 스터디 사진 추가하기 -->
+                            <span class="study-content-title">스터디 사진</span>
+                        </label>
+                        <div class="study-content-wrapper">
+                            <div class="study-content">
+                                <input type="file" class="study-content-input" id="photo-file" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="media-study-register-button">
+                    스터디 등록하기
+                </button>
+                </form>
+
+            </main>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="footer-inner">
+        <ol style="width: 45%; padding: 0">
+            <b>(주)OH!스카</b>
+            | 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층 | 대표 : 정해승<br />
+            개인정보보호책임 : 배정수 | 사업자등록번호 : 815-88-00171<br />
+            통신판매업신고 : 2015 - 서울강남 - 03148호 | 02-2135-2949<br />
+            koreais@koreaedugroup.com
+        </ol>
+        <ol>
+            <a href="">오늘의 스터디</a>
+        </ol>
+        <ol>
+            <a href="">오늘의 카페</a>
+        </ol>
+        <ol>
+            <a href="">FAQ</a>
+        </ol>
+        <ol>
+            <a href="">OH!스카 소개</a>
+        </ol>
+    </div>
+    <div class="footer-media">
+        &nbsp;&nbsp; (주)OH!스카 &nbsp;&nbsp;&nbsp;
+        <a href="">오늘의 스터디</a>&nbsp; <a href="">오늘의 카페</a>&nbsp; <a href="">FAQ</a>&nbsp;
+        <a href="">OH!스카 소개</a>&nbsp;
+    </div>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/js/study/study-open.js"></script>
+</html>

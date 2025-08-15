@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/mainPage/main_page.css">
+    <link rel="stylesheet" href="/css/mainPage/main_page_login_modal.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+    <title>오스카</title>
+</head>
+<body>
+<div id="main-page">
+
+    <input type="hidden" class="logined" th:value="${login}">
+
+
+    <!-- 헤더 시작 -->
+    <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+    <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+    <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+
+    <!-- 헤더 끝 -->
+
+    <!-- 메인 영역 시작 -->
+    <div class="main-contents-container">
+        <main class="main-contents-wrapper">
+            <section class="banner-area">
+                <div class="slide-wrapper">
+                    <div class="slide-box">
+                        <div class="slide-body">
+                            <div class="slick-slider" dir="ltr">
+                                <div class="slick-list" style="padding:0px 50px">
+                                    <!-- width이랑 translate결정 할 곳 기본 -62px-->
+                                    <div class="slick-track" draggable="true">
+
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="1번째 배너 이미지" src="/images/banners/001.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="2번째 배너 이미지" src="/images/banners/002.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="3번째 배너 이미지" src="/images/banners/003.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="4번째 배너 이미지" src="/images/banners/004.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="5번째 배너 이미지" src="/images/banners/005.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div style="outline: none;" class="slick-slide">
+                                            <div>
+                                                <a href="#" style="width:100%;display:inline-block">
+                                                    <div class="bannerBlur"></div>
+                                                    <img alt="6번째 배너 이미지" src="/images/banners/006.png" width="700" height="280" decoding="async" class="banner-img" loading="lazy" style="color:transparent">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-area">
+                    <button class="prev-button">
+                            <span role="img" class="prev-svg-box">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="prev-svg">
+                                    <path xmlns="http://www.w3.org/2000/svg" d="M9.41421356,12 L15.7071068,5.70710678 C16.0976311,5.31658249 16.0976311,4.68341751 15.7071068,4.29289322 C15.3165825,3.90236893 14.6834175,3.90236893 14.2928932,4.29289322 L7.29289322,11.2928932 C6.90236893,11.6834175 6.90236893,12.3165825 7.29289322,12.7071068 L14.2928932,19.7071068 C14.6834175,20.0976311 15.3165825,20.0976311 15.7071068,19.7071068 C16.0976311,19.3165825 16.0976311,18.6834175 15.7071068,18.2928932 L9.41421356,12 Z"></path>
+                                </svg>
+                            </span>
+                    </button>
+                    <div class="current-banner-cnt-box">
+                        <span class="current-cnt">01</span>
+                        <span class="total-cnt">
+                                <span>/</span>
+                                <span>06</span>
+                            </span>
+                    </div>
+                    <button class="next-button">
+                            <span role="img" class="next-svg-box">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="next-svg">
+                                    <path xmlns="http://www.w3.org/2000/svg" d="M9.41421356,12 L15.7071068,5.70710678 C16.0976311,5.31658249 16.0976311,4.68341751 15.7071068,4.29289322 C15.3165825,3.90236893 14.6834175,3.90236893 14.2928932,4.29289322 L7.29289322,11.2928932 C6.90236893,11.6834175 6.90236893,12.3165825 7.29289322,12.7071068 L14.2928932,19.7071068 C14.6834175,20.0976311 15.3165825,20.0976311 15.7071068,19.7071068 C16.0976311,19.3165825 16.0976311,18.6834175 15.7071068,18.2928932 L9.41421356,12 Z" transform="translate(11.500000, 12.000000) scale(-1, 1) translate(-11.500000, -12.000000) "></path>
+                                </svg>
+                            </span>
+                    </button>
+                </div>
+            </section>
+            <div class="main-contents-area">
+                <div>
+
+                    <section class="most-popular">
+                        <div class="most-popular-list">
+                            <a href="/study" class="most-popular-item-area">
+                                <article class="most-popular-item-box">
+                                    <div class="most-popular-item-title">
+                                        IT 스터디
+                                        <h3 class="most-popular-item-subtitle">오늘의 스터디</h3>
+                                    </div>
+                                    <img src="/images/main-page/main1-1.png" width="217" height="300" decoding="async" class="most-popular-item-img">
+                                </article>
+                            </a>
+                            <a href="/cafe" class="most-popular-item-area">
+                                <article class="most-popular-item-box">
+                                    <div class="most-popular-item-title">
+                                        카공 카페
+                                        <h3 class="most-popular-item-subtitle">오늘의 카페</h3>
+                                    </div>
+                                    <img src="/images/main-page/main1-2.png" width="217" height="300" decoding="async" class="most-popular-item-img">
+                                </article>
+                            </a>
+                            <a href="" class="most-popular-item-area">
+                                <article class="most-popular-item-box">
+                                    <div class="most-popular-item-title">
+                                        내 스터기 가기
+                                        <h3 class="most-popular-item-subtitle">내 스터디</h3>
+                                    </div>
+                                    <img src="/images/main-page/main1-3.png" width="217" height="300" decoding="async" class="most-popular-item-img">
+                                </article>
+                            </a>
+                            <a href="/FAQ/FAQ-main" class="most-popular-item-area">
+                                <article class="most-popular-item-box">
+                                    <div class="most-popular-item-title">
+                                        자주 묻는 질문
+                                        <h3 class="most-popular-item-subtitle">FAQ</h3>
+                                    </div>
+                                    <img src="/images/main-page/main1-4.png" width="217" height="300" decoding="async" class="most-popular-item-img">
+                                </article>
+                            </a>
+                            <a href="/introduction" class="most-popular-item-area">
+                                <article class="most-popular-item-box">
+                                    <div class="most-popular-item-title">
+                                        소개
+                                        <h3 class="most-popular-item-subtitle">Oh!스카 소개</h3>
+                                    </div>
+                                    <img src="/images/main-page/main1-5.png" width="217" height="300" decoding="async" class="most-popular-item-img">
+                                </article>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="about-page">
+                        <div class="about-page-wrapper">
+                            <div class="about-page-contents-box">
+                                <div class="about-page-contents-title-area">
+                                    <h2 class="about-page-contents-title">내게 필요한 모든 IT 스터디</h2>
+                                    <p class="about-page-contents-subtitle">누적 거래 500건!<br>다양한 IT 스터디와 카페를<br>Oh!스카에서 찾아보세요.</p>
+                                </div>
+                                <div class="about-page-contents-video-container">
+                                    <div class="about-page-contents-video-wrapper">
+                                        <img src="/images/main-page/main2.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="page-point">
+                                <li class="page-point-item">
+                                    <h3 class="page-point-item-title">다양한 스터디</h3>
+                                    <p class="page-point-item-contents">IT 전문가와 함께 하는 스터디로<br/>IT기술을 상향시킬 수 있어요.</p>
+                                    <div class="page-point-item-number">
+                                        <img alt="1번째 카드" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-01%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-01%403x.png&w=2880&q=75" width="28" height="28" decoding="async" loading="lazy" style="color: transparent;">
+                                    </div>
+                                </li>
+                                <li class="page-point-item">
+                                    <h3 class="page-point-item-title">다양한 카페</h3>
+                                    <p class="page-point-item-contents">스터디를 진행할 수 있는 다양한 카페를<br/>지역별로 알려줘요.</p>
+                                    <div class="page-point-item-number">
+                                        <img alt="2번째 카드" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-02%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-02%403x.png&w=2880&q=75" width="28" height="28" decoding="async" loading="lazy" style="color: transparent;">
+                                    </div>
+                                </li>
+                                <li class="page-point-item">
+                                    <h3 class="page-point-item-title">만족스러운 결과물</h3>
+                                    <p class="page-point-item-contents">평균 만족도 98.7%<br/>많은 회원들이 만족하고 있어요.</p>
+                                    <div class="page-point-item-number">
+                                        <img alt="3번째 카드" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-03%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Findex%2Fcard-03%403x.png&w=2880&q=75" width="28" height="28" decoding="async" loading="lazy" style="color: transparent;">
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section class="signup-ad">
+                        <a href="/sign-up/email-type">
+                            <div class="signup-ad-body">
+                                <img src="/images/main-page/main3.png" alt="oh!스카 회원가입 하면 1,000point를 드려요!">
+                            </div>
+                        </a>
+                    </section>
+
+                    <section class="page-review">
+                        <div class="page-review-container">
+                            <h2 class="page-review-title">Oh!스카를 이용한 회원들의 생생한 후기</h2>
+                            <p class="page-review-subtitle">235만 건의 구매 후기에서 평균 만족도는 98.7%에 달했어요.</p>
+                            <section class="page-review-body">
+                                <article class="page-review-contents-area">
+                                    <div class="page-review-video-area">
+                                        <div class="page-review-video-box">
+                                            <img src="/images/main-page/main4-1.png"  width="375" height="210">
+                                        </div>
+                                    </div>
+                                    <div class="page-review-video-desc">
+                                        <div class="page-review-video-title">투썸플레이스  |</div>
+                                        <div class="page-review-video-subtitle">카페 사장님</div>
+                                    </div>
+                                    <div style="text-align: left; color: #f0f1f5;">
+                                        <br>
+                                        " 카페에서 너무 오랜 시간 공부하는 사람들 때문에
+                                        <br>
+                                        고민이 많았는데, 미리 예약을 받아서 좋았습니다.
+                                        <br>
+                                        여기에 카페 홍보까지 가능해서
+                                        <br>
+                                        많은 도움이 됐습니다."
+                                    </div>
+                                </article>
+                                <article class="page-review-contents-area">
+                                    <div class="page-review-video-area">
+                                        <div class="page-review-video-box">
+                                            <img src="/images/main-page/main4-2.png"  width="375" height="210">
+                                        </div>
+                                    </div>
+                                    <div class="page-review-video-desc">
+                                        <div class="page-review-video-title">정유진  |</div>
+                                        <div class="page-review-video-subtitle">스터디 개설자</div>
+                                    </div>
+                                    <div style="text-align: left; color: #f0f1f5;">
+                                        <br>
+                                        " 카공이 가능한 카페를 미리 알아보고
+                                        <br>
+                                        갈 수 있어서 너무 좋았어요.
+                                        <br>
+                                        oh!스카 덕분에 카페에서 눈치도 안보고
+                                        <br>
+                                        잘 공부 할 수 있었습니다."
+                                    </div>
+                                </article>
+                                <article class="page-review-contents-area">
+                                    <div class="page-review-video-area">
+                                        <div class="page-review-video-box">
+                                            <img src="/images/main-page/main4-3.png"  width="375" height="210">
+                                        </div>
+                                    </div>
+                                    <div class="page-review-video-desc">
+                                        <div class="page-review-video-title">홍길동  |</div>
+                                        <div class="page-review-video-subtitle">스터디 이용자</div>
+                                    </div>
+                                    <div style="text-align: left; color: #f0f1f5;">
+                                        <br>
+                                        " 다양한 IT 스터디를 찾아보고
+                                        <br>
+                                        참여할 수 있어서 너무 좋았습니다."
+                                    </div>
+                                </article>
+
+                            </section>
+                        </div>
+                    </section>
+
+                    <section class="page-lank" style="margin-top: 80px;">
+                        <div class="page-lank-area">
+                            <h2 class="page-lank-title">오!스카 순위</h2>
+                            <p class="page-lank-subtitle">사람들이 가장 많이 선택한 스터디와 카페에요.</p>
+                            <div class="page-lank-contents">
+                                <article class="page-lank-content">
+                                    <h3 class="page-lank-content-category">오늘의 스터디</h3>
+                                    <div class="page-lank-crown">
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 1위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-01%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-01%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong id="No1StudyTitle" class="page-lank-info-detail-title">
+                                                    네이버 개발자와 함께 하는 spring</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">IT 프로그래밍</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div id="No1StudyImage" class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/studyDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div id="studyRank" class="page-lank-top">
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 2위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-02%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-02%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">카카오 개발자와 함께 하는 spring 스터디</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">IT 프로그래밍</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/studyDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 3위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-03%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-03%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">라인 개발자와 함께 하는 spring 스터디</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">IT 프로그래밍</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/studyDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 4위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-04%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-04%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">쿠팡 개발자와 함께 하는 spring 스터디</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">IT 프로그래밍</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/studyDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 5위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-05%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-05%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">배민 개발자와 함께 하는 spring 스터디</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">IT 프로그래밍</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/studyDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                </article>
+                                <article class="page-lank-content">
+                                    <h3 class="page-lank-content-category">오늘의 카페</h3>
+                                    <div class="page-lank-crown">
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 1위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-01%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-01%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong id="No1CafeName" class="page-lank-info-detail-title">투썸플레이스</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">서울</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div id="No1CafeImage" class="page-lank-info-detail-img-box">
+                                                    <img  src="/images/main-page/default/cafeDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                    <div id="cafeRank" class="page-lank-top">
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 2위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-02%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-02%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">할리스</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">서울</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/cafeDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 3위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-03%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-03%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">이디야 커피</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">서울</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/cafeDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 4위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-04%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-04%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">스타벅스</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">서울</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/cafeDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                        <div class="boundary"></div>
+                                        <article class="page-lank-info">
+                                            <img alt="로고 디자인 카테고리의 5위 랭킹 아이콘" srcset="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-05%403x.png&w=2880&q=75 1x" src="https://kmong.com/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fdesktop%2Fpages%2Fmain%2Franking-05%403x.png&w=2880&q=75" width="40" height="40" decoding="async" loading="lazy" style="color: transparent;">
+                                            <div class="page-lank-info-detail">
+                                                <strong class="page-top-lank-info-detail-title">바나프레소</strong>
+                                                <a class="page-lank-info-detail-subtitle-link" href="#">
+                                                    <span class="page-lank-info-detail-subtitle">서울</span>
+                                                </a>
+                                            </div>
+                                            <a href="#" class="page-lank-info-detail-icon">
+                                                <div class="page-lank-info-detail-img-box">
+                                                    <img src="/images/main-page/default/cafeDefaultImage.jfif" shape="0" loading="lazy" class="page-lank-info-detail-img">
+                                                </div>
+                                            </a>
+                                        </article>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="page-ad">
+                        <a href="/study" class="page-ad-link">
+                            <img alt="크몽 전문가 등록하고 수익을 만들어 보세요" title="크몽 전문가 등록하고 수익을 만들어 보세요" srcset="/images/main-page/main5.png" width="1168" height="160" decoding="async" loading="lazy" style="color: transparent;">
+                        </a>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- 메인 영역 끝 -->
+
+    <!-- 푸터 시작 -->
+    <footer th:replace="~{/fix/footer :: footer}"></footer>
+    <!-- 푸터 끝 -->
+
+    <!-- 로그인 모달창 -->
+    <!--<link rel="stylesheet" href="main_page_login_modal.css">-->
+    <div class="modal-root" >
+        <div class="modal-background"></div>
+        <div role="dialog" class="modal-wrapper">
+            <div class="modal-container">
+                <div id="modal-content" class="modal-content">
+                    <div class="close-button-box">
+                        <button role="button" class="close-button">
+                            <span class="svg-wrapper">
+                                <span role="img" class="svg-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" focusable="false" preserveAspectRatio="xMidYMid meet" class="svg">
+                                        <path xmlns="http://www.w3.org/2000/svg" d="M6.34314575,4.92893219 L12.000039,10.585039 L17.6568542,4.92893219 C18.0473785,4.5384079 18.6805435,4.5384079 19.0710678,4.92893219 C19.4615921,5.31945648 19.4615921,5.95262146 19.0710678,6.34314575 L13.415039,12.000039 L19.0710678,17.6568542 C19.4615921,18.0473785 19.4615921,18.6805435 19.0710678,19.0710678 C18.6805435,19.4615921 18.0473785,19.4615921 17.6568542,19.0710678 L12.000039,13.415039 L6.34314575,19.0710678 C5.95262146,19.4615921 5.31945648,19.4615921 4.92893219,19.0710678 C4.5384079,18.6805435 4.5384079,18.0473785 4.92893219,17.6568542 L10.585039,12.000039 L4.92893219,6.34314575 C4.5384079,5.95262146 4.5384079,5.31945648 4.92893219,4.92893219 C5.31945648,4.5384079 5.95262146,4.5384079 6.34314575,4.92893219 Z"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="modal-box">
+                        <div class="modal-area">
+                            <div class="modal-header">
+                                <img src="/images/logo.png" style="width: 70px; height: 40px">
+                            </div>
+                            <form id="login-form" action="/login" method="POST" novalidate class="modal-body">
+                                <div class="email-input-area">
+                                    <div class="input-box">
+                                        <input type="email" required="" placeholder="이메일을 입력해 주세요." name="memberEmail" autocomplete="username" class="input-info" value="">
+                                    </div>
+                                    <div class="error-log-area">
+                                        <p class="error-log-box">
+                                        <p id="email-error-log" class="error-log"></p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="password-input-area">
+                                    <div class="input-box">
+                                        <input type="password" required="" placeholder="비밀번호를 입력해 주세요." name="memberPassword" autocomplete="current-password" class="input-info" value="">
+                                    </div>
+                                    <div class="error-log-area">
+                                        <p class="error-log-box">
+                                        <p id="password-error-log" class="error-log"></p>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="modal-login-button-area">
+                                    <button role="button" type="submit" class="modal-login-button">
+                                        <span class="login-button-content">로그인</span>
+                                    </button>
+                                </div>
+                                <div class="forgot-account-area">
+                                    <div class="forgot-account-box">
+                                        <a href="/find-account" class="forgot-account-link">
+                                            <p class="forgot-account">아이디·비밀번호 찾기</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="modal-social-login-box">
+                                <h5 class="modal-social-login-title">SNS 간편 로그인</h5>
+                                <div class="modal-social-login-container">
+                                    <a href="#" class="modal-social-login" style="background-color: rgb(30, 200, 0);">
+                                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/naver-logo_v2.png" width="24" height="24" alt="소셜 로고">
+                                    </a>
+                                    <a href="https://kauth.kakao.com/oauth/authorize?client_id=c4b51a9523682afb89b2d9dca35e3d2e&redirect_uri=
+http://localhost:10000/kakao/login&response_type=code" class="modal-social-login" style="background-color:  rgb(249, 224, 0);">
+                                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/kakao-logo_v2.png" width="24" height="24" alt="소셜 로고">
+                                    </a>
+                                    <a href="#" class="modal-social-login" style="background-color: rgb(24, 119, 242);">
+                                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/facebook-logo_v2.png" width="24" height="24" alt="소셜 로고">
+                                    </a>
+                                    <a href="#" class="modal-social-login" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(228, 229, 237);">
+                                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/google-logo_v2.png" width="24" height="24" alt="소셜 로고">
+                                    </a>
+                                    <a href="#" class="modal-social-login" style="background-color: rgb(0, 0, 0);">
+                                        <img src="https://d2v80xjmx68n4w.cloudfront.net/assets/icon/apple-logo_v2.png" width="24" height="24" alt="소셜 로고">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sign-up-box">
+                                <a href="/sign-up/email-type" class="modal-signup-link"><span class="modal-signup-link-text">회원가입</span></a>
+                                <div class="modal-event-message-box">
+                                    <p class="modal-event-message" >회원가입 하면 <b>1,000point</b>을 드려요!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript" src="/js/mainPage/login_modal.js"></script>
+<script type="text/javascript" src="/js/mainPage/main_page_login_modal.js"></script>
+<script type="text/javascript" src="/js/mainPage/main_page_banner.js"></script>
+<script th:inline="javascript">
+    let role =  "[[${session.memberRole}]]";
+    let id =  "[[${session.id}]]";
+    let mainStudyList = [[${mainStudyList}]];
+    let mainCafeList = [[${mainCafeList}]];
+
+    console.log(mainStudyList);
+    console.log(mainCafeList);
+
+    // 1위 스터디
+    const $studyTitleOfStudyRankNo1 = $("#No1StudyTitle");
+    const $studyImageOfStudyRankNo1 = $("#No1StudyImage");
+    const $studyRank = $("#studyRank > article");
+
+    // 스터디 리스트 뿌리기
+    mainStudyList.forEach((element, idx) => {
+        if ( idx === 0 ) {
+            $studyTitleOfStudyRankNo1.text(element.studyTitle);
+            if (element.imageId) {
+                $studyImageOfStudyRankNo1.html(`<img src="/display?fileName=${element.imagePath}/${element.imageUuid}_${element.imageName}" alt="no.1" shape="0" loading="lazy" class="page-lank-info-detail-img">`);
+            }
+        } else {
+            $($studyRank[idx-1]).children("div").children("strong").text(element.studyTitle);
+            if (element.imageId) {
+                $($studyRank[idx-1]).children("a").children("div").html(`<img src="/display?fileName=${element.imagePath}/${element.imageUuid}_${element.imageName}" shape="0" loading="lazy" class="page-lank-info-detail-img">`);
+            }
+        }
+    });
+
+
+    //    카페 리스트 뿌리기
+
+    const $cafeTitleOfStudyRankNo1 = $("#No1CafeName");
+    const $cafeImageOfStudyRankNo1 = $("#No1CafeImage");
+    const $cafeRank = $("#cafeRank > article");
+
+    console.log($cafeImageOfStudyRankNo1);
+    console.log($cafeTitleOfStudyRankNo1);
+
+    mainCafeList.forEach((element, idx) => {
+        if ( idx === 0 ) {
+            $cafeTitleOfStudyRankNo1.text(element.cafeName);
+            if (element.imageId) {
+                $cafeImageOfStudyRankNo1.html(`<img src="/display?fileName=${element.imagePath}/${element.imageUuid}_${element.imageName}" alt="no.1" shape="0" loading="lazy" class="page-lank-info-detail-img">`);
+            }
+        } else {
+            $($cafeRank[idx-1]).children("div").children("strong").text(element.cafeName);
+            if (element.imageId) {
+                $($cafeRank[idx-1]).children("a").children("div").html(`<img src="/display?fileName=${element.imagePath}/${element.imageUuid}_${element.imageName}" shape="0" loading="lazy" class="page-lank-info-detail-img">`);
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

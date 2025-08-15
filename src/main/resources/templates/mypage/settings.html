@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleag.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/mypage/settings.css"/>
+    <link rel="stylesheet" href="/css/study/study-main/study-footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png"/>
+    <title>계정관리</title>
+</head>
+<body>
+<header class="header-wrapper">
+    <section class="header-container">
+        <a th:href="@{/}" aria-label="logo" class="header-logo">
+            <img src="/images/logo.png" alt="오!스카 로고" style="width: 70px; height: 40px"/> </a>
+        <div>
+            <span class="header-line"></span>
+            <a th:href="@{/study/}" class="header-menu">오늘의 스터디</a>
+            <a th:href="@{/cafe}" class="header-menu">오늘의 카페</a>
+            <a th:href="@{/FAQ/FAQ-main}" class="header-menu">FAQ</a>
+            <a th:href="@{/introduction}" class="header-menu">Oh!스카 소개</a>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="header-aside">
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">로그아웃</p>
+            </span>
+            </a>
+            <a
+                    role="link"
+                    color="default"
+                    href="/inboxes?inbox_group_id=&amp;partner_id="
+                    class="header-aside-menu"
+                    aria-expanded="false"
+            >
+            <span class="aside-menu-contents">
+              <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+            </span>
+            </a>
+            <div>
+                <div class="header-profile" aria-expanded="false">
+                    <a href="/buyer/order-list" class="profile-link">
+                        <div class="profile-wrapper">
+                            <div size="32" shape="0" role="article" class="profile-shape">
+                                <img
+                                        src="https://kmong.com/img/tools/main_user_gray.png"
+                                        alt="avatar"
+                                        shape="0"
+                                        loading="lazy"
+                                        class="profile-img"
+                                        style="height: 32px; width: 32px"
+                                />
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+<div>
+    <div class="body-div">
+        <aside class="setting-menu-box">
+            <div class="menu-title">계정 관리</div>
+            <hr class="line"/>
+            <a class="menu-list menu-selected">내 정보</a>
+            <!-- 이거 아이디가 뭔지 지정해줘야 함 -->
+            <a class="menu-list" th:href="@{/password/change}">비밀번호 변경</a>
+            <a class="menu-list" th:href="@{/setting/withdraw}">회원 탈퇴</a>
+        </aside>
+        <hr class="line-mini">
+        <main class="body-details">
+            <div class="body-details-div">
+                <h1 class="body-details-title">내 정보</h1>
+                <section class="body-settings">
+                    <section class="member-profile">
+                        <div class="profile-pic-div">
+                            <img
+                                    src="https://d2v80xjmx68n4w.cloudfront.net/members/thumbs/QfUBa1690812432.png"
+                                    alt="프로필 사진"
+                                    shape="0"
+                                    loading="lazy"
+                                    class="profile-pic"
+                            />
+                        </div>
+                        <div class="profile-change-button-div">
+                            <div class="dropzone" style="border: none; overflow: auto; padding: 4px">
+                                <button role="button" class="profile-change-button">
+                      <span>
+                        <label class="profile-label"
+                        >프로필 변경<input
+                                id="file-input"
+                                style="display: none"
+                                type="file"
+                                accept="image/gif, image/jpeg, image/jpg, image/png"/></label
+                        ></span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="settings-myinfo">
+                        <form action="/setting/changeMemberNickname" method="post" id="nicknameForm">
+                            <label class="info-title">
+                                <span class="info-title-words">닉네임</span>
+                                <div class="edit">
+                                    <!-- 닉네임 수정한거 저장하는 부분 -->
+                                    <button class="edit-span save modify-nickname" type="submit" disabled style="background: none; border: none;">수정</button>
+                                </div>
+                            </label>
+                            <div class="info-list">
+                                <div class="input id-input">
+                                    <input class="input-value id-input" type="text"
+                                           id="change-nickname"
+                                           name="memberNickname"
+                                           th:placeholder="${member.memberNickname}"/>
+                                </div>
+                                <ul class="explanation nickname-explanation">
+                                    <li class="nickname-text">* 한글/영문/숫자만 사용할 수 있습니다.</li>
+                                </ul>
+                            </div>
+                        </form>
+
+
+                        <div class="info-list">
+                            <label class="info-title">
+                                <span class="info-title-words">이메일 </span>
+                            </label>
+                            <div class="email-box">
+                                <div class="input">
+                                    <input class="input-value" type="text" disabled
+                                           th:placeholder="${member.memberEmail}"/>
+                                    <div class="suffix-wrapper tick-location">
+                        <span class="tick"
+                        ><svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                                focusable="false"
+                                preserveAspectRatio="xMidYMid meet"
+                                class="tick-svg"
+                        >
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                    d="M12,2 C17.5228475,2 22,6.4771525 22,12 C22,17.5228475 17.5228475,22 12,22 C6.4771525,22 2,17.5228475 2,12 C2,6.4771525 6.4771525,2 12,2 Z M15.7997804,9.20767085 C15.53176,8.93186943 15.0959927,8.93062056 14.8264668,9.20488141 L14.8264668,9.20488141 L10.8145475,13.2862949 L9.18819848,11.528062 L9.11288323,11.4577095 C8.84909316,11.2455787 8.466272,11.2574579 8.21525483,11.5004627 C7.93913594,11.767768 7.92706048,12.2135121 8.18828353,12.49606 L8.18828353,12.49606 L10.2996011,14.7797344 L10.3762843,14.8511931 C10.6449585,15.0661724 11.0355012,15.0488498 11.2848524,14.7951181 L11.2848524,14.7951181 L15.7970545,10.2036467 L15.8639086,10.1248492 C16.0645771,9.84971652 16.0434353,9.4583994 15.7997804,9.20767085 Z"
+                            ></path></svg
+                        ></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="explanation">
+                                <li>
+                                    *<!-- -->
+                                    <!-- -->이메일을 변경하시려면 고객센터로 문의해 주세요.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-list">
+                            <label class="info-title">
+                                <span class="info-title-words">휴대폰 번호</span></label>
+                            <div class="phone-input-area">
+                                <div disabled class="input">
+                                    <input id="tel" type="text" required="" placeholder="전화번호를 입력해주세요" name="memberPhonenumber" class="input-value"
+                                           value="">
+                                </div>
+                                <button type="button" id="verificationbtn" class="verificationbtn phone-button" disabled>재인증</button>
+                            </div>
+
+                            <div class="verification phone-input-area">
+                                <div class="input-body disable">
+                                    <input id="checkAouthCode" type="text" placeholder="인증번호를 입력해주세요." name="authCode" readonly="" class="input"
+                                           value="">
+                                </div>
+                                <!-- =================== 휴대폰 번호 변경하기 =================== -->
+                                <form action="/setting/change-phonenumber" method="post" id="phoneNumberForm">
+                                    <input hidden name="memberPhonenumber" id="memberPhonenumber">
+                                    <button type="button" class="phone-button" id="modify-phone-button" disabled>수정</button>
+                                </form>
+
+                                <div class="input-error">
+                                    <div class="input-error-message-box">
+                                        <p class="input-error-message"></p><!--영어 x-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <form action="/setting/changeBusinessNumber" method="post" id="businessNumberForm">
+                            <div class="info-list">
+                                <label class="info-title">
+                                    <span class="info-title-words"> 사업자등록번호 </span>
+                                    <div class="edit">
+                                        <!-- 사업자등록번호 수정한거 저장 버튼 -->
+                                        <button class="edit-span save modify-businessNum" disabled type="submit" style="background: none; border: none;">수정</button>
+                                    </div>
+                                </label>
+                                <div class="input id-input2">
+                                    <input class="input-value id-input2 redborder" type="text" name="cafeBusinessNumber"
+                                           th:placeholder="${cafeBusinessNumber}"/>
+                                </div>
+                                <ul class="explanation businessNum-explanation">
+                                    <li class="number-10">* 숫자 10자리를 입력해 주세요.</li>
+                                </ul>
+                            </div>
+                        </form>
+
+                    </section>
+                </section>
+            </div>
+        </main>
+    </div>
+</div>
+
+<footer th:replace="~{/fix/footer :: footer}"></footer>
+
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/mypage/settings.js"></script>
+<script>
+</script>
+</html>

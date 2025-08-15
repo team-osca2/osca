@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>cafeMain</title>
+    <link rel="stylesheet" href="/css/footer/footer.css"/>
+    <link rel="stylesheet" href="/css/header/header.css"/>
+    <link rel="icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/cafe/cafe_main.css">
+</head>
+<body>
+<div id="__next">
+    <!-- 헤더 -->
+    <header class="header-wrapper">
+        <section class="header-container">
+            <a href="/" aria-label="logo" class="header-logo">
+                <img src="/images/logo.png" alt="오!스카 로고" style="width:70px; height: 40px;">
+            </a>
+            <div>
+                <span class="header-line"></span>
+                <a href="" class="header-menu">오늘의 스터디</a>
+                <a href="" class="header-menu">오늘의 카페</a>
+                <a href="" class="header-menu">FAQ</a>
+                <a href="" class="header-menu">Oh!스카 소개</a>
+            </div>
+            <div style="flex-grow:1"></div>
+            <div class="header-aside">
+                <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">회원가입</p>
+                        </span>
+                </a>
+                <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">로그인</p>
+                        </span>
+                </a>
+                <a role="link" color="default" href="/inboxes?inbox_group_id=&amp;partner_id=" class="header-aside-menu" aria-expanded="false">
+                        <span class="aside-menu-contents">
+                            <p variant="body2" class="aside-contents" color="gray900">마이페이지</p>
+                        </span>
+                </a>
+                <div>
+                    <div class="header-profile" aria-expanded="false">
+                        <a href="/buyer/order-list" class="profile-link">
+                            <div class="profile-wrapper">
+                                <div size="32" shape="0" role="article" class="profile-shape">
+                                    <img src="https://kmong.com/img/tools/main_user_gray.png" alt="avatar" shape="0" loading="lazy" class="profile-img" style="height: 32px; width: 32px;">
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- 바디 -->
+    <div class="body">
+        <div class="bodyArea">
+            <section class="bannerSection">
+                <!-- 왼쪽 이미지 배너 -->
+                <a class="leftBanner" href="#">
+                    <img src="/images/cafeMain/cafeMain.png" alt="#" width="694" height="365" decoding="async" data-nimg="1" loading="lazy" style="color: transparent;">
+                </a>
+                <div width="454" height="365" class="rightBanner">
+                    <div class="rightBannerImg">
+                        <!-- 우측 슬라이드 배너 -->
+                        <div class="slick-slider slick-initialized">
+                            <button class="prev">
+                                    <span role="img" rotate="0" class="rightBannerInner">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="rightBannerInnerImg">
+                                            <path xmlns="http://www.w3.org/2000/svg" d="M9.41421356,12 L15.7071068,5.70710678 C16.0976311,5.31658249 16.0976311,4.68341751 15.7071068,4.29289322 C15.3165825,3.90236893 14.6834175,3.90236893 14.2928932,4.29289322 L7.29289322,11.2928932 C6.90236893,11.6834175 6.90236893,12.3165825 7.29289322,12.7071068 L14.2928932,19.7071068 C14.6834175,20.0976311 15.3165825,20.0976311 15.7071068,19.7071068 C16.0976311,19.3165825 16.0976311,18.6834175 15.7071068,18.2928932 L9.41421356,12 Z"></path>
+                                        </svg>
+                                    </span>
+                            </button>
+                            <div id="wrapper">
+                                <div id="slider-wrap">
+                                    <ul id="slider" style="display: flex;">
+                                        <li>
+                                            <div class="slick-slide" aria-hidden="true">
+                                                <div>
+                                                    <a class="slick-slide-img" href="/md-pick/587">
+                                                        <img alt="음악 레슨" src="/images/cafeMain/001.webp" style="width:500px;">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="slick-slide" aria-hidden="true">
+                                                <div>
+                                                    <a class="slick-slide-img" href="/md-pick/587">
+                                                        <img alt="음악 레슨" src="/images/cafeMain/002.webp" style="width:500px;">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="slick-slide" aria-hidden="true">
+                                                <div>
+                                                    <a class="slick-slide-img" href="/md-pick/587">
+                                                        <img alt="음악 레슨" src="/images/cafeMain/003.webp" style="width:500px;">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="slick-slide" aria-hidden="true">
+                                                <div>
+                                                    <a class="slick-slide-img" href="/md-pick/587">
+                                                        <img alt="음악 레슨" src="/images/cafeMain/004.webp" style="width:500px;">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="slick-slide" aria-hidden="true">
+                                                <div>
+                                                    <a class="slick-slide-img" href="/md-pick/587">
+                                                        <img alt="음악 레슨" src="/images/cafeMain/001.webp" style="width:500px;">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- <div class="slick-list">
+                                <div class="slick-track" style="width: 5448px; opacity: 1; transform: translate3d(-2270px, 0px, 0px);">
+                                    <div class="slick-slide slick-cloned" aria-hidden="true">
+                                        <div>
+                                            <a class="slick-slide-img" href="/md-pick/587">
+                                                <img alt="음악 레슨" src="/_next/image?url=https%3A%2F%2Fd2v80xjmx68n4w.cloudfront.net%2Fassets%2Fknowhow%2Fimages%2Fbanners%2Fdesktop%2F230804_587_pc.jpg&amp;w=2880&amp;q=75" width="454" height="365" decoding="async" data-nimg="1" loading="lazy" style="color: transparent;">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <button class="next">
+                                    <span role="img" rotate="0" class="rightBannerInner">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" class="rightBannerInnerImg">
+                                            <path xmlns="http://www.w3.org/2000/svg" d="M9.41421356,12 L15.7071068,5.70710678 C16.0976311,5.31658249 16.0976311,4.68341751 15.7071068,4.29289322 C15.3165825,3.90236893 14.6834175,3.90236893 14.2928932,4.29289322 L7.29289322,11.2928932 C6.90236893,11.6834175 6.90236893,12.3165825 7.29289322,12.7071068 L14.2928932,19.7071068 C14.6834175,20.0976311 15.3165825,20.0976311 15.7071068,19.7071068 C16.0976311,19.3165825 16.0976311,18.6834175 15.7071068,18.2928932 L9.41421356,12 Z" transform="translate(11.500000, 12.000000) scale(-1, 1) translate(-11.500000, -12.000000)"></path>
+                                        </svg>
+                                    </span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- 우측 슬라이드 배너 안 카운터 div -->
+                    <!-- <div class="rightBannerCounter">
+                        <span class="currentNumber">02</span>
+                        <span class="outOf">/</span>
+                        <span class="totalNumber">04</span>
+                    </div> -->
+                </div>
+            </section>
+            <!-- 카테고리(지역태그) -->
+            <div class="temp">
+                <div class="isLoggedIn filter-box filter-header cafe-list-filter-header">
+                    <div class="region-filter-container">
+                        <div class="interestTagSlide categoryList">
+                            <div class="scrollsnap scrollsnap-hidden regionTagSlide_width">
+                                <div class="scrollsnap-hidden scrollsnap2 scrollsnap3 scrollsnap4 tagSlide-content-interval">
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color" id="all-content-color" style="color: #F9A01B;  --button-color: #F9A01B;">
+                                        <span class="region-button-contentButton ">전체</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">서울</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">경기</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">인천</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">대전</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">대구</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">부산</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">광주</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">울산</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">강원</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">전남</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">전북</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">경남</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">경북</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">충남</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">충북</span>
+                                    </button>
+                                    <button class="button-scroll button-shape button-outline-shape button-outline-primary button-outline-medium region-category-item button-content-color">
+                                        <span class="region-button-contentButton">제주</span>
+                                    </button>
+                                </div>
+                                <div class="tagslide-arrow tagslide-rightarrow tagslide-arrow-visible">
+                                    <button type="button" class="rightarrow-button">
+                                            <span class="arrow-SvgIcon" style="width: 20px; height: 20px;">
+                                                <svg class="SvgIcon" viewBox="0 0 18 18">
+                                                    <path d="m11.955 9-5.978 5.977a.563.563 0 0 0 .796.796l6.375-6.375a.563.563 0 0 0 0-.796L6.773 2.227a.562.562 0 1 0-.796.796L11.955 9z">                                                    </path>
+                                                </svg>
+                                            </span>
+                                    </button>
+                                </div>
+                                <div class="tagslide-arrow tagslide-leftarrow">
+                                    <button type="button" class="leftarrow-button">
+                                            <span class="arrow-SvgIcon" style="width: 20px; height: 20px;">
+                                                <svg class="SvgIcon" viewBox="0 0 18 18">
+                                                    <path d="m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z">                                                    </path>
+                                                </svg>
+                                            </span>
+                                    </button>
+                                </div>
+                                <div class="tagslide-arrow tagslide-leftarrow"></div>
+                            </div>
+                        </div>
+                        <hr class="main-category-divider header-divider">
+                    </div>
+                </div>
+            </div>
+            <ul class="all-cafe-list cafe-list-container">
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="/images/cafeMain/intro-bana2000.png" alt="바나프레소">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">바나프레소</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="https://yt3.googleusercontent.com/ytc/AGIKgqNlMJh1pZSWeJwAad-JXFD9unHMnfPcKlyDzGlhdg=s176-c-k-c0x00ffffff-no-rj" alt="투썸플레이스">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">투썸플레이스</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FNbNOz%2FbtqyPVj4VCV%2FnFh85UIfBBu8xDFa798Vz0%2Fimg.jpg" alt="이디야커피">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">이디야커피</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9951424F5E738F4330" alt="스타벅스">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">스타벅스</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="/images/cafeMain/hollys.png" alt="할리스">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">할리스</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="/images/cafeMain/tomandtoms.png" alt="탐앤탐스">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">탐앤탐스</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="/images/cafeMain/mega.png" alt="메가커피">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">메가커피</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+                <li class="cafe-card-container cafe-card-interaction">
+                    <a href="" style="--base-font-size: 10;">
+                        <div class="cafe-thumbnail-image cafe-thumbnail-responsive">
+                            <img class="cafe-image cafe-image-cover" src="/images/cafeMain/paul.jpeg" alt="스타벅스">
+                        </div>
+                        <div class="section section-column">
+                            <div class="BadgeList">
+                                    <span class="badge-root badge-outline badge-size">
+                                        <span class="badge-label badge-label-responsive">
+                                            카공 카페
+                                        </span>
+                                    </span>
+                            </div>
+                            <p class="title title-responsive">폴바셋</p>
+                        </div>
+                        <div class="additional-section additional-section-column">
+                                <span class="period period-responsive">
+                                    2023.06.29(목)~2023.07.02(일)
+                                </span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class=""></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-inner">
+            <ol style="width:45%; padding: 0;">
+                <b>(주)OH!스카</b> | 서울특별시 강남구 테헤란로 26길 12 제일비전타워 13층 | 대표 : 정해승<br>
+                개인정보보호책임 : 배정수 | 사업자등록번호 : 815-88-00171<br>
+                통신판매업신고 : 2015 - 서울강남 - 03148호 | 02-2135-2949<br>
+                koreais@koreaedugroup.com
+            </ol>
+            <ol><a href="">오늘의 스터디</a></ol>
+            <ol><a href="">오늘의 카페</a></ol>
+            <ol><a href="">FAQ</a></ol>
+            <ol><a href="">OH!스카 소개</a></ol>
+        </div>
+        <div class="footer-media">
+            &nbsp;&nbsp; (주)OH!스카 &nbsp;&nbsp;&nbsp;
+            <a href="">오늘의 스터디</a>&nbsp;
+            <a href="">오늘의 카페</a>&nbsp;
+            <a href="">FAQ</a>&nbsp;
+            <a href="">OH!스카 소개</a>&nbsp;
+        </div>
+    </footer>
+</div>
+
+[[${cafeAdImagesDTO}]]
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/js/cafe/cafe_main.js"></script>
+<script th:inline="javascript">console.log([[${cafeAdImagesDTO}]])</script>
+</html>

@@ -1,0 +1,29 @@
+services:
+  osca_db:
+    image: mysql:8.0.35
+    container_name: osca_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: osca
+      MYSQL_USER: osca
+      MYSQL_PASSWORD: osca
+      TZ: Asia/Seoul
+    command: |
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "23306:3306"
+    volumes:
+      - osca_mysql_data:/var/lib/mysql
+#      - ./data/mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - osca_network
+
+volumes:
+  osca_mysql_data:
+    driver: local
+
+networks:
+  osca_network:
+    driver: bridge

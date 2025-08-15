@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/footer/footer.css"/>
+    <link rel="stylesheet" href="/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png"/>
+    <link rel="stylesheet" href="/css/cafe/write.css">
+    <title>writeCafePost</title>
+</head>
+<body class="body" style="padding-right:0px;">
+<div id="__next">
+    <div class="cafePost">
+        <!-- 헤더 시작 -->
+        <div th:if="${session.id == null}"><header th:replace="~{/fix/header :: unlogined-header}"></header></div>
+        <div th:if="${session.id != null && session.memberRole == 2}"><header th:replace="~{/fix/header :: social-logined-header}"></header></div>
+        <div th:if="${session.id != null && session.memberRole == null}"><header th:replace="~{/fix/header :: logined-header}"></header></div>
+        <form id="form" class="form" th:object="${cafeVO}" onsubmit="return false;" >
+            <div class="form-content">
+<!--                <nav class="side-navigation">-->
+<!--                    <div class="side-navigation-row">-->
+<!--                        <div class="navigation-row active">-->
+<!--                            <div class="row-number">1</div>-->
+<!--                            <span class="row-title">카페 정보</span>-->
+<!--                        </div>-->
+<!--                        <div class="navigation-row">-->
+<!--                            <div class="row-number">2</div>-->
+<!--                            <span class="row-title">카페 위치</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </nav>-->
+                <div class="main-content">
+                    <section id="information" class="information">
+                        <span class="content-category">카페 정보</span>
+                        <div class="sub-container">
+                            <div class="introduction">
+                                <div class="introduction-box">
+                                    <div class="box-directory brand-name">
+                                        <span class="directory-title cafe-brand">사업자 번호</span>
+                                        <label>
+                                            <input type="text" placeholder="사업자 번호를 입력해주세요.(-포함)" maxlength="12" th:field="*{cafeBusinessNumber}" class="directory-context"/>
+                                        </label>
+                                    </div>
+                                    <div class="box-directory brand-name">
+                                        <span class="directory-title cafe-brand">카페 이름</span>
+                                        <label>
+                                            <input type="text" placeholder="카페 이름을 입력해주세요." maxlength="20" th:field="*{cafeName}" class="directory-context"/>
+                                        </label>
+<!--                                        <span class="text-number">0/20</span>-->
+                                    </div>
+                                    <div class="box-directory brand-name">
+                                        <span class="directory-title cafe-brand">카페 이메일</span>
+                                        <label>
+                                            <input type="email" placeholder="카페 이메일을 입력해주세요." th:field="*{cafeContactEmail}" class="directory-context"/>
+                                        </label>
+                                        <span class="directory-title cafe-brand">카페 전화번호</span>
+                                        <label>
+                                            <input type="text" placeholder="카페 전화번호를 입력해주세요." th:field="*{cafeContactPhonenumber}" class="directory-context"/>
+                                        </label>
+                                    </div>
+                                    <div class="box-directory brand-name">
+                                        <span class="directory-title cafe-brand">오픈 시간</span>
+                                        <label>
+                                            <input type="time" name="cafeOpenTime" value="09:00" class="directory-context" />
+                                        </label>
+                                        ~
+                                        <span class="directory-title cafe-brand">마감 시간</span>
+                                        <label>
+                                            <input type="time" name="cafeEndTime" value="23:00" class="directory-context" />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="location" class="location section information">
+                        <span direction="row" class="content-category">카페 위치</span>
+                        <div class="sub-container">
+                            <div class="introduction">
+                                <div class="introduction-box">
+                                    <div class="box-directory brand-name" id="postcodify_search_button">
+                                        <span class="directory-title cafe-brand">주소</span>
+                                        <label for="address">
+                                            <input type="text" id="address" placeholder="클릭해주세요" value="" class="directory-context postcodify_address" style="cursor: default;" readonly/>
+                                        </label>
+                                    </div>
+                                    <div class="box-directory brand-name">
+                                        <span class="directory-title cafe-brand">상세 주소</span>
+                                        <label for="address_detail">
+                                            <input type="text" id="address_detail" placeholder="상세주소를 입력해주세요" class="directory-context postcodify_details" value=""/>
+                                        </label>
+                                    </div>
+                                    <input type="text" th:field="*{cafeLocation}" hidden>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="save-button-box">
+                    <button type="button" role="button" class="save-button">
+                        <span class="save-button-text">등록하기</span>
+                    </button>
+                </div>
+            </footer>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="http://d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+
+<script>
+    // 주소 찾기
+    $(function() { $("#postcodify_search_button").postcodifyPopUp(); });
+</script>
+<script src="/js/cafe/write.js"></script>
+</html>
