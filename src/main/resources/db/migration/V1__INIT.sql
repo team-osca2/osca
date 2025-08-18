@@ -170,7 +170,7 @@ CREATE TABLE studies
     title                VARCHAR(200) NOT NULL,
     content              TEXT,
     curriculum           TEXT,
-    period_              VARCHAR(100),
+    study_period         VARCHAR(100),
     location             VARCHAR(100),
     detailed_location    VARCHAR(200) COMMENT '상세 위치',
     meeting_type         ENUM ('OFFLINE', 'ONLINE', 'HYBRID')                      DEFAULT 'OFFLINE',

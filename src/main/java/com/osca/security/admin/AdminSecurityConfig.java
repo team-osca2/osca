@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 /**
- * please explain class!
+ * 관리자 Security Config
  *
  * @author :Uheejoon
  * @date :2025-08-12 오전 12:22
@@ -20,13 +20,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class AdminSecurityConfig {
 
-  private final AdminUserDetailsService adminUserDetailsService;
-  private final PasswordEncoder passwordEncoder;
   private final AdminAccessDeniedHandler adminAccessDeniedHandler;
   private final AdminAuthEntryPoint adminAuthEntryPoint;
 
   @Bean
-  @Order(0) // 가장 먼저 매칭(어드민이 우선)
+  @Order(1) // 가장 먼저 매칭(어드민이 우선)
   public SecurityFilterChain adminSecurity(HttpSecurity http) throws Exception {
     http
         // 이 체인은 /admin/**, /admin/login, /admin/logout 만 처리
@@ -39,7 +37,7 @@ public class AdminSecurityConfig {
 
         // CSRF: 어드민 HTML 폼은 기본 활성화. 필요 시 /admin/api/** 만 예외 처리
         .csrf(csrf -> csrf
-            .ignoringRequestMatchers("/admin/api/**")
+            .ignoringRequestMatchers("/api/admin//**")
         )
 
         .formLogin(form -> form
@@ -66,18 +64,9 @@ public class AdminSecurityConfig {
         .exceptionHandling(ex -> ex
             .accessDeniedHandler(adminAccessDeniedHandler)
             .authenticationEntryPoint(adminAuthEntryPoint)
-        )
-
-        .authenticationProvider(adminAuthenticationProvider());
+        );
 
     return http.build();
-  }
-
-  @Bean
-  public DaoAuthenticationProvider adminAuthenticationProvider() {
-    DaoAuthenticationProvider provider = new DaoAuthenticationProvider(adminUserDetailsService);
-    provider.setPasswordEncoder(passwordEncoder);
-    return provider;
   }
 
 }

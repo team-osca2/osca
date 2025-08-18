@@ -160,7 +160,7 @@ VALUES (2, '서울대학교', '네이버', '백엔드 개발에 관심이 많은
        (3, '연세대학교', '카카오', '프론트엔드 개발을 공부하고 있는 신입 개발자입니다.', 'FRESHER');
 
 -- 샘플 스터디
-INSERT INTO studies (title, content, curriculum, period, location, max_participants, deadline_date,
+INSERT INTO studies (title, content, curriculum, study_period, location, max_participants, deadline_date,
                      member_id, meeting_type, difficulty_level)
 VALUES ('Spring Boot 마스터하기',
         'Spring Boot를 활용한 백엔드 개발을 체계적으로 학습하는 스터디입니다. 실제 프로젝트를 만들어보며 실무 경험을 쌓아보세요!',
