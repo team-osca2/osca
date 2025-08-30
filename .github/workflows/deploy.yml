@@ -37,51 +37,6 @@ jobs:
         # 환경 변수 변환을 위해 설치 (템플릿안의 ${변수명}을 실제 환경 변수 값으로 바꿔주는 도구 포함)
         run: sudo apt-get install -y gettext
 
-      - name: Create application.yml.template
-        run: |
-          mkdir -p src/main/resources
-          cat > src/main/resources/application.yml.template <<EOL
-          spring:
-            application:
-              name: osca
-          
-            datasource:
-              hikari:
-                jdbc-url: jdbc:mysql://localhost:23306/osca?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul
-                username: osca
-                password: osca
-                driver-class-name: com.mysql.cj.jdbc.Driver
-          
-                maximum-pool-size: 20
-                minimum-idle: 5
-                idle-timeout: 300000
-                max-lifetime: 1200000
-                connection-timeout: 20000
-                validation-timeout: 3000
-                leak-detection-threshold: 60000
-          
-          server:
-            port: 10000
-          
-          logging:
-            level:
-              org.springframework: DEBUG
-              com.osca: DEBUG
-          
-          EOL
-
-#      - name: Set Yaml
-#        run: |
-#          envsubst < src/main/resources/application.yml.template > src/main/resources/application.yml
-#          echo "Generated application.yml:"
-#          cat src/main/resources/application.yml
-#        env:
-#          RDS_HOSTNAME: ${{ secrets.RDS_HOSTNAME }}
-#          RDS_PORT: ${{ secrets.RDS_PORT }}
-#          RDS_DB_NAME: ${{ secrets.RDS_DB_NAME }}
-#          RDS_USERNAME: ${{ secrets.RDS_USERNAME }}
-#          RDS_PASSWORD: ${{ secrets.RDS_PASSWORD }}
-
       - name: Build with Gradle
         run: ./gradlew clean build test
         shell: bash
