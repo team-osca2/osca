@@ -17,3 +17,13 @@ spring:
       validation-timeout: 3000
       leak-detection-threshold: 60000
 
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://db.ascode.click/osca?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul
+

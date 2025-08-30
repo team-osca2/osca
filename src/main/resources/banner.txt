@@ -6,5 +6,7 @@ ${AnsiColor.BRIGHT_GREEN}
   \ \ \_\ \    /\ \L\ \   \ \ \L\ \  \ \ \/\ \
    \ \_____\   \ `\____\   \ \____/   \ \_\ \_\
     \/_____/    \/_____/    \/___/     \/_/\/_/
+${AnsiColor.RED}
+Project Name: ${application}
+Spring Boot Version: ${spring-boot.version}
 ${AnsiColor.DEFAULT}
-

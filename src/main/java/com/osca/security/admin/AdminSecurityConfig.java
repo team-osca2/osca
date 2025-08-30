@@ -31,8 +31,9 @@ public class AdminSecurityConfig {
         .securityMatcher("/admin/**", "/admin/login", "/admin/logout")
 
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/admin/login", "/admin/logout").permitAll()
-            .anyRequest().hasRole("ADMIN")
+            .requestMatchers("/admin/login", "/admin/logout", "/admin/**")
+            .permitAll()
+//            .anyRequest().hasRole("ADMIN")
         )
 
         // CSRF: 어드민 HTML 폼은 기본 활성화. 필요 시 /admin/api/** 만 예외 처리
