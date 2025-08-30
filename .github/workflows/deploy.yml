@@ -40,4 +40,4 @@ jobs:
       - name: Build with Gradle (no DB)
         env:
           SPRING_PROFILES_ACTIVE: ci
-        run: ./gradlew clean build test --stacktrace --info --no-daemon
+        run: ./gradlew clean build test -Dspring.profiles.active=ci --stacktrace --info --no-daemon

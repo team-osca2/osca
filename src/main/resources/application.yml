@@ -17,6 +17,9 @@ spring:
       validation-timeout: 3000
       leak-detection-threshold: 60000
 
+server:
+  port: 10000
+
 ---
 spring:
   config:
@@ -27,3 +30,11 @@ spring:
     hikari:
       jdbc-url: jdbc:mysql://db.ascode.click/osca?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Seoul
 
+---
+spring:
+  config:
+    activate:
+      on-profile: ci
+
+  flyway:
+    enabled: false
