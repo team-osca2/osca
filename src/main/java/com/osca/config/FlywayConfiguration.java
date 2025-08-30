@@ -2,14 +2,13 @@ package com.osca.config;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import javax.sql.DataSource;
 import org.flywaydb.core.Flyway;
 import org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.Profile;
 
 /**
  * Flyway 설정 클래스
@@ -18,6 +17,7 @@ import org.springframework.context.annotation.DependsOn;
  * @author :Uheejoon
  * @date :2025-08-11 오전 1:05
  */
+@Profile({"local", "default"})
 @Configuration
 public class FlywayConfiguration {
 

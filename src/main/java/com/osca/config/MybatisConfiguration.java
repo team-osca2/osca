@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -30,14 +31,28 @@ public class MybatisConfiguration {
 
   public static final String CLASSPATH_MAPPER_XML = "classpath*:/mapper/*.xml";
 
+  @Bean
+  @DependsOn("flywayInitializer")
+  @ConditionalOnProperty(name = "spring.flyway.enabled", havingValue = "true", matchIfMissing = true)
+  public SqlSessionFactory sqlSessionFactoryWithFlyway(
+      @Qualifier("oscaDataSource") DataSource dataSource
+  ) {
+    return createSqlSessionFactory(dataSource);
+  }
+
   /**
    * SqlSessionFactory 빈 생성 Flyway 마이그레이션 완료 후 실행되도록 의존성 설정
    */
   @Bean
-  @DependsOn("flywayInitializer")
+  @ConditionalOnProperty(name = "spring.flyway.enabled", havingValue = "false")
   public SqlSessionFactory sqlSessionFactory(
       @Qualifier("oscaDataSource") DataSource dataSource
   ) {
+    return createSqlSessionFactory(dataSource);
+  }
+
+
+  private SqlSessionFactory createSqlSessionFactory(DataSource dataSource) {
     try {
       SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
       sqlSessionFactoryBean.setDataSource(dataSource);
@@ -50,10 +65,10 @@ public class MybatisConfiguration {
 
       assert sqlSessionFactory != null;
       var configuration = sqlSessionFactory.getConfiguration();
-      configuration.setMapUnderscoreToCamelCase(true); // 스네이크케이스 → 카멜케이스 변환
-      configuration.setCacheEnabled(true); // 2차 캐시 활성화
-      configuration.setLazyLoadingEnabled(true); // 지연 로딩 활성화
-      configuration.setAggressiveLazyLoading(false); // 적극적 지연 로딩 비활성화
+      configuration.setMapUnderscoreToCamelCase(true);
+      configuration.setCacheEnabled(true);
+      configuration.setLazyLoadingEnabled(true);
+      configuration.setAggressiveLazyLoading(false);
 
       return sqlSessionFactory;
 
