@@ -37,6 +37,7 @@ jobs:
         # 환경 변수 변환을 위해 설치 (템플릿안의 ${변수명}을 실제 환경 변수 값으로 바꿔주는 도구 포함)
         run: sudo apt-get install -y gettext
 
-      - name: Build with Gradle
-        run: ./gradlew clean build test
-        shell: bash
+      - name: Build with Gradle (no DB)
+        env:
+          SPRING_PROFILES_ACTIVE: ci
+        run: ./gradlew clean build test --stacktrace --info --no-daemon
